@@ -8,5 +8,14 @@ namespace Project_Krekelhof
 {
     public interface IItem
     {
+        int Id { get; set; }
+
+        string Omschrijving { get; set; }
+
+        string Naam { get; set; }
+
+        int Beschikbaar { get; set; }
+
+        Categorie Categorie { get; set; }
     }
 }

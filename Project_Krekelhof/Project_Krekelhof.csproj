@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boek.cs" />
+    <Compile Include="Categorie.cs" />
     <Compile Include="IItem.cs" />
     <Compile Include="Leerling.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
