@@ -3,8 +3,8 @@
   <Class Name="Project_Krekelhof.Boek">
     <Position X="4.5" Y="3.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAgAAAABAAAAABAAAAAAAAAIAAAAAA=</HashCode>
-      <FileName>Boek.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAAgAAAABAAAAQBAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Domain\Boek.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -12,7 +12,7 @@
     <Position X="4.5" Y="5.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAgAAAABAAAAABAAAAAAAAAIAAAAAA=</HashCode>
-      <FileName>Spel.cs</FileName>
+      <FileName>Models\Domain\Spel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -20,7 +20,7 @@
     <Position X="7.5" Y="3.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAACAAgAAAABAAAAABAAAAAAAAAIAAAAAA=</HashCode>
-      <FileName>Verteltas.cs</FileName>
+      <FileName>Models\Domain\Verteltas.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Items" />
@@ -30,18 +30,18 @@
   <Class Name="Project_Krekelhof.Uitlening">
     <Position X="11.75" Y="1" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAACgAABAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Uitlening.cs</FileName>
+      <HashCode>AAACAAAAAAAEAAAAAAAACgAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Models\Domain\Uitlening.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="IItem" />
+      <Property Name="Iitem" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Project_Krekelhof.Leerling">
     <Position X="11.75" Y="3.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAACACAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
-      <FileName>Leerling.cs</FileName>
+      <FileName>Models\Domain\Leerling.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Uitleningen" />
@@ -50,15 +50,15 @@
   <Class Name="Project_Krekelhof.Categorie">
     <Position X="1" Y="1" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>Categorie.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Categorie.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Project_Krekelhof.IItem">
     <Position X="5.5" Y="1" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAgAAAABAAAAABAAAAAAAAAIAAAAAA=</HashCode>
-      <FileName>IItem.cs</FileName>
+      <FileName>Models\Domain\IItem.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Categorie" />
