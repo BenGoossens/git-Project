@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace Project_Krekelhof
 {
-    public class Spel : Item
+    public class Spel : IItem
     {
     }
 }

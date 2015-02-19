@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace Project_Krekelhof
 {
-    public class Boek : Item
+    public class Boek : IItem
     {
     }
 }

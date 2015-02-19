@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace Project_Krekelhof
 {
-    public abstract class Item
+    public interface IItem
     {
     }
 }

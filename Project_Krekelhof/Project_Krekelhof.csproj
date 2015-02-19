@@ -70,9 +70,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boek.cs" />
-    <Compile Include="Item.cs" />
+    <Compile Include="IItem.cs" />
+    <Compile Include="Leerling.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spel.cs" />
+    <Compile Include="Uitlening.cs" />
     <Compile Include="Verteltas.cs" />
   </ItemGroup>
   <PropertyGroup>
