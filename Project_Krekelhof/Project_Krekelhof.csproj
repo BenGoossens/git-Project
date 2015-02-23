@@ -145,6 +145,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategorieController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\LeerlingController.cs" />
     <Compile Include="Controllers\UitleningController.cs" />
@@ -165,6 +166,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\DAL\Mapper\" />
     <Folder Include="Views\Categorie\" />
+    <Folder Include="Views\Home\" />
     <Folder Include="Views\Item\" />
     <Folder Include="Views\Leerling\" />
     <Folder Include="Views\Uitlening\" />
