@@ -17,6 +17,13 @@ namespace Project_Krekelhof
         public virtual ICollection<Uitlening> Uitleningen { get; set; }
 
         public string Voornaam { get; set; }
-        
+
+        public Leerling(String familieNaam, String voornaam, int id)
+        {
+            familieNaam = FamilieNaam;
+            voornaam = Voornaam;
+            id = Id;
+
+        }
     }
 }
