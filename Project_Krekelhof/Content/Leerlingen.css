@@ -24,6 +24,11 @@ h2{
     margin-top: 50px;
 }
 
+#h1zoeken img{
+height: 40px;    
+
+}
+
 div{
     
 	/*text-align: center;
@@ -151,13 +156,20 @@ input{
     width: 170px;
 }
 
-#uitleningen{
+#leerlingen{
     height: 0px;
 }
 
-#uitleningen button{
+#leerlingen button{
     float: right;
     margin-left: 5px;
+    font-size: 20px;
+    padding-top:5px;
+        padding-bottom: 5px;
+}
+#leerlingen button img{
+    height: 40px;
+    padding-right: 10px;
 }
 
 #zoekform{
@@ -168,6 +180,7 @@ input{
 #ganaar{
     float: right;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 

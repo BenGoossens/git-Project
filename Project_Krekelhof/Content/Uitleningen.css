@@ -158,11 +158,32 @@ input{
 #uitleningen button{
     float: right;
     margin-left: 5px;
+    font-size: 20px;
+    padding-top:5px;
+        padding-bottom: 5px;
+}
+#uitleningen button img{
+    height: 40px;
+    padding-right: 10px;
 }
 
+#h1zoeken1 img{
+height: 40px;    
+
+}
 #zoekform{
     height: 150px;
 }
+
+#ganaar{
+    height: 30px;
+}
+
+#h1zoeken img{
+height: 5px;    
+
+}
+
 
 
 
