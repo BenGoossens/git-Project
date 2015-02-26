@@ -13,6 +13,37 @@
         <button disabled>Uitlening voltooien</button>
     </div>
 
+    <div id="zoekform">
+
+        <form action="index.html" method="post">
+
+            <h1>Zoeken</h1>
+
+            <fieldset>
+                <input type="text" id="name" name="user_name">
+            </fieldset>
+
+            <fieldset id="Lijst">
+                <label for="zoek">In:</label>
+                <select id="zoek" name="zoek">
+                    <optgroup label="Items">
+                        <option value="Boeken">Boeken</option>
+                        <option value="Verteltassen">Verteltassen</option>
+                        <option value="Spel">Spel</option>
+
+                    </optgroup>
+                    <optgroup label="Leerlingen">
+                        <option value="Leerlingen">Leerlingen</option>
+
+                    </optgroup>
+                </select>
+
+            </fieldset>
+            <button id="knop" type="button" onclick="location.href = '/../Uitlening/Index'">Zoek</button>
+        </form>
+
+    </div>
+
     <div id="Scroll">
 
         <table class="tg" style="undefined;table-layout: fixed; width: 100%">
@@ -104,36 +135,7 @@
 
     </div>
 
-    <div id="zoekform">
-
-        <form action="index.html" method="post">
-
-            <h1>Zoeken</h1>
-
-            <fieldset>
-                <input type="text" id="name" name="user_name">
-            </fieldset>
-
-            <fieldset id="Lijst">
-                <label for="zoek">In:</label>
-                <select id="zoek" name="zoek">
-                    <optgroup label="Items">
-                        <option value="Boeken">Boeken</option>
-                        <option value="Verteltassen">Verteltassen</option>
-                        <option value="Spel">Spel</option>
-
-                    </optgroup>
-                    <optgroup label="Leerlingen">
-                        <option value="Leerlingen">Leerlingen</option>
-                       
-                    </optgroup>
-                </select>
-
-            </fieldset>
-            <button id="knop" type="button" onclick="location.href = '/../Uitlening/Index'">Zoek</button>
-        </form>
-
-    </div>
+    
 
     
     
