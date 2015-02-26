@@ -10,16 +10,14 @@ namespace Project_Krekelhof.Models.DAL
     {
         protected override void Seed(KrekelschoolContext context)
         {
-           //base.Seed(context);
-            Leerling lln1 = new Leerling("Wouter", "Koen", 1);
+      //      Leerling lln1 = new Leerling { FamilieNaam = "Wouters", Voornaam = "Koen", Uitleningen = 5Id = 1 };
 
-            Leerling lln2 = new Leerling("Beke", "Wouter", 2);
-
-            context.leerlingen.Add(lln1);
-            context.leerlingen.Add(lln2);
+            Categorie cat = new Categorie { Id = 1, Naam = "Thriller" };
+            Categorie cat2 = new Categorie { Id = 2, Naam = "Horror" };
+            Categorie[] Categorieen = (new Categorie[] { cat, cat2 });
+            context.categorieen.AddRange(Categorieen);
             context.SaveChanges();
-
-
+            
         }
 
 

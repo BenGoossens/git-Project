@@ -16,6 +16,6 @@ namespace Project_Krekelhof
 
         int Beschikbaar { get; set; }
 
-        Categorie Categorie { get; set; }
+       /* public Categorie categorie { get; set; }*/
     }
 }

@@ -1,0 +1,141 @@
+﻿<link href="~/Content/Uitleningen.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Uitleningen";
+}
+<body>
+       <h2>Uitleningen</h2>
+    <p>Openstaande uitleningen (0)</p>
+
+    <div id="uitleningen">
+        <button>Uitlening toevoegen</button>
+        <button disabled>Bewerken</button>
+        <button disabled>Uitlening voltooien</button>
+    </div>
+
+    <div id="Scroll">
+
+        <table class="tg" style="undefined;table-layout: fixed; width: 100%">
+            <colgroup>
+                <col style="width: 33px"> 
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tg-031e">Nr.</th>
+                    <th class="tg-031e">Leerling</th>
+                    <th class="tg-031e">Startdatum</th>
+                    <th class="tg-031e">Einddatum</th>
+                    <th class="tg-031e">Aantal items</th>
+
+
+                </tr>
+            </thead>
+            <tbody id="Scroll">
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+            </tbody>
+            
+        </table>
+
+    </div>
+
+    <div id="zoekform">
+
+        <form action="index.html" method="post">
+
+            <h1>Zoeken</h1>
+
+            <fieldset>
+                <input type="text" id="name" name="user_name">
+            </fieldset>
+
+            <fieldset id="Lijst">
+                <label for="zoek">In:</label>
+                <select id="zoek" name="zoek">
+                    <optgroup label="Items">
+                        <option value="Boeken">Boeken</option>
+                        <option value="Verteltassen">Verteltassen</option>
+                        <option value="Spel">Spel</option>
+
+                    </optgroup>
+                    <optgroup label="Leerlingen">
+                        <option value="Leerlingen">Leerlingen</option>
+                       
+                    </optgroup>
+                </select>
+
+            </fieldset>
+            <button id="knop" type="button" onclick="location.href = '/../Uitlening/Index'">Zoek</button>
+        </form>
+
+    </div>
+
+    
+    
+
+</body>

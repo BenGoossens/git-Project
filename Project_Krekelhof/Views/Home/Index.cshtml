@@ -1,19 +1,50 @@
 ﻿<link href="~/Content/Home.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "TEST";
+    ViewBag.Title = "Welkom";
 }
 
-<div>
-    <h2><img src="~/Images/Krekel.png" /></h2>
-    <p>
-        <ul id="knoppen">
-            <li><button><img src="~/Images/Krekel.png"/>Uitleningen</button></li>
-            <li><button>Leerlingen</button></li>
-            <li><button>Items</button></li>
-        </ul>
-    </p>
-</div>
+<body>
+    <h2><img src="~/Images/Krekel.png" />Welkom</h2>
+
+    <p id="p1">Wat wilt u doen?</p>
+        <div id="div2">
+            <div id="div1">
+
+                <div>
+
+                    <button onclick ="location.href = '/../Uitlening/Index'"><img src="~/Images/Uitleningen.png" /></button>
+                    <p>Uitleningen beheren</p>
+
+                </div>
+
+                <div>
+                    <button onclick="location.href = '/../Leerling/Index'"><img src="~/Images/cyberscooty-kids-smiling.png" /></button>
+                    <p>Leerlingen opzoeken</p>
+                </div>
+
+                <div>
+                    <button onclick="location.href = '/../Item/Index'"><img src="~/Images/Boeken2.png" /></button>
+                    <p>Boeken bekijken</p>
+
+                </div>
+
+                <div>
+                    <button onclick="location.href = '/../Item/Index'"><img src="~/Images/Verteltas.png" /></button>
+                    <p>Verteltassen bekijken</p>
+
+                </div>
+
+                <div>
+                    <button onclick="location.href = '/../Item/Index'"><img src="~/Images/Spel.png" /></button>
+                    <p>Spellen bekijken</p>
+
+                </div>
+        </div>
+    </div>
+        
+    
+</body>
 
 
 

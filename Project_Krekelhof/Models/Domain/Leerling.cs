@@ -18,12 +18,8 @@ namespace Project_Krekelhof
 
         public string Voornaam { get; set; }
 
-        public Leerling(String familieNaam, String voornaam, int id)
-        {
-            familieNaam = FamilieNaam;
-            voornaam = Voornaam;
-            id = Id;
+      //  public Leerling(String familieNaam, String voornaam, int id)
+      //  {        }
 
-        }
     }
 }

@@ -20,6 +20,6 @@ namespace Project_Krekelhof
         
         public virtual ICollection<IItem> Items { get; set; }
         
-        public Categorie Categorie { get; set; }
+        public virtual Categorie Categorie { get; set; }
         }
 }

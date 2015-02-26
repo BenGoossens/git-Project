@@ -115,10 +115,18 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\Leerlingen.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Uitleningen.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Boeken2.png" />
+    <Content Include="Images\boekenkast.png" />
+    <Content Include="Images\cyberscooty-kids-smiling.png" />
     <Content Include="Images\Krekel.png" />
+    <Content Include="Images\Spel.png" />
+    <Content Include="Images\Uitleningen.png" />
+    <Content Include="Images\Verteltas.png" />
     <Content Include="Models\Domain\domein.cd" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -141,6 +149,9 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\Leerling\Index.cshtml" />
+    <Content Include="Views\Uitlening\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,9 +189,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\DAL\Mapper\" />
     <Folder Include="Views\Categorie\" />
-    <Folder Include="Views\Item\" />
-    <Folder Include="Views\Leerling\" />
-    <Folder Include="Views\Uitlening\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

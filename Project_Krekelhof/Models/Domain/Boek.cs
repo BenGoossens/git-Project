@@ -19,7 +19,7 @@ namespace Project_Krekelhof
 
         public int Beschikbaar { get; set; }
 
-        public Categorie Categorie { get; set; }
+        public virtual Categorie Categorie { get; set; }
 
         public int Isbn { get; set; }
     }
