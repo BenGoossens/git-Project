@@ -9,8 +9,8 @@
 
     <div id="uitleningen">
         <button><img src="~/Images/Toevoegen.png" />Uitlening toevoegen</button>
-        <button disabled><img src="~/Images/Bewerken.png" />Bewerken</button>
-        <button disabled><img src="~/Images/Vinkje.png"/>Voltooien</button>
+        <button ><img src="~/Images/Bewerken.png" />Bewerken</button>
+        <button ><img src="~/Images/Vinkje.png"/>Voltooien</button>
     </div>
 
     <div id="zoekform">
@@ -27,7 +27,14 @@
                 <label for="zoek">In:</label>
                 <select id="zoek" name="zoek">
                     <optgroup label="Leerlingen">
-                        <option value="Leerlingen">Leerlingen</option>
+                        <option value="Voornaam">Voornaam</option>
+                        <option value="Familienaam">Familienaam</option>
+
+                    </optgroup>
+                    <optgroup label="Items">
+                        <option value="Boeken">Boeken</option>
+                        <option value="Verteltassen">Verteltassen</option>
+                        <option value="Spellen">Spellen</option>
 
                     </optgroup>
                 </select>
