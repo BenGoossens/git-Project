@@ -17,6 +17,8 @@ namespace Project_Krekelhof.Models.DAL
             Categorie[] Categorieen = (new Categorie[] { cat, cat2 });
             context.categorieen.AddRange(Categorieen);
             context.SaveChanges();
+
+
             
         }
 

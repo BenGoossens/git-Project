@@ -6,18 +6,8 @@ using System.ComponentModel;
 
 namespace Project_Krekelhof
 {
-    public class Spel : IItem
+    public class Spel : Item
     {
-        public int Id { get; set; }
-
-        public string Omschrijving { get; set; }
-
-        public string Naam { get; set; }
-
-        public int Beschikbaar { get; set; }
-        
-
-        public virtual Categorie Categorie { get; set; }
         
     }
 }

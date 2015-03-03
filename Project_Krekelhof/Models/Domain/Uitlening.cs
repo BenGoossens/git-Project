@@ -8,7 +8,7 @@ namespace Project_Krekelhof
 {
     public class Uitlening
     {
-        public virtual IItem Iitem { get; set; }
+        public virtual Item Item { get; set; }
         
         public int Id { get; set; }
         

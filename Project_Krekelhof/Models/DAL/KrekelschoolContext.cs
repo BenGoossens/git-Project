@@ -14,7 +14,7 @@ namespace Project_Krekelhof.Models.DAL
             
         }
 
-        public DbSet<IItem> items { get; set; }
+        public DbSet<Item> items { get; set; }
         public DbSet<Leerling> leerlingen { get; set; }
         public DbSet<Uitlening> uitleningen { get; set; }
         public DbSet<Categorie> categorieen { get; set; }
