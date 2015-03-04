@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
-using System.ComponentModel;
-
-namespace Project_Krekelhof
+﻿namespace Project_Krekelhof.Models.Domain
 {
     public class Verteltas : Item
     {
-        public virtual ICollection<Item> Items { get; set; }
+        public virtual string BeschrijvingItems { get; set; }
         }
 }

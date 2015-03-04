@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Project_Krekelhof.Models.Domain;
 
 namespace Project_Krekelhof.Models.DAL
 {
@@ -14,8 +15,8 @@ namespace Project_Krekelhof.Models.DAL
 
             Categorie cat = new Categorie { Id = 1, Naam = "Thriller" };
             Categorie cat2 = new Categorie { Id = 2, Naam = "Horror" };
-            Categorie[] Categorieen = (new Categorie[] { cat, cat2 });
-            context.categorieen.AddRange(Categorieen);
+            Categorie[] categorieen = (new Categorie[] { cat, cat2 });
+            context.Categorieen.AddRange(categorieen);
             context.SaveChanges();
 
 

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
-using System.ComponentModel;
-
-namespace Project_Krekelhof
+﻿namespace Project_Krekelhof.Models.Domain
 {
     public class Boek : Item
     {
         public int Isbn { get; set; }
+
+        public string Auteur { get; set; }
+
+        public string Uitgeverij { get; set; }
     }
 }

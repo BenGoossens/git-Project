@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 
-namespace Project_Krekelhof
+namespace Project_Krekelhof.Models.Domain
 {
     public class Leerling
     {

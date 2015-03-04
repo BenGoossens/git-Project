@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
-using System.ComponentModel;
 
-namespace Project_Krekelhof
+namespace Project_Krekelhof.Models.Domain
 {
     public abstract class Item
     {
         public Item() { }
-        int Id { get; set; }
-        string Omschrijving { get; set; }
-        string Naam { get; set; }
-        int Beschikbaar { get; set; }
+        public int Id { get; set; }
+        public string Omschrijving { get; set; }
+        public string Naam { get; set; }
+        public int Beschikbaar { get; set; }
 
-        public String isBeschikbaar()
+        public String IsBeschikbaar()
         {
             if (Beschikbaar == 0)
             {
@@ -24,6 +20,6 @@ namespace Project_Krekelhof
                 return "Yes";
             }
         }
-        public Categorie categorie {  get; set; }
+        public Categorie Categorie {  get; set; }
     }
 }
