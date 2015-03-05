@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Project_Krekelhof.Models.Domain.Admin">
+    <Position X="5.25" Y="9" Width="1.5" />
+    <AssociationLine Name="Items" Type="Project_Krekelhof.Models.Domain.Item" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.562" Y="11.194" />
+        <Point X="5.562" Y="12.021" />
+        <Point X="0.779" Y="12.021" />
+        <Point X="0.779" Y="1.566" />
+        <Point X="6.75" Y="1.566" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAFAAAAACAIAAAAAAAAAgAAAAQAAAACAAAAACAA=</HashCode>
+      <FileName>Models\Domain\Admin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+      <Property Name="Leerlingen" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Boek">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAgAAAAAAIAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Boek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Categorie">
+    <Position X="13.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Categorie.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Cd">
+    <Position X="9" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Cd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Dvd">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Dvd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Gebruiker">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBA=</HashCode>
+      <FileName>Models\Domain\Gebruiker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Item">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Domain\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Leerling">
+    <Position X="13.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\Domain\Leerling.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Uitleningen" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Medewerker">
+    <Position X="2.25" Y="9" Width="1.5" />
+    <AssociationLine Name="Uitleningen" Type="Project_Krekelhof.Models.Domain.Uitlening" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="9.373" />
+        <Point X="4.125" Y="9.373" />
+        <Point X="4.125" Y="6.805" />
+        <Point X="14.062" Y="6.805" />
+        <Point X="14.062" Y="6.43" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAgAJAAAAAA=</HashCode>
+      <FileName>Models\Domain\Medewerker.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Uitleningen" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Spel">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Spel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Uitlening">
+    <Position X="13.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAEAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Uitlening.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_Krekelhof.Models.Domain.Verteltas">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <AssociationLine Name="Boeken" Type="Project_Krekelhof.Models.Domain.Boek" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.75" Y="4.983" />
+        <Point X="12.75" Y="5.9" />
+        <Point X="5.125" Y="5.9" />
+        <Point X="5.125" Y="5.06" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Dvds" Type="Project_Krekelhof.Models.Domain.Dvd" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13" Y="4.983" />
+        <Point X="13" Y="6.237" />
+        <Point X="3" Y="6.237" />
+        <Point X="3" Y="4.675" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Spellen" Type="Project_Krekelhof.Models.Domain.Spel" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12" Y="4.983" />
+        <Point X="12" Y="5.9" />
+        <Point X="7.75" Y="5.9" />
+        <Point X="7.75" Y="4.733" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAgAAAgAIAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Verteltas.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Boeken" />
+      <Property Name="Cds" />
+      <Property Name="Dvds" />
+      <Property Name="Spellen" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
