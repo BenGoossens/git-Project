@@ -11,7 +11,7 @@
         <Point X="2.292" Y="1.566" Type="JumpStart" />
         <Point X="2.458" Y="1.566" Type="JumpEnd" />
         <Point X="5.573" Y="1.566" Type="JumpStart" />
-        <Point X="5.74" Y="1.566" Type="JumpEnd" />
+        <Point X="5.739" Y="1.566" Type="JumpEnd" />
         <Point X="6.75" Y="1.566" />
       </Path>
     </AssociationLine>
@@ -156,10 +156,10 @@
         <Point X="15" Y="5.312" />
         <Point X="15.857" Y="5.312" />
         <Point X="15.857" Y="0.844" />
-        <Point X="13.74" Y="0.844" Type="JumpStart" />
+        <Point X="13.739" Y="0.844" Type="JumpStart" />
         <Point X="13.573" Y="0.844" Type="JumpEnd" />
         <Point X="12.952" Y="0.844" Type="JumpStart" />
-        <Point X="12.785" Y="0.844" Type="JumpEnd" />
+        <Point X="12.786" Y="0.844" Type="JumpEnd" />
         <Point X="8.25" Y="0.844" />
       </Path>
     </AssociationLine>
@@ -173,39 +173,15 @@
   </Class>
   <Class Name="Project_Krekelhof.Models.Domain.Verteltas">
     <Position X="11.75" Y="3.75" Width="1.5" />
-    <AssociationLine Name="Boeken" Type="Project_Krekelhof.Models.Domain.Boek" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="12.75" Y="4.983" />
-        <Point X="12.75" Y="5.9" />
-        <Point X="5.125" Y="5.9" />
-        <Point X="5.125" Y="4.868" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="Dvds" Type="Project_Krekelhof.Models.Domain.Dvd" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="13" Y="4.983" />
-        <Point X="13" Y="6.237" />
-        <Point X="3" Y="6.237" />
-        <Point X="3" Y="4.483" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="Spellen" Type="Project_Krekelhof.Models.Domain.Spel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="12" Y="4.983" />
-        <Point X="12" Y="5.677" />
-        <Point X="7.75" Y="5.677" />
-        <Point X="7.75" Y="4.498" />
-      </Path>
-    </AssociationLine>
     <AssociationLine Name="Categorie" Type="Project_Krekelhof.Models.Domain.Categorie" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="13.25" Y="4.375" />
-        <Point X="14.688" Y="4.375" />
+        <Point X="13.25" Y="4.207" />
+        <Point X="14.688" Y="4.207" />
         <Point X="14.688" Y="3.19" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAgAAAAAgAAAgAIgAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAgAAAAAAAAAgAIgAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Domain\Verteltas.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

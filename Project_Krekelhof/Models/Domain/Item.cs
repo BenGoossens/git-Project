@@ -16,5 +16,20 @@ namespace Project_Krekelhof.Models.Domain
         {
             
         }
+
+        public Item(string naam, string omschrijving, bool beschikbaar)
+        {
+            Naam = naam;
+            Omschrijving = omschrijving;
+            Beschikbaar = beschikbaar;
+        }
+
+        public Item(int id, string naam, string omschrijving, bool beschikbaar)
+        {
+            Id = id;
+            Naam = naam;
+            Omschrijving = omschrijving;
+            Beschikbaar = beschikbaar;
+        }
     }
 }
