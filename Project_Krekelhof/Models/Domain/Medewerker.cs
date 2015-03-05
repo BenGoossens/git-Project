@@ -7,6 +7,20 @@ namespace Project_Krekelhof.Models.Domain
 {
     public class Medewerker  :Gebruiker
     {
+        public string LoginNaam { get; set; }
+        public string Passwoord { get; set; }
+
+        public Medewerker()
+        {
+            
+        }
+
+        public Medewerker(string loginNaam, string passwoord)
+        {
+            this.LoginNaam = loginNaam;
+            this.Passwoord = passwoord;
+        }
+
         public virtual ICollection<Uitlening> Uitleningen { get; set; }
         public Uitlening UitleningToevoegen(int id, DateTime startUitlening, DateTime eindeUitlening, bool isTerug)
         {

@@ -12,12 +12,18 @@ namespace Project_Krekelhof.Models.Domain
 
         public Categorie()
         {
-            Items = new HashSet<Item>();
+            
         }
 
-        public void Add(Item i)
+        public Categorie(int id, string naam)
         {
-            Items.Add(i);
+            Id = id;
+            Naam = naam;
+        }
+
+        public Categorie(string naam)
+        {
+            Naam = naam;
         }
     }
 }

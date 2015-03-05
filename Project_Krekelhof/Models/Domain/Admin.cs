@@ -9,6 +9,8 @@ namespace Project_Krekelhof.Models.Domain
     {
         public virtual ICollection<Item> Items { get; set; }
         public virtual ICollection<Leerling> Leerlingen { get; set; }
+        public virtual ICollection<Medewerker> Medewerkers { get; set; } 
+
         public Item ItemToevoegen()
         {
             //code
@@ -43,8 +45,21 @@ namespace Project_Krekelhof.Models.Domain
         public void LeerlingVerwijderen(Leerling leerling)
         {
             if (!Leerlingen.Contains(leerling))
-                throw new ArgumentException(string.Format("{0} {0} bestaat niet", leerling.Voornaam));
+                throw new ArgumentException(string.Format("{0} bestaat niet", leerling.Voornaam));
             Leerlingen.Remove(leerling);
+        }
+
+        public Medewerker MedewerkerToevoegen()
+        {
+            //code
+            return null;
+        }
+
+        public void MedewerkerVerwijderen(Medewerker medewerker)
+        {
+            if (!Medewerkers.Contains(medewerker))
+                throw new ArgumentException(string.Format("{0} bestaat niet", medewerker.LoginNaam));
+            Medewerkers.Remove(medewerker);
         }
     }
 }

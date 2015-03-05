@@ -7,7 +7,7 @@ namespace Project_Krekelhof.Models.Domain
 {
     public class Gebruiker
     {
-        
+        //kan zonder login op systeem
         
 
         public Item ItemOpzoeken(string zoekWoord)

@@ -19,7 +19,7 @@ namespace Project_Krekelhof.Models.Domain
             
         }
 
-        public Verteltas(int id, string naam, string omschijving, bool beschikbaar, List<Boek> boekenList, List<Cd> cds, List<Dvd> dvds, List<Spel> spellen, Categorie categorie )
+        public Verteltas(int id, string naam, string omschijving, bool beschikbaar, ICollection<Boek> boekenList, ICollection<Cd> cds, ICollection<Dvd> dvds, ICollection<Spel> spellen, Categorie categorie)
         {
             this.Id = id;
             this.Naam = naam;
@@ -32,5 +32,16 @@ namespace Project_Krekelhof.Models.Domain
             this.Categorie = categorie;
         }
 
+        public Verteltas(string naam, string omschijving, bool beschikbaar, ICollection<Boek> boekenList, ICollection<Cd> cds, ICollection<Dvd> dvds, ICollection<Spel> spellen, Categorie categorie)
+        {
+            this.Naam = naam;
+            this.Omschrijving = omschijving;
+            this.Beschikbaar = beschikbaar;
+            this.Boeken = boekenList;
+            this.Cds = cds;
+            this.Dvds = dvds;
+            this.Spellen = spellen;
+            this.Categorie = categorie;
+        }
     }
 }
