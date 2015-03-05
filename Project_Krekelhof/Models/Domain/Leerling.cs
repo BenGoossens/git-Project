@@ -1,20 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace Project_Krekelhof.Models.Domain
 {
     public class Leerling
     {
         public int Id { get; set; }
-        
-
-        public string FamilieNaam { get; set; }
-        
-        public virtual ICollection<Uitlening> Uitleningen { get; set; }
-
         public string Voornaam { get; set; }
-
-      //  public Leerling(String familieNaam, String voornaam, int id)
-      //  {        }
-
+        public string Familienaam { get; set; }
+        public virtual ICollection<Uitlening> Uitleningen { get; set; }
     }
 }

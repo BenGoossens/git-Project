@@ -132,9 +132,9 @@
     <Content Include="Images\Verteltas.png" />
     <Content Include="Images\Vinkje.png" />
     <Content Include="Images\Voltooien.png" />
-    <Content Include="Models\Domain\domein.cd" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Models\Domain\domain.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -149,6 +149,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Item\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -158,7 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\Leerling\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -171,11 +171,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CategorieController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ItemController.cs" />
-    <Compile Include="Controllers\LeerlingController.cs" />
-    <Compile Include="Controllers\UitleningController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,17 +182,20 @@
     <Compile Include="Models\DAL\Mapper\ItemMap.cs" />
     <Compile Include="Models\DAL\Mapper\UitleningMap.cs" />
     <Compile Include="Models\DAL\Mapper\VerteltasMap.cs" />
+    <Compile Include="Models\Domain\Admin.cs" />
     <Compile Include="Models\Domain\Boek.cs" />
     <Compile Include="Models\Domain\Categorie.cs" />
     <Compile Include="Models\Domain\Cd.cs" />
     <Compile Include="Models\Domain\Dvd.cs" />
+    <Compile Include="Models\Domain\Gebruiker.cs" />
     <Compile Include="Models\Domain\Item.cs" />
     <Compile Include="Models\Domain\Leerling.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Domain\Medewerker.cs" />
     <Compile Include="Models\Domain\Spel.cs" />
     <Compile Include="Models\Domain\Uitlening.cs" />
     <Compile Include="Models\Domain\Verteltas.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
