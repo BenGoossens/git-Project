@@ -19,7 +19,8 @@ namespace Project_Krekelhof.Models.DAL
             context.Categorieen.AddRange(categorieen);
             context.SaveChanges();
 
-
+            //database aanmaken?
+            new KrekelschoolContext().Database.Initialize(true);
             
         }
 
