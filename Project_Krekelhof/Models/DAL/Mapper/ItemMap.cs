@@ -34,11 +34,6 @@ namespace Project_Krekelhof.Models.DAL.Mapper
             this.Map<Cd>(m => m.Requires("Type").HasValue("Cd"));
             this.Map<Dvd>(m => m.Requires("Type").HasValue("Dvd"));
 
-            //Relationships
-            this.HasRequired(t => t.Categorie)
-                .WithMany()
-                .Map(m => m.MapKey("Categorie"))
-                .WillCascadeOnDelete(false);
         }
        
     }

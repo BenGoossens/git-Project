@@ -9,7 +9,6 @@ namespace Project_Krekelhof.Models.Domain
     {
         public int Id { get; set; }
         public string Naam { get; set; }
-        public virtual ICollection<Item> Items { get; set; }
 
         public Categorie()
         {
