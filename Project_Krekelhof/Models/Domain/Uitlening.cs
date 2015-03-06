@@ -11,29 +11,28 @@ namespace Project_Krekelhof.Models.Domain
         public DateTime StartUitlening { get; set; }
         public DateTime EindeUitlening { get; set; }
         public bool IsTerug { get; set; }
-
-        public virtual ICollection<Item> Items { get; set; }
+        public virtual Item Item { get; set; }
 
         public Uitlening()
         {
             
         }
 
-        public Uitlening(int id, DateTime startUitlening, DateTime eindeUitlening, bool isTerug, ICollection<Item> items)
+        public Uitlening(int id, DateTime eindeUitlening, Item item)
         {
             this.Id = id;
-            this.StartUitlening = startUitlening;
+            this.StartUitlening = DateTime.Today;
             this.EindeUitlening = eindeUitlening;
-            this.IsTerug = isTerug;
-            this.Items = items;
+            this.IsTerug = false;
+            this.Item = item;
         }
 
-        public Uitlening(DateTime startUitlening, DateTime eindeUitlening, bool isTerug, ICollection<Item> items)
+        public Uitlening(DateTime eindeUitlening, Item item)
         {
-            this.StartUitlening = startUitlening;
+            this.StartUitlening = DateTime.Today;
             this.EindeUitlening = eindeUitlening;
-            this.IsTerug = isTerug;
-            this.Items = items;
+            this.IsTerug = false;
+            this.Item = item;
         }
     }
 }
