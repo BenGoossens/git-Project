@@ -88,11 +88,22 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Project_Krekelhof.Models.Domain.Gebruiker">
-    <Position X="2.25" Y="6.75" Width="1.5" />
+    <Position X="1.25" Y="6" Width="3.5" />
+    <AssociationLine Name="Leerling" Type="Project_Krekelhof.Models.Domain.Leerling" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="6.812" />
+        <Point X="8.886" Y="6.812" />
+        <Point X="8.886" Y="8.699" />
+        <Point X="13.5" Y="8.699" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBA=</HashCode>
+      <HashCode>AAAAAAAAAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAEBA=</HashCode>
       <FileName>Models\Domain\Gebruiker.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Leerling" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Project_Krekelhof.Models.Domain.Item">
     <Position X="6.75" Y="0.5" Width="1.5" />
@@ -116,10 +127,13 @@
     <AssociationLine Name="Uitleningen" Type="Project_Krekelhof.Models.Domain.Uitlening" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="3.75" Y="9.566" />
-        <Point X="4.125" Y="9.566" />
-        <Point X="4.125" Y="7.785" />
-        <Point X="14.062" Y="7.785" />
-        <Point X="14.062" Y="6.882" />
+        <Point X="5" Y="9.566" />
+        <Point X="5" Y="8.461" />
+        <Point X="8.802" Y="8.461" Type="JumpStart" />
+        <Point X="8.969" Y="8.461" Type="JumpEnd" />
+        <Point X="11.206" Y="8.461" />
+        <Point X="11.206" Y="6.438" />
+        <Point X="13.5" Y="6.438" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -150,11 +164,12 @@
   </Class>
   <Class Name="Project_Krekelhof.Models.Domain.Uitlening">
     <Position X="13.5" Y="4.75" Width="1.5" />
-    <AssociationLine Name="Items" Type="Project_Krekelhof.Models.Domain.Item" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Item" Type="Project_Krekelhof.Models.Domain.Item" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="15" Y="5.463" />
-        <Point X="15.857" Y="5.463" />
-        <Point X="15.857" Y="0.844" />
+        <Point X="15" Y="5.062" />
+        <Point X="15" Y="5.117" />
+        <Point X="15.901" Y="5.117" />
+        <Point X="15.901" Y="0.844" />
         <Point X="13.739" Y="0.844" Type="JumpStart" />
         <Point X="13.573" Y="0.844" Type="JumpEnd" />
         <Point X="12.952" Y="0.844" Type="JumpStart" />
@@ -163,12 +178,12 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAQAAECAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAQAAEAAAAAAAAAAAEAAAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Domain\Uitlening.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Items" />
-    </ShowAsCollectionAssociation>
+    <ShowAsAssociation>
+      <Property Name="Item" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Project_Krekelhof.Models.Domain.Verteltas">
     <Position X="11.75" Y="3.75" Width="1.5" />

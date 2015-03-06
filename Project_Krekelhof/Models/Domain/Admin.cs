@@ -49,10 +49,11 @@ namespace Project_Krekelhof.Models.Domain
             Leerlingen.Remove(leerling);
         }
 
-        public Medewerker MedewerkerToevoegen()
+        public void MedewerkerToevoegen(Medewerker medewerker)
         {
-            //code
-            return null;
+            if (Medewerkers.Contains(medewerker))
+                throw new ArgumentException("medewerker met login {0} bestaat al", medewerker.LoginNaam);
+            Medewerkers.Add(medewerker);
         }
 
         public void MedewerkerVerwijderen(Medewerker medewerker)
