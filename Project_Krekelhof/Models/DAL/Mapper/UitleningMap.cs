@@ -17,7 +17,7 @@ namespace Project_Krekelhof.Models.DAL.Mapper
             //Properties
             
             //Relationships
-            this.HasOptional(t => t.Items)
+            this.HasOptional(t => t.Item)
                 .WithMany()
                 .Map(m => m.MapKey("Item"))
                 .WillCascadeOnDelete(false);

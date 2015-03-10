@@ -12,7 +12,7 @@ namespace Project_Krekelhof.Models.DAL.Mapper
         public DvdMap()
         {
             //Properties
-            this.Property(t => t.Regiseur).HasMaxLength(100);
+            //this.Property(t => t.Regiseur).HasMaxLength(100);
         }
     }
 }

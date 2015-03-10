@@ -180,7 +180,10 @@
     <Compile Include="Models\DAL\Mapper\CategorieMap.cs" />
     <Compile Include="Models\DAL\Mapper\DvdMap.cs" />
     <Compile Include="Models\DAL\Mapper\ItemMap.cs" />
+    <Compile Include="Models\DAL\Mapper\ItemRepository.cs" />
+    <Compile Include="Models\DAL\Mapper\LeerlingRepository.cs" />
     <Compile Include="Models\DAL\Mapper\UitleningMap.cs" />
+    <Compile Include="Models\DAL\Mapper\UitleningRepository.cs" />
     <Compile Include="Models\DAL\Mapper\VerteltasMap.cs" />
     <Compile Include="Models\Domain\Admin.cs" />
     <Compile Include="Models\Domain\Boek.cs" />
@@ -188,7 +191,10 @@
     <Compile Include="Models\Domain\Cd.cs" />
     <Compile Include="Models\Domain\Dvd.cs" />
     <Compile Include="Models\Domain\Gebruiker.cs" />
+    <Compile Include="Models\Domain\IItemRepository.cs" />
+    <Compile Include="Models\Domain\ILeerlingRepository.cs" />
     <Compile Include="Models\Domain\Item.cs" />
+    <Compile Include="Models\Domain\IUitleningRepository.cs" />
     <Compile Include="Models\Domain\Leerling.cs" />
     <Compile Include="Models\Domain\Medewerker.cs" />
     <Compile Include="Models\Domain\Spel.cs" />

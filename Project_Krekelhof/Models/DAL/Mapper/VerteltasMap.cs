@@ -12,7 +12,7 @@ namespace Project_Krekelhof.Models.DAL.Mapper
         public VerteltasMap()
         {
             //Properties
-            this.Property(t => t.BeschrijvingItems).IsRequired().HasMaxLength(150);
+            //this.Property(t => t.BeschrijvingItems).IsRequired().HasMaxLength(150);
         }
     }
 }
