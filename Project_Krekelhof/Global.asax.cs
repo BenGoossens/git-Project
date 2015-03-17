@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using MySql.Data.Entity;
+using Project_Krekelhof.Models.DAL;
 
 namespace Project_Krekelhof
 {
@@ -16,6 +19,11 @@ namespace Project_Krekelhof
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //moet dit?
+            DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
+            //of?
+            //new KrekelschoolContext().Uitleningen.ToList();
         }
     }
 }

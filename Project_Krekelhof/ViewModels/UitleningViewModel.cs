@@ -8,16 +8,17 @@ namespace Project_Krekelhof.ViewModels
 {
     public class UitleningViewModel
     {
-        public UitleningViewModel()
-        {
+        //public UitleningViewModel()
+        //{
             
-        }
+        //}
         public UitleningViewModel(Uitlening u)
         {
             Id = u.Id;
             EindeUitlening = u.EindeUitlening;
             IsTerug = u.IsTerug;
-            Item = u.Item;
+            //Postcode = (b.Gemeente == null) ? null : b.Gemeente.Postcode;
+            Naam = (u.Item == null) ? null : u.Item.Naam;
             StartUitlening = u.StartUitlening;
             
             
@@ -29,7 +30,7 @@ namespace Project_Krekelhof.ViewModels
 
         public  bool IsTerug {get;set;}
         
-        public  Item Item {get;set;}       
+        public  string Naam {get;set;}       
 
     }
 
@@ -40,7 +41,10 @@ namespace Project_Krekelhof.ViewModels
             Id = u.Id;
             EindeUitlening = u.EindeUitlening;
             IsTerug = u.IsTerug;
-            Item = u.Item;
+            if (u.Item != null)
+            {
+                Naam = u.Item.Naam;
+            }
             StartUitlening = u.StartUitlening;
 
 
@@ -52,9 +56,6 @@ namespace Project_Krekelhof.ViewModels
 
         public bool IsTerug { get; set; }
 
-        public Item Item { get; set; }     
+        public string Naam { get; set; }
     }
-
-
-
-    }
+}

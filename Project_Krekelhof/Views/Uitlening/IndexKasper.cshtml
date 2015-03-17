@@ -1,0 +1,144 @@
+﻿<link href="~/Content/Uitleningen.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Uitleningen";
+}
+<body>
+       <h2>Uitleningen</h2>
+    <p>Openstaande uitleningen (2)</p>
+
+    <div id="uitleningen">
+        <button><img src="~/Images/Toevoegen.png" />Uitlening toevoegen</button>
+        <button ><img src="~/Images/Bewerken.png" />Bewerken</button>
+        <button ><img src="~/Images/Vinkje.png"/>Voltooien</button>
+    </div>
+
+    <div id="zoekform">
+
+        <form action="index.html" method="post">
+
+            <h1 id="h1zoeken1"><img src="~/Images/Lupe.png" />Zoeken</h1>
+
+            <fieldset>
+                <input type="text" id="name" name="user_name">
+            </fieldset>
+
+            <fieldset id="Lijst">
+                <label for="zoek">In:</label>
+                <select id="zoek" name="zoek">
+                    <optgroup label="Leerlingen">
+                        <option value="Voornaam">Voornaam</option>
+                        <option value="Familienaam">Familienaam</option>
+
+                    </optgroup>
+                    <optgroup label="Items">
+                        <option value="Boeken">Boeken</option>
+                        <option value="Verteltassen">Verteltassen</option>
+                        <option value="Spellen">Spellen</option>
+
+                    </optgroup>
+                </select>
+
+            </fieldset>
+            <button id="knop" type="button" onclick="location.href = '/../Uitlening/Index'">Zoek</button>
+        </form>
+
+    </div>
+
+    <div id="Scroll">
+
+        <table class="tg" style="undefined;table-layout: fixed; width: 100%">
+            <colgroup>
+                <col style="width: 33px"> 
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tg-031e">Nr.</th>
+                    <th class="tg-031e">Leerling</th>
+                    <th class="tg-031e">Startdatum</th>
+                    <th class="tg-031e">Einddatum</th>
+                    <th class="tg-031e">Aantal items</th>
+
+
+                </tr>
+            </thead>
+            <tbody id="Scroll">
+                <tr>
+                    <td class="tg-031e">2</td>
+                    <td class="tg-031e">Ben Goossens</td>
+                    <td class="tg-031e">26/02/2015</td>
+                    <td class="tg-031e">12/03/2015</td>
+                    <td class="tg-031e">3</td>
+                </tr>
+                <tr>
+                    <td class="tg-031e">1</td>
+                    <td class="tg-031e">Kasper Ottoy</td>
+                    <td class="tg-031e">20/02/2015</td>
+                    <td class="tg-031e">06/02/2015</td>
+                    <td class="tg-031e">2</td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+            </tbody>
+            
+        </table>
+
+    </div>
+
+    
+
+    
+    
+
+</body>

@@ -5,10 +5,12 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using MySql.Data.Entity;
 using Project_Krekelhof.Models.Domain;
 
 namespace Project_Krekelhof.Models.DAL
 {
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class KrekelschoolContext : DbContext
     {
         public KrekelschoolContext() : base("krekelschool")

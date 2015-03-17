@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using Project_Krekelhof.Models.Domain;
 using Project_Krekelhof.ViewModels;
 namespace Project_Krekelhof.Controllers
@@ -15,6 +17,10 @@ namespace Project_Krekelhof.Controllers
         private IItemRepository itemRepository;
         private ILeerlingRepository leerlingRepository;
 
+        public UitleningController()
+        {
+
+        }
         public UitleningController(IUitleningRepository uitleningRepository, IItemRepository itemRepository,ILeerlingRepository leerlingRepository)
         {
             this.uitleningRepository = uitleningRepository;
@@ -22,18 +28,27 @@ namespace Project_Krekelhof.Controllers
             this.leerlingRepository = leerlingRepository;
         }
 
-        public ActionResult Index()
+        public IEnumerable<Uitlening> GetUitleningen()
         {
-            //Ophalen uitleningen
-            IEnumerable<Uitlening> uitleningen = 
-                uitleningRepository.FindAll();
-
-            //Aanmaken van ViewModel.  ToList zorgt voor het uitvoeren van de query
-
-            IEnumerable<UitleningIndexViewModel> vms =
-               uitleningen.Select(u => new UitleningIndexViewModel(u)).ToList();            
-               return View(vms);
+            return uitleningRepository.FindAll().ToList();
         }
+
+        //public ActionResult Index()
+        //{
+        //    //Ophalen uitleningen, gesorteerd op startuitlening.
+        //    IEnumerable<Uitlening> uitleningen =
+        //        uitleningRepository.FindAll().Include(u => u.Item).OrderByDescending(u => u.StartUitlening);
+        //    //Aanmaken van ViewModel.  ToList zorgt voor het uitvoeren van de query
+        //    if (uitleningen != null)
+        //    {
+        //        IEnumerable<UitleningIndexViewModel> vms =
+        //        uitleningen.Select(u => new UitleningIndexViewModel(u)).ToList();
+        //        return View(vms);
+        //    }
+            
+        //    //ViewBag.TotaleOmzet = uitleningen.Sum(b => b.Id);
+        //    return null;
+        //}
     }
 }
 
