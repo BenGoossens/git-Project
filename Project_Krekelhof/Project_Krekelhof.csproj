@@ -184,6 +184,7 @@
     <Compile Include="Models\DAL\Mapper\DvdMap.cs" />
     <Compile Include="Models\DAL\Mapper\ItemMap.cs" />
     <Compile Include="Models\DAL\Mapper\ItemRepository.cs" />
+    <Compile Include="Models\DAL\Mapper\LeerlingMap.cs" />
     <Compile Include="Models\DAL\Mapper\LeerlingRepository.cs" />
     <Compile Include="Models\DAL\Mapper\UitleningMap.cs" />
     <Compile Include="Models\DAL\Mapper\UitleningRepository.cs" />

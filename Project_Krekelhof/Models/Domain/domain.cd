@@ -93,8 +93,8 @@
       <Path>
         <Point X="4.75" Y="6.812" />
         <Point X="8.886" Y="6.812" />
-        <Point X="8.886" Y="8.699" />
-        <Point X="13.5" Y="8.699" />
+        <Point X="8.886" Y="8.656" />
+        <Point X="13.5" Y="8.656" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -129,7 +129,7 @@
         <Point X="3.75" Y="9.566" />
         <Point X="5" Y="9.566" />
         <Point X="5" Y="8.461" />
-        <Point X="8.802" Y="8.461" Type="JumpStart" />
+        <Point X="8.803" Y="8.461" Type="JumpStart" />
         <Point X="8.969" Y="8.461" Type="JumpEnd" />
         <Point X="11.206" Y="8.461" />
         <Point X="11.206" Y="6.438" />

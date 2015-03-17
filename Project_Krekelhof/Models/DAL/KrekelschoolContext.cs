@@ -20,13 +20,15 @@ namespace Project_Krekelhof.Models.DAL
         }
         //public KrekelschoolContext(string connStringName) : base(connStringName) { }
         public DbSet<Item> Items { get; set; }
+        public DbSet<Boek> Boeken { get; set; }
+        public DbSet<Dvd> Dvds { get; set; }
         public DbSet<Leerling> Leerlingen { get; set; }
         public DbSet<Uitlening> Uitleningen { get; set; }
         public DbSet<Categorie> Categorieen { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
+            //modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
             //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             //modelBuilder.Configurations.Add(new BoekMap());
@@ -38,6 +40,9 @@ namespace Project_Krekelhof.Models.DAL
 
 
             //base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
+            //modelBuilder.Ignore<Item>();
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

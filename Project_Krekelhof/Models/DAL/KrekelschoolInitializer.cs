@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
@@ -12,40 +13,36 @@ namespace Project_Krekelhof.Models.DAL
     {
         protected override void Seed(KrekelschoolContext context)
         {
-            //database aanmaken?
-            //new KrekelschoolContext().Database.Initialize(true);
-
             try
             {
-                Categorie cat = new Categorie { Id = 1, Naam = "Thriller" };
-                Categorie cat2 = new Categorie { Id = 2, Naam = "Horror" };
-                Categorie[] categorieen = (new Categorie[] { cat, cat2 });
-                context.Categorieen.AddRange(categorieen);
-                
-
-                Boek boek1 = new Boek(1, "boek1", "dit is een boek", true, "bla", "123456789111", "hogent", cat);
-
-                Uitlening uitlening1 = new Uitlening(1, new DateTime(2015, 3, 22), boek1);
-                context.Uitleningen.Add(uitlening1);
-
+                Categorie cat1 = new Categorie(1, "horror");
+                context.Categorieen.Add(cat1);
                 context.SaveChanges();
 
+                context.Boeken.Add(new Boek(1, "boek1", "dit is een boek", true, "auteur", "ISBN", "uitgeverij", cat1));
+                context.SaveChanges();
+                context.Items.Add(new Boek(2, "boek2", "dit is een 2de boek", false, "auteur", "ISBN", "uitgeverij", new Categorie(2, "Thriller")));
+                context.SaveChanges();
+
+                Item dvd1 = new Dvd(1, "cd", "dit is een cd", true, "regisseur", cat1);
+                context.Items.Add(dvd1);
+                context.SaveChanges();
+
+                Uitlening uitlening1 = new Uitlening(1, new DateTime(2015, 4, 17), dvd1);
+                context.Uitleningen.Add(uitlening1);
+                context.SaveChanges();
+
+                Leerling lln1 = new Leerling("Ben", "Goossens", "Straat", 2, "Aalst", 9300, "nummer", new Collection<Uitlening>());
+                context.Leerlingen.Add(lln1);
+                context.SaveChanges();
             }
-            catch (DbEntityValidationException e)
+            catch (Exception e)
             {
-                string s = "Fout creatie database ";
-                foreach (var eve in e.EntityValidationErrors)
-                {
-                    s += String.Format("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                         eve.Entry.Entity.GetType().Name, eve.Entry.GetValidationResult());
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        s += String.Format("- Property: \"{0}\", Error: \"{1}\"",
-                            ve.PropertyName, ve.ErrorMessage);
-                    }
-                }
-                throw new Exception(s);
+
+                throw (e);
             }
+            context.SaveChanges();
+            base.Seed(context);
         }
     }
 }

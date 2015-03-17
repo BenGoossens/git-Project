@@ -20,10 +20,6 @@ namespace Project_Krekelhof
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //moet dit?
-            DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
-            //of?
-            //new KrekelschoolContext().Uitleningen.ToList();
         }
     }
 }

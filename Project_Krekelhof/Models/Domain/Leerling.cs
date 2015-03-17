@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 
@@ -15,15 +16,14 @@ namespace Project_Krekelhof.Models.Domain
         public string Gemeente { get; set; }
         public int Postcode { get; set; }
         public string StamBoekNummer { get; set; }
-
-        public virtual ICollection<Uitlening> Uitleningen { get; set; }
+        public virtual Collection<Uitlening> Uitleningen { get; set; }
 
         public Leerling()
         {
             
         }
 
-        public Leerling(int id, string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer, ICollection<Uitlening> uitleningen)
+        public Leerling(int id, string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer, Collection<Uitlening> uitleningen)
         {
             this.Id = id;
             this.Voornaam = voornaam;
@@ -36,7 +36,7 @@ namespace Project_Krekelhof.Models.Domain
             this.Uitleningen = uitleningen;
         }
 
-        public Leerling(string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer, ICollection<Uitlening> uitleningen)
+        public Leerling(string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer, Collection<Uitlening> uitleningen)
         {
             this.Voornaam = voornaam;
             this.Familienaam = familienaam;
