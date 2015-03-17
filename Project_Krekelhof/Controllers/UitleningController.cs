@@ -28,27 +28,27 @@ namespace Project_Krekelhof.Controllers
             this.leerlingRepository = leerlingRepository;
         }
 
-        public IEnumerable<Uitlening> GetUitleningen()
-        {
-            return uitleningRepository.FindAll().ToList();
-        }
-
-        //public ActionResult Index()
+        //public IEnumerable<Uitlening> GetUitleningen()
         //{
-        //    //Ophalen uitleningen, gesorteerd op startuitlening.
-        //    IEnumerable<Uitlening> uitleningen =
-        //        uitleningRepository.FindAll().Include(u => u.Item).OrderByDescending(u => u.StartUitlening);
-        //    //Aanmaken van ViewModel.  ToList zorgt voor het uitvoeren van de query
-        //    if (uitleningen != null)
-        //    {
-        //        IEnumerable<UitleningIndexViewModel> vms =
-        //        uitleningen.Select(u => new UitleningIndexViewModel(u)).ToList();
-        //        return View(vms);
-        //    }
-            
-        //    //ViewBag.TotaleOmzet = uitleningen.Sum(b => b.Id);
-        //    return null;
+        //    return uitleningRepository.FindAll().ToList();
         //}
+
+        public ActionResult Index()
+        {
+            //Ophalen uitleningen, gesorteerd op startuitlening.
+            IEnumerable<Uitlening> uitleningen =
+                uitleningRepository.FindAll().Include(u => u.Item).OrderByDescending(u => u.StartUitlening);
+            //Aanmaken van ViewModel.  ToList zorgt voor het uitvoeren van de query
+            if (uitleningen != null)
+            {
+                IEnumerable<UitleningIndexViewModel> vms =
+                uitleningen.Select(u => new UitleningIndexViewModel(u)).ToList();
+                return View(vms);
+            }
+
+            //ViewBag.TotaleOmzet = uitleningen.Sum(b => b.Id);
+            return null;
+        }
     }
 }
 
