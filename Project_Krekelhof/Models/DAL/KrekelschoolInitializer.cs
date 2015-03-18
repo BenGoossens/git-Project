@@ -36,13 +36,26 @@ namespace Project_Krekelhof.Models.DAL
                 context.Leerlingen.Add(lln1);
                 context.SaveChanges();
             }
-            catch (Exception e)
+            catch (DbEntityValidationException e)
             {
+                string message = String.Empty;
+                foreach (var eve in e.EntityValidationErrors)
+                {
 
-                throw (e);
+                    message +=
+                        String.Format("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                                      eve.Entry.Entity.GetType().Name, eve.Entry.GetValidationResult());
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        message +=
+                      String.Format("- Property: \"{0}\", Error: \"{1}\"",
+                          ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw new ApplicationException("Fout bij aanmaken database " + message);
             }
-            context.SaveChanges();
-            base.Seed(context);
+            //context.SaveChanges();
+            //base.Seed(context);
         }
     }
 }
