@@ -19,6 +19,8 @@ namespace Project_Krekelhof.Models.DAL.Mapper
 
             // Table & Column Mappings
             this.ToTable("Categorie");
+
+            //HasOptional(i => i.Items).WithMany();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 
@@ -12,7 +13,7 @@ namespace Project_Krekelhof.Models.Domain
 
         public Categorie()
         {
-            
+
         }
 
         public Categorie(int id, string naam)
@@ -21,9 +22,9 @@ namespace Project_Krekelhof.Models.Domain
             Naam = naam;
         }
 
-        public Categorie(string naam)
-        {
-            Naam = naam;
-        }
+        //public Categorie(string naam)
+        //{
+        //    Naam = naam;
+        //}
     }
 }

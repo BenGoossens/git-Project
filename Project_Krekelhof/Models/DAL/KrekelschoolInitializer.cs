@@ -15,24 +15,7 @@ namespace Project_Krekelhof.Models.DAL
         {
             try
             {
-                Categorie cat1 = new Categorie(1, "horror");
-                context.Categorieen.Add(cat1);
-                context.SaveChanges();
-
-                context.Boeken.Add(new Boek(1, "boek1", "dit is een boek", true, "auteur", "ISBN", "uitgeverij", cat1));
-                context.SaveChanges();
-                context.Items.Add(new Boek(2, "boek2", "dit is een 2de boek", false, "auteur", "ISBN", "uitgeverij", new Categorie(2, "Thriller")));
-                context.SaveChanges();
-
-                Item dvd1 = new Dvd(1, "cd", "dit is een cd", true, "regisseur", cat1);
-                context.Items.Add(dvd1);
-                context.SaveChanges();
-
-                Uitlening uitlening1 = new Uitlening(1, new DateTime(2015, 4, 17), dvd1);
-                context.Uitleningen.Add(uitlening1);
-                context.SaveChanges();
-
-                Leerling lln1 = new Leerling("Ben", "Goossens", "Straat", 2, "Aalst", 9300, "nummer", new Collection<Uitlening>());
+                Leerling lln1 = new Leerling(1, "Ben", "Goossens", "Straat", 2, "Aalst", 9300, "nummer");
                 context.Leerlingen.Add(lln1);
                 context.SaveChanges();
             }
@@ -54,8 +37,8 @@ namespace Project_Krekelhof.Models.DAL
                 }
                 throw new ApplicationException("Fout bij aanmaken database " + message);
             }
-            //context.SaveChanges();
-            //base.Seed(context);
+            context.SaveChanges();
+            base.Seed(context);
         }
     }
 }

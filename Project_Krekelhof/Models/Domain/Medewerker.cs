@@ -22,11 +22,11 @@ namespace Project_Krekelhof.Models.Domain
         }
 
         public virtual ICollection<Uitlening> Uitleningen { get; set; }
-        public void UitleningToevoegen(int id, DateTime startUitlening, DateTime eindeUitlening, bool isTerug, Item item )
+        public void UitleningToevoegen(DateTime eindeUitlening, Item item )
         {
             if (!MagUitlenen(Leerling))
               throw new ApplicationException("Leerling heeft maximum uitleningen bereikt");
-            Uitlening nieuweUitlening = new Uitlening(eindeUitlening, item);
+            Uitlening nieuweUitlening = new Uitlening(item, new DateTime(2015, 5, 23));
             if (Uitleningen.Contains(nieuweUitlening))
                 throw new ApplicationException("Uitlening bestaat al");
 

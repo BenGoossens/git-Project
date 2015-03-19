@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
-using System.Data.Entity;
 using Project_Krekelhof.Models.Domain;
 
-namespace Project_Krekelhof.Models.DAL.Mapper
+namespace Project_Krekelhof.Models.DAL
 {
     public class LeerlingRepository: ILeerlingRepository
     {

@@ -14,19 +14,19 @@ namespace Project_Krekelhof.Controllers
 
 
         private IUitleningRepository uitleningRepository;
-        private IItemRepository itemRepository;
+        //private IItemRepository itemRepository;
         private ILeerlingRepository leerlingRepository;
 
         public UitleningController()
         {
 
         }
-        public UitleningController(IUitleningRepository uitleningRepository, IItemRepository itemRepository,ILeerlingRepository leerlingRepository)
-        {
-            this.uitleningRepository = uitleningRepository;
-            this.itemRepository = itemRepository;
-            this.leerlingRepository = leerlingRepository;
-        }
+        //public UitleningController(IUitleningRepository uitleningRepository, IItemRepository itemRepository,ILeerlingRepository leerlingRepository)
+        //{
+        //    this.uitleningRepository = uitleningRepository;
+        //    this.itemRepository = itemRepository;
+        //    this.leerlingRepository = leerlingRepository;
+        //}
 
         //public IEnumerable<Uitlening> GetUitleningen()
         //{
@@ -37,7 +37,7 @@ namespace Project_Krekelhof.Controllers
         {
             //Ophalen uitleningen, gesorteerd op startuitlening.
             IEnumerable<Uitlening> uitleningen =
-                uitleningRepository.FindAll().Include(u => u.Item).OrderByDescending(u => u.StartUitlening);
+                uitleningRepository.FindAll().Include(u => u.Item).OrderByDescending(u => u.IsTerug);
             //Aanmaken van ViewModel.  ToList zorgt voor het uitvoeren van de query
            
             IEnumerable<UitleningIndexViewModel> vms =

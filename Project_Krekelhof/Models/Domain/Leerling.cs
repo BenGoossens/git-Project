@@ -23,7 +23,7 @@ namespace Project_Krekelhof.Models.Domain
             
         }
 
-        public Leerling(int id, string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer, Collection<Uitlening> uitleningen)
+        public Leerling(int id, string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer)
         {
             this.Id = id;
             this.Voornaam = voornaam;
@@ -33,10 +33,9 @@ namespace Project_Krekelhof.Models.Domain
             this.Gemeente = gemeente;
             this.Postcode = postcode;
             this.StamBoekNummer = stamBoekNummer;
-            this.Uitleningen = uitleningen;
         }
 
-        public Leerling(string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer, Collection<Uitlening> uitleningen)
+        public Leerling(string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer)
         {
             this.Voornaam = voornaam;
             this.Familienaam = familienaam;
@@ -45,7 +44,22 @@ namespace Project_Krekelhof.Models.Domain
             this.Gemeente = gemeente;
             this.Postcode = postcode;
             this.StamBoekNummer = stamBoekNummer;
-            this.Uitleningen = uitleningen;
+        }
+
+        public void KrijgLening(Uitlening uitlening)
+        {
+            if (Uitleningen.Count >= 3)
+            {
+                throw new ApplicationException("Lener mag maar 3 uitleningen hebben!");
+            }
+
+            Uitleningen.Add(uitlening);
+
+        }
+
+        public void CheckLeningUit(Uitlening uitlening)
+        {
+            Uitleningen.Remove(uitlening);
         }
     }
 }

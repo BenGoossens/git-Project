@@ -15,11 +15,11 @@ namespace Project_Krekelhof.ViewModels
         public UitleningViewModel(Uitlening u)
         {
             Id = u.Id;
-            EindeUitlening = u.EindeUitlening;
+            //EindeUitlening = u.EindeUitlening;
             IsTerug = u.IsTerug;
             //Postcode = (b.Gemeente == null) ? null : b.Gemeente.Postcode;
             Naam = (u.Item == null) ? null : u.Item.Naam;
-            StartUitlening = u.StartUitlening;
+           // StartUitlening = u.StartUitlening;
             
             
         }
@@ -39,13 +39,13 @@ namespace Project_Krekelhof.ViewModels
         public UitleningIndexViewModel(Uitlening u)
         {
             Id = u.Id;
-            EindeUitlening = u.EindeUitlening;
+            //EindeUitlening = u.EindeUitlening;
             IsTerug = u.IsTerug;
             if (u.Item != null)
             {
                 Naam = u.Item.Naam;
             }
-            StartUitlening = u.StartUitlening;
+            //StartUitlening = u.StartUitlening;
 
 
         }

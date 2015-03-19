@@ -5,17 +5,11 @@ using System.Web;
 
 namespace Project_Krekelhof.Models.Domain
 {
-    public interface IItemRepository
+    public interface IVerteltasRepository
     {
-        Item FindBy(int itemId);
-
-        IQueryable<Item> FindAll();
-
-        void Add(Item item);
-
-        void Delete(Item item);
-
+        IQueryable<Verteltas> FindAll();
+        Verteltas FindById(int id);
+        void Add(Verteltas verteltas);
         void SaveChanges();
-
     }
 }

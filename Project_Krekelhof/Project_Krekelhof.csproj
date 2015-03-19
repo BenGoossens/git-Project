@@ -190,6 +190,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\Uitlening\Index.cshtml" />
+    <Content Include="Views\Boek\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -213,22 +214,24 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\BoekController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UitleningController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAL\BoekRepository.cs" />
     <Compile Include="Models\DAL\KrekelschoolContext.cs" />
     <Compile Include="Models\DAL\KrekelschoolInitializer.cs" />
     <Compile Include="Models\DAL\Mapper\BoekMap.cs" />
     <Compile Include="Models\DAL\Mapper\CategorieMap.cs" />
+    <Compile Include="Models\DAL\Mapper\CategorieRepository.cs" />
     <Compile Include="Models\DAL\Mapper\DvdMap.cs" />
     <Compile Include="Models\DAL\Mapper\ItemMap.cs" />
-    <Compile Include="Models\DAL\Mapper\ItemRepository.cs" />
     <Compile Include="Models\DAL\Mapper\LeerlingMap.cs" />
-    <Compile Include="Models\DAL\Mapper\LeerlingRepository.cs" />
+    <Compile Include="Models\DAL\LeerlingRepository.cs" />
     <Compile Include="Models\DAL\Mapper\UitleningMap.cs" />
-    <Compile Include="Models\DAL\Mapper\UitleningRepository.cs" />
+    <Compile Include="Models\DAL\UitleningRepository.cs" />
     <Compile Include="Models\DAL\Mapper\VerteltasMap.cs" />
     <Compile Include="Models\Domain\Admin.cs" />
     <Compile Include="Models\Domain\Boek.cs" />
@@ -236,10 +239,12 @@
     <Compile Include="Models\Domain\Cd.cs" />
     <Compile Include="Models\Domain\Dvd.cs" />
     <Compile Include="Models\Domain\Gebruiker.cs" />
-    <Compile Include="Models\Domain\IItemRepository.cs" />
+    <Compile Include="Models\Domain\IBoekRepository.cs" />
+    <Compile Include="Models\Domain\ICategorieRepository.cs" />
     <Compile Include="Models\Domain\ILeerlingRepository.cs" />
     <Compile Include="Models\Domain\Item.cs" />
     <Compile Include="Models\Domain\IUitleningRepository.cs" />
+    <Compile Include="Models\Domain\IVerteltasRepository.cs" />
     <Compile Include="Models\Domain\Leerling.cs" />
     <Compile Include="Models\Domain\Medewerker.cs" />
     <Compile Include="Models\Domain\Spel.cs" />
@@ -248,6 +253,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\BoekViewModel.cs" />
     <Compile Include="ViewModels\UitleningViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
