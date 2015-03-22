@@ -14,6 +14,10 @@ namespace Project_Krekelhof.Controllers
         private IBoekRepository BoekRepository;
         private ICategorieRepository CategorieRepository;
 
+        public BoekController()
+        {
+            
+        }
         public BoekController(IBoekRepository boekRepository, ICategorieRepository categorieRepository)
         {
             BoekRepository = boekRepository;

@@ -6,9 +6,7 @@ using Project_Krekelhof.Models.Domain;
 
 namespace Project_Krekelhof.ViewModels
 {
-    public class BoekViewModel
-    {
-    }
+    
     public class BoekIndexViewModel
     {
         public BoekIndexViewModel(Boek b)
