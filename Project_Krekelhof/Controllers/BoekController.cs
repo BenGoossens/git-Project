@@ -12,12 +12,12 @@ namespace Project_Krekelhof.Controllers
     {
 
         private IBoekRepository BoekRepository;
-        //private ICategorieRepository CategorieRepository;
+        private ICategorieRepository CategorieRepository;
 
-       public BoekController(IBoekRepository boekRepository)
+       public BoekController(IBoekRepository boekRepository, ICategorieRepository categorieRepository)
         {
             BoekRepository = boekRepository;
-            //CategorieRepository = categorieRepository;
+            CategorieRepository = categorieRepository;
         }
         
         // GET: Boek

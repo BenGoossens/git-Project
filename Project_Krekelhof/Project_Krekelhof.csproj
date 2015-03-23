@@ -234,6 +234,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DAL\BoekRepository.cs" />
+    <Compile Include="Models\DAL\CategorieRepository.cs" />
     <Compile Include="Models\DAL\KrekelschoolContext.cs" />
     <Compile Include="Models\DAL\KrekelschoolInitializer.cs" />
     <Compile Include="Models\DAL\Mapper\BoekMap.cs" />
