@@ -25,7 +25,7 @@ namespace Project_Krekelhof.Controllers
         {
             //return View(new BoeksIndexViewModel(BoekRepository.FindAll().OrderBy(p => p.Id).ToList()));
             IEnumerable<Boek> boeken = BoekRepository.FindAll().OrderBy(b => b.Id).ToList();
-            IEnumerable<BoekViewModel> bvm = boeken.Select(b => new BoekViewModel(b)).ToList();
+            IEnumerable<BoekIndexViewModel> bvm = boeken.Select(b => new BoekIndexViewModel(b)).ToList();
             return View(bvm);
         }
     }

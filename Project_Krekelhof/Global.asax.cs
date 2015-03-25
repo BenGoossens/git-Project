@@ -20,6 +20,11 @@ namespace Project_Krekelhof
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            var init = new KrekelschoolInitializer();
+            Database.SetInitializer<KrekelschoolContext>(init);
+            var ctx = new KrekelschoolContext();
+            ctx.Database.Initialize(true);
+            var bedrijven = ctx.Boeken.ToList();
         }
     }
 }
