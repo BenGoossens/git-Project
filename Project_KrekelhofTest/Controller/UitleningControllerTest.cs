@@ -21,12 +21,12 @@ namespace Project_KrekelhofTest.Controller
 
         private UitleningController controller;
 
-        [TestMethod]
-        public void GetUitleningenReturnsUitleningen()
-        {
-            Uitlening[] uitlenings = controller.GetUitleningen().ToArray();
-            Assert.AreEqual(1, uitlenings.Length);
-            Assert.AreEqual(1, uitlenings[0].Id);
-        }
+        //[TestMethod]
+        //public void GetUitleningenReturnsUitleningen()
+        //{
+        //    Uitlening[] uitlenings = controller.GetUitleningen().ToArray();
+        //    Assert.AreEqual(1, uitlenings.Length);
+        //    Assert.AreEqual(1, uitlenings[0].Id);
+        //}
     }
 }

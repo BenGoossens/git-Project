@@ -6,6 +6,27 @@ using Project_Krekelhof.Models.Domain;
 
 namespace Project_Krekelhof.ViewModels
 {
+
+    public class BoekViewModel
+    {
+        public BoekViewModel(Boek b)
+        {
+            Id = b.Id;
+            Naam = b.Naam;
+            Omschrijving = b.Omschrijving;
+            Auteur = b.Auteur;
+            Uitgeverij = b.Uitgeverij;
+            Isbn = b.Isbn;
+
+        }
+
+        public int Id { get; set; }
+        public string Naam { get; set; }
+        public string Omschrijving { get; set; }
+        public string Auteur { get; set; }
+        public string Uitgeverij { get; set; }
+        public string Isbn { get; set; }
+    }
     
     public class BoekIndexViewModel
     {

@@ -23,7 +23,10 @@ namespace Project_Krekelhof.Controllers
         // GET: Boek
         public ActionResult Index()
         {
-            return View(new BoeksIndexViewModel(BoekRepository.FindAll().OrderBy(p => p.Id).ToList()));
+            //return View(new BoeksIndexViewModel(BoekRepository.FindAll().OrderBy(p => p.Id).ToList()));
+            IEnumerable<Boek> boeken = BoekRepository.FindAll().OrderBy(b => b.Id).ToList();
+            IEnumerable<BoekViewModel> bvm = boeken.Select(b => new BoekViewModel(b)).ToList();
+            return View(bvm);
         }
     }
 }

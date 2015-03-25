@@ -223,10 +223,14 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\BoekController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UitleningController.cs" />
@@ -266,7 +270,9 @@
     <Compile Include="Models\Domain\Verteltas.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Startup.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ViewModels\BoekViewModel.cs" />
     <Compile Include="ViewModels\UitleningViewModel.cs" />
   </ItemGroup>

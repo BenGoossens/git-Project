@@ -13,11 +13,11 @@ namespace Project_Krekelhof.Models.DAL
 {
     public class KrekelschoolContext : DbContext
     {
-        public KrekelschoolContext() : base("name=krekelschool")
+        public KrekelschoolContext() : base("krekelschool")
         {
             
         }
-        public KrekelschoolContext(string connStringName) : base(connStringName) { }
+        //public KrekelschoolContext(string connStringName) : base(connStringName) { }
 
         public virtual DbSet<Boek> Boeken { get; set; }
         public virtual DbSet<Dvd> Dvds { get; set; }
