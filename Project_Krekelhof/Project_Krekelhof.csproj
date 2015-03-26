@@ -171,7 +171,9 @@
     <Content Include="Content\Uitleningen.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\DVD.png" />
     <Content Include="Images\Bewerken.png" />
+    <Content Include="Images\CD.png" />
     <Content Include="Images\Boeken2.png" />
     <Content Include="Images\boekenkast.png" />
     <Content Include="Images\cyberscooty-kids-smiling.png" />
