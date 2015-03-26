@@ -29,225 +29,37 @@ height: 40px;
 
 }
 
-div{
+tr:nth-child(even) {
+    background-color: #EBEBEB;
     
-	/*text-align: center;
-	align-content: center;
-	align-self: center;*/
+}
+tr:nth-child(odd) {
+    background-color: #BFBFBF;
+}
+
+tr{
+    border: 2px solid white;
+}
+
+tr td{
+    border: 1px solid white;
+}
+
+#TabelHoofd {
+    color: White;
+    font-size: 17px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: solid;
+
+    
 }
 
 
-/*btton{
-	
-
-  background: #96b832;
-  background-image: -webkit-linear-gradient(top, #96b832, #5c9923);
-  background-image: -moz-linear-gradient(top, #96b832, #5c9923);
-  background-image: -ms-linear-gradient(top, #96b832, #5c9923);
-  background-image: -o-linear-gradient(top, #96b832, #5c9923);
-  background-image: linear-gradient(to bottom, #96b832, #5c9923);
-  
-  
-/* 
-	-webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  border-radius: 60px;
-  text-shadow: 3px 3px 3px #666666;
-  */
-  
-/*  font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", sans-serif;
-  color: #fff2f8;
-  font-size: 28px;
-  padding: 5px 5px 5px 5px;
-  margin-left: 5px;
-  width: 200px;
-  height: 200px;
-  
- 
-}*/
-
-/*button:hover {
-
-  background: #97b6c9;
-  background-image: -webkit-linear-gradient(top, #97b6c9, #2c3338);
-  background-image: -moz-linear-gradient(top, #97b6c9, #2c3338);
-  background-image: -ms-linear-gradient(top, #97b6c9, #2c3338);
-  background-image: -o-linear-gradient(top, #97b6c9, #2c3338);
-  background-image: linear-gradient(to bottom, #97b6c9, #2c3338);
-
-}*/
-
-#rechts{
-    padding-top: 10px;
-    padding-bottom: 15px;
-
-}
-button{
-    float: left;
-
-}
-
-
-p {
-    padding: 10px;
-   
-	
-}
-
-#p1{
-	font-size: 30px;
-	margin-bottom: 0px;
-}
-
-
-button img {
-	
-    height: 180px;
-   
-}
-
-#div2{
+#TabelHoofd th{
     text-align: center;
-  }
-
-#div1 {
-    
-    text-align:center;
-}
-
-
-#div1 div{
-    
-    /*float: left;*/
-   
-}
-
-
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc; width: 100%;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
-
-#Scroll{
-    overflow:scroll;
-    height:180px;
-    width: 100%;
-}
- 
-form{
-    width: 200px;
-   
+    padding-top: 15px;
+    border: 1px solid white;
 
 }
-input{
-    margin-bottom: 5px;
-    width: 200px;
-    
-    
-    }
-#knop{
-    width: 200px;
-}
-
-#lijst{
-    width: 200px;
-}
-
-#zoek{
-    width: 170px;
-}
-
-#leerlingen{
-    height: 0px;
-}
-
-#leerlingen button{
-    float: right;
-    margin-left: 5px;
-    font-size: 20px;
-    padding-top:5px;
-        padding-bottom: 5px;
-}
-#leerlingen button img{
-    height: 40px;
-    padding-right: 10px;
-}
-
-#zoekform{
-    height: 150px;
-}
-
-
-#ganaar{
-    float: right;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-
-/*
-#wrapper {
-    margin: 0 auto;
-    width: 1000px;
-}
-
-#headerwrap {
-    width: 1000px;
-    float: left;
-    margin: 0 auto;
-}
-
-#header {
-    height: 75px;
-    background: #FF6633;
-    border-radius: 10px;
-    border: 1px solid #eb521f;
-    margin: 5px;
-}
-
-#navigationwrap {
-    width: 1000px;
-    float: left;
-    margin: 0 auto;
-}
-
-#navigation {
-    height: 40px;
-    background: #FFCC33;
-    border-radius: 10px;
-    border: 1px solid #ebb81f;
-    margin: 5px;
-}
-
-#contentwrap {
-    width: 1000;
-    float: left;
-    margin: 0 auto;
-}
-
-#content {
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid #ebebeb;
-    margin: 5px;
-}
-
-#footerwrap {
-    width: 1000px;
-    float: left;
-    margin: 0 auto;
-    clear: both;
-}
-
-#footer {
-    height: 40px;
-    background: #33FF66;
-    border-radius: 10px;
-    border: 1px solid #1feb52;
-    margin: 5px;
-}
-
-    */
-
-
 
 

@@ -16,6 +16,7 @@ namespace Project_Krekelhof.ViewModels
             Omschrijving = b.Omschrijving;
             Auteur = b.Auteur;
             Uitgeverij = b.Uitgeverij;
+            Leeftijd = b.Leeftijd;
             Isbn = b.Isbn;
 
         }
@@ -25,6 +26,7 @@ namespace Project_Krekelhof.ViewModels
         public string Omschrijving { get; set; }
         public string Auteur { get; set; }
         public string Uitgeverij { get; set; }
+        public int Leeftijd { get; set; }
         public string Isbn { get; set; }
     }
     
@@ -37,6 +39,7 @@ namespace Project_Krekelhof.ViewModels
             Omschrijving = b.Omschrijving;
             Auteur = b.Auteur;
             Uitgeverij = b.Uitgeverij;
+            Leeftijd = b.Leeftijd;
             Isbn = b.Isbn;
 
         }
@@ -46,6 +49,7 @@ namespace Project_Krekelhof.ViewModels
         public string Omschrijving { get; set; }
         public string Auteur { get; set; }
         public string Uitgeverij { get; set; }
+        public int Leeftijd { get; set; }
         public string Isbn { get; set; }
        
     }

@@ -1,16 +1,25 @@
-﻿@model IEnumerable<Project_Krekelhof.ViewModels.LeerlingIndexViewModel>
+﻿<link href="~/Content/Leerlingen.css" rel="stylesheet" type="text/css" />
+
+@model IEnumerable<Project_Krekelhof.ViewModels.LeerlingIndexViewModel>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Leerlingen</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <fieldset style="float:left">
+        <input style="height:30px" type="text" id="name" name="user_name" />
+        <button type="button"><img style="height:25px; padding: 2px;" src="~/Images/Lupe.png" />Zoek</button>
+    </fieldset>
+</p>
+<p style="float:right">
+    
+    @Html.ActionLink("Toevoegen", "Create")
+    <img style="height:25px" src="~/Images/Toevoegen.png" />
 </p>
 <table class="table">
-    <tr>
+    <tr id="TabelHoofd" style="background-color:#84C90C; height: 50px;">
         <th>
             @Html.DisplayNameFor(model => model.Voornaam)
         </th>
@@ -32,32 +41,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Voornaam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Familienaam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Straat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Huisnummer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Klas)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    <tbody >
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voornaam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Familienaam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Straat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Huisnummer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Klas)
+                </td>
+                <td>
+                    @Html.ActionLink("Aanpassen", "Edit", new { id = item.Id }) |
+
+                    @Html.ActionLink("Verwijderen", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>

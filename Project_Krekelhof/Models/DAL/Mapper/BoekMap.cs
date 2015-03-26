@@ -14,7 +14,8 @@ namespace Project_Krekelhof.Models.DAL.Mapper
             //Properties
             this.Property(t => t.Auteur).HasMaxLength(100);
             this.Property(t => t.Uitgeverij).HasMaxLength(100);
-            this.Property(t => t.Isbn).HasMaxLength(13);
+            //this.Property(t => t.Isbn).HasMaxLength(13);
+          
         }
     }
 }

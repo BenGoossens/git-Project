@@ -29,6 +29,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Omschrijving)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Leeftijd)
+        </th>
         <th></th>
     </tr>
 
@@ -52,6 +55,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Omschrijving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Leeftijd)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new
