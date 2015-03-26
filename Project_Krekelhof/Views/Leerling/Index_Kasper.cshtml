@@ -1,0 +1,167 @@
+﻿<link href="~/Content/Leerlingen.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Leerlingen";
+}
+<body>
+    <h2>Leerlingen</h2>
+    <p>Leerlingen (2)</p>
+
+    <div id="leerlingen">
+        <button ><img src="~/Images/Toevoegen.png" />Leerling toevoegen</button>
+        <button ><img src="~/Images/Bewerken.png" />Leerling bewerken</button>
+        <button ><img src="~/Images/Vinkje.png" />Leerling verwijderen</button>
+    
+        
+    </div>
+
+    <div id="zoekform">
+
+        <form action="index.html" method="post">
+
+            <h1 id="h1zoeken"><img src="~/Images/Lupe.png" /> Zoeken</h1>
+
+            <fieldset>
+                <input type="text" id="name" name="user_name">
+            </fieldset>
+
+            <fieldset id="Lijst">
+                <label for="zoek">Op:</label>
+                <select id="zoek" name="zoek">
+                    <optgroup label="Leerling">
+                        <option value="Voornaam">Voornaam</option>
+                        <option value="Voornaam">Famielienaam</option>
+                        
+
+                    </optgroup>
+                </select>
+
+            </fieldset>
+            <button id="knop" type="button" onclick="location.href = '/../Uitlening/Index'">Zoek</button>
+        </form>
+
+    </div>
+
+
+    <div id="Scroll">
+
+        <table class="tg" style="undefined;table-layout: fixed; width: 100%">
+            <colgroup>
+                <col style="width: 33px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tg-031e">Nr.</th>
+                    <th class="tg-031e">Lening</th>                    
+                    <th class="tg-031e">Voornaam</th>
+                    <th class="tg-031e">Familienaam</th>
+                    <th class="tg-031e">Klas</th>
+                    <th style="width: 500px"class="tg-031e">Adres</th>
+                    <th class="tg-031e">Telefoonnummer</th>
+                    
+
+
+                </tr>
+            </thead>
+            <tbody id="Scroll">
+                <tr>
+                    <td class="tg-031e">1</td>
+                    <td class="tg-031e">Ja</td>
+                    <td class="tg-031e">Kasper</td>
+                    <td class="tg-031e">Ottoy</td>
+                    <td class="tg-031e">2 TIN A</td>
+                    <td class="tg-031e">Steenweg op aalst 37, 9308 Hofstade</td>
+                    <td class="tg-031e">0478/83.66.19</td>
+                </tr>
+                <tr>
+                    <td class="tg-031e">2</td>
+                    <td class="tg-031e">Ja</td>
+                    <td class="tg-031e">Ben</td>
+                    <td class="tg-031e">Goossens</td>
+                    <td class="tg-031e">2 TIN A</td>
+                    <td class="tg-031e">Vlekkemdorp 23, 9420 Erpe-Mere</td>
+                    <td class="tg-031e">-</td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+                <tr>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div id="ganaardiv">
+        <button id="ganaar" disabled>Bekijk geschiedenis uitlening</button>
+    </div>
+
+
+
+
+</body>
+
+

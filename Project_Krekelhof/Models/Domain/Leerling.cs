@@ -13,9 +13,12 @@ namespace Project_Krekelhof.Models.Domain
         public string Familienaam { get; set; }
         public string Straat { get; set; }
         public int Huisnummer { get; set; }
-        public string Gemeente { get; set; }
-        public int Postcode { get; set; }
-        public string StamBoekNummer { get; set; }
+        //public string Gemeente { get; set; }
+        //public int Postcode { get; set; }
+        //public string StamBoekNummer { get; set; }
+
+        public string Email { get; set; }
+        public string Klas { get; set; }
         public virtual Collection<Uitlening> Uitleningen { get; set; }
 
         public Leerling()
@@ -23,27 +26,25 @@ namespace Project_Krekelhof.Models.Domain
             
         }
 
-        public Leerling(int id, string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer)
+        public Leerling(int id, string voornaam, string familienaam, string straat, int huisnummer, string email, string klas)
         {
             this.Id = id;
             this.Voornaam = voornaam;
             this.Familienaam = familienaam;
             this.Straat = straat;
             this.Huisnummer = huisnummer;
-            this.Gemeente = gemeente;
-            this.Postcode = postcode;
-            this.StamBoekNummer = stamBoekNummer;
+            this.Email = email;
+            this.Klas = klas;
         }
 
-        public Leerling(string voornaam, string familienaam, string straat, int huisnummer, string gemeente, int postcode, string stamBoekNummer)
+        public Leerling(string voornaam, string familienaam, string straat, int huisnummer, string email, string klas)
         {
             this.Voornaam = voornaam;
             this.Familienaam = familienaam;
             this.Straat = straat;
             this.Huisnummer = huisnummer;
-            this.Gemeente = gemeente;
-            this.Postcode = postcode;
-            this.StamBoekNummer = stamBoekNummer;
+            this.Email = email;
+            this.Klas = klas;
         }
 
         public void KrijgLening(Uitlening uitlening)

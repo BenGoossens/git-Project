@@ -11,7 +11,7 @@ namespace Project_Krekelhof.Models.Domain
         public DateTime BeginDatumUitlening { get; set; }
         public DateTime EindDatumUitlening { get; set; }
         public bool IsTerug { get; set; }
-        public Item Item { get; set; }
+        public virtual Item Item { get; set; }
 
         public Uitlening()
         {

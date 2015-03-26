@@ -15,7 +15,7 @@ namespace Project_Krekelhof.Models.DAL
         {
             try
             {
-                Leerling lln1 = new Leerling(1, "Ben", "Goossens", "Straat", 2, "Aalst", 9300, "nummer");
+                Leerling lln1 = new Leerling(1, "Ben", "Goossens", "Straat", 2, "test@test.te", "2A");
                 context.Leerlingen.Add(lln1);
                 context.SaveChanges();
             }

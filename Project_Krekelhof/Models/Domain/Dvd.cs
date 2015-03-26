@@ -8,7 +8,7 @@ namespace Project_Krekelhof.Models.Domain
     public class Dvd : Item
     {
         public string Regisseur { get; set; }
-        public ICollection<Categorie> Categories { get; set; }
+        public virtual ICollection<Categorie> Categories { get; set; }
 
         public Dvd(int id, string naam, string beschrijving, bool beschikbaar, string regisseur)
             : base(id, naam, beschrijving, beschikbaar)
