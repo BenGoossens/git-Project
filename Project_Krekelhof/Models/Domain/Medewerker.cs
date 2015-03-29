@@ -2,50 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Project_Krekelhof.ViewModels;
 
 namespace Project_Krekelhof.Models.Domain
 {
-    public class Medewerker  :Gebruiker
+    public class Medewerker : Gebruiker
     {
-        public string LoginNaam { get; set; }
-        public string Passwoord { get; set; }
-
-        public Medewerker()
+        public Medewerker(IBoekRepository boekRepository, ICategorieRepository categorieRepository) : base(boekRepository, categorieRepository)
         {
-            
         }
 
-        public Medewerker(string loginNaam, string passwoord)
+        public void AddBoek(BoekViewModel boek)
         {
-            this.LoginNaam = loginNaam;
-            this.Passwoord = passwoord;
+            Boek newBoek = new Boek
+            {
+                Id = boek.Id,
+                Naam = boek.Naam,
+                Auteur = boek.Auteur,
+                Uitgeverij = boek.Uitgeverij,
+                Leeftijd = boek.Leeftijd,
+                Omschrijving = boek.Omschrijving,
+                Isbn = boek.Isbn,
+                Beschikbaar = boek.Beschikbaar,
+                Categorie = (String.IsNullOrEmpty(boek.Categorie) ? null : GeefCategorieBijNaam(boek.Categorie))
+            };
+            BoekRepository.Add(newBoek);
+            BoekRepository.SaveChanges();
         }
 
-        public virtual ICollection<Uitlening> Uitleningen { get; set; }
-        public void UitleningToevoegen(DateTime eindeUitlening, Item item )
+        public void VerwijderBoek(int id)
         {
-            if (!MagUitlenen(Leerling))
-              throw new ApplicationException("Leerling heeft maximum uitleningen bereikt");
-            Uitlening nieuweUitlening = new Uitlening(item, new DateTime(2015, 5, 23));
-            if (Uitleningen.Contains(nieuweUitlening))
-                throw new ApplicationException("Uitlening bestaat al");
-
-            Uitleningen.Add(nieuweUitlening);
-            Leerling.Uitleningen.Add(nieuweUitlening);
-            item.Beschikbaar = false;
-        }
-
-        public void UitleningAanpassen()
-        {
-            //code
-            
-        }
-
-        public void UitleningVerwijderen(Uitlening uitlening)
-        {
-            if (!Uitleningen.Contains(uitlening))
-                throw new ArgumentException(string.Format("{0} bestaat niet!", uitlening.Id));
-            Uitleningen.Remove(uitlening);
+            BoekRepository.Remove(GeefBoek(id));
+            BoekRepository.SaveChanges();
         }
     }
 }

@@ -15,8 +15,11 @@ namespace Project_Krekelhof.Models.DAL.Mapper
 
 
             this.HasKey(l => l.Id);
-            HasMany(u => u.Uitleningen);
 
+            HasMany(l => l.Uitleningen)
+                .WithRequired()
+                .Map(m => m.MapKey("LeerlingId"))
+                .WillCascadeOnDelete(false);
         }
     }
 }

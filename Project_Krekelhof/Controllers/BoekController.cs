@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,22 +12,49 @@ namespace Project_Krekelhof.Controllers
     public class BoekController : Controller
     {
 
-        private IBoekRepository BoekRepository;
-        private ICategorieRepository CategorieRepository;
+        private Gebruiker gebruiker;
+        private Medewerker medewerker;
 
-       public BoekController(IBoekRepository boekRepository, ICategorieRepository categorieRepository)
+        public BoekController(IBoekRepository boekRepository, ICategorieRepository categorieRepository)
         {
-            BoekRepository = boekRepository;
-            CategorieRepository = categorieRepository;
+            gebruiker = new Gebruiker(boekRepository, categorieRepository);
+            medewerker = new Medewerker(boekRepository, categorieRepository);
         }
-        
-        // GET: Boek
-        public ActionResult Index()
+
+        public ActionResult Index(String zoekstring = null)
         {
-            //return View(new BoeksIndexViewModel(BoekRepository.FindAll().OrderBy(p => p.Id).ToList()));
-            IEnumerable<Boek> boeken = BoekRepository.FindAll().OrderBy(b => b.Id).ToList();
-            IEnumerable<BoekIndexViewModel> bvm = boeken.Select(b => new BoekIndexViewModel(b)).ToList();
-            return View(bvm);
+            IEnumerable<Boek> boeken;
+            if (!String.IsNullOrEmpty(zoekstring))
+            {
+                boeken = gebruiker.GeefBoeken(zoekstring);
+                ViewBag.Selection = "Alle boeken met " + zoekstring;
+            }
+            else
+            {
+                boeken = gebruiker.GeefBoeken(zoekstring);
+                ViewBag.Selection = "Alle boeken";
+            }
+            if (Request.IsAjaxRequest())
+                return PartialView("Lijst", new BoekIndexViewModel(boeken));
+
+            return View(new BoekIndexViewModel(boeken));
+        }
+
+        public ActionResult Create()
+        {
+            return View(new BoekCreateViewModel(medewerker.GeefCategorieën(), new Boek()));
+        }
+
+        [HttpPost]
+        public ActionResult Create(BoekViewModel boek)
+        {
+            if (ModelState.IsValid)
+            {
+                medewerker.AddBoek(boek);
+                TempData["Info"] = "Het boek werd toegevoegd...";
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Create");
         }
     }
 }

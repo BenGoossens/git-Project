@@ -11,23 +11,23 @@ namespace Project_Krekelhof.Models.Domain
         public string Isbn { get; set; }
         public string Uitgeverij { get; set; }
 
-        public int Leeftijd { get; set; }
+        public string Leeftijd { get; set; }
 
-        public virtual ICollection<Categorie> Categories { get; set; }
+        public virtual Categorie Categorie { get; set; }
 
         public Boek()
         {
             
         }
 
-        public Boek(int id, string naam, string beschrijving, bool beschikbaar, string auteur, string ISBN, string uitgeverij, int leeftijd)
+        public Boek(int id, string naam, string beschrijving, bool beschikbaar, string auteur, string ISBN, string uitgeverij, string leeftijd, Categorie categorie)
             : base(id, naam, beschrijving, beschikbaar)
         {
             this.Auteur = auteur;
             this.Isbn = ISBN;
             this.Uitgeverij = uitgeverij;
             this.Leeftijd = leeftijd;
-        }
-
+            this.Categorie = categorie;
+        }    
     }
 }

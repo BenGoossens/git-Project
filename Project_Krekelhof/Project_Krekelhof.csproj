@@ -206,6 +206,8 @@
     <Content Include="Views\Uitlening\Index.cshtml" />
     <Content Include="Views\Boek\Index.cshtml" />
     <Content Include="Views\Leerling\Index.cshtml" />
+    <Content Include="Views\Boek\BoekenLijst.cshtml" />
+    <Content Include="Views\Boek\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

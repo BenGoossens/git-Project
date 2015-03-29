@@ -7,32 +7,35 @@ namespace Project_Krekelhof.Models.Domain
 {
     public class Gebruiker
     {
-        //kan zonder login op systeem
-        public virtual Leerling Leerling { get; set; }
-        
+        public IBoekRepository BoekRepository;
+        public ICategorieRepository CategorieRepository;
 
-        public Item ItemOpzoeken(string zoekWoord)
+        public Gebruiker(IBoekRepository boekRepository, ICategorieRepository categorieRepository)
         {
-            //code
-            return null;
+            this.BoekRepository = boekRepository;
+            this.CategorieRepository = categorieRepository;
         }
 
-        public Uitlening UitleningOpzoeken(string zoekWoord)
+        public IEnumerable<Boek> GeefBoeken(string zoekTerm)
         {
-            //code
-            return null;
+            return !String.IsNullOrEmpty(zoekTerm) ? BoekRepository.Find(zoekTerm).ToList() : BoekRepository.FindAll().OrderBy(t => t.Naam).ToList();
         }
 
-        public bool MagUitlenen(Leerling leerling)
+        public IEnumerable<Categorie> GeefCategorieën()
         {
-            if (leerling.Uitleningen.Count == 3)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return CategorieRepository.FindAll().OrderBy(c => c.Naam);
         }
+
+        public Categorie GeefCategorieBijNaam(string naam)
+        {
+            return CategorieRepository.FindBy(naam);
+        }
+
+        public Boek GeefBoek(int id)
+        {
+            Boek boek = BoekRepository.FindById(id);
+            return boek;
+        }
+
     }
 }

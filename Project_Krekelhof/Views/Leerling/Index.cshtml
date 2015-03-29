@@ -38,7 +38,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Klas)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.AantalUitleningen)
+        </th>
     </tr>
 
     <tbody >
@@ -63,6 +65,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Klas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AantalUitleningen)
                 </td>
                 <td>
                     @Html.ActionLink("Aanpassen", "Edit", new { id = item.Id }) |

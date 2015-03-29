@@ -19,14 +19,15 @@ namespace Project_Krekelhof.Models.Domain
 
         public string Email { get; set; }
         public string Klas { get; set; }
-        public virtual Collection<Uitlening> Uitleningen { get; set; }
+        public virtual ICollection<Uitlening> Uitleningen { get; set; }
 
         public Leerling()
         {
-            
+            Uitleningen = new HashSet<Uitlening>();
         }
 
-        public Leerling(int id, string voornaam, string familienaam, string straat, int huisnummer, string email, string klas)
+        public Leerling(int id, string voornaam, string familienaam, string straat, int huisnummer, string email, string klas) 
+            : this()
         {
             this.Id = id;
             this.Voornaam = voornaam;
@@ -62,5 +63,6 @@ namespace Project_Krekelhof.Models.Domain
         {
             Uitleningen.Remove(uitlening);
         }
+
     }
 }

@@ -15,6 +15,23 @@ namespace Project_Krekelhof.Models.DAL
         {
             try
             {
+                Categorie c1 = new Categorie(1, "gevoelens: verlegen, blij, opgewonden, trots,….");
+                Categorie c2 = new Categorie(2, "ziekenhuisverblijf");
+                Categorie c3 = new Categorie(3, "ik en mijn knuffel");
+                Categorie c4 = new Categorie(4, "haast hebben, tijd nemen");
+
+                Boek b1 = new Boek(1, "Bravo klein visje", "", true, "Guido van Genechten", "", "Van In", "3", c1);
+                Boek b2 = new Boek(2, "Mejuffer Muis in het ziekenhuis", "", true, "Elle van Lieshout, Erik van Os en Marije Tolman", "", "Van In", "5", c2);
+                Boek b3 = new Boek(3, "Mijn dikste vriend", "Nederlands - Turks!", true, "Christine Sterkens", "", "Herkes", "3", c3);
+                Boek b4 = new Boek(4, "Millie Duizendvoet", "", true, "Stijn Moekaars en Frank Daenen", "", "De Eenhoorn	haast hebben, tijd nemen", "4 +", c4);
+                //				
+
+                context.Boeken.Add(b1);
+                context.Boeken.Add(b2);
+                context.Boeken.Add(b3);
+                context.Boeken.Add(b4);
+                context.SaveChanges();
+
                 Leerling lln1 = new Leerling(1, "Tuana","Agacseven","J. Verdegemstraat",72,"","3KA");
                 Leerling lln2 = new Leerling(2, "Zilyan", "Kadirova", "Jean Bethunestraat", 52, "asi.kemal@live.nl", "2KC");
                 Leerling lln3 = new Leerling(3, "Robin", "Coppens", "Banierstraat", 29, "", "1KA");
@@ -27,14 +44,7 @@ namespace Project_Krekelhof.Models.DAL
                 context.Leerlingen.Add(lln4);
                 context.SaveChanges();
 
-                Boek b1 = new Boek(1, "Bravo klein visje", "", true, "Guido van Genechten", "", "Van In", 3);
-                Boek b2 = new Boek(2, "Mejuffer Muis in het ziekenhuis", "", true, "Elle van Lieshout, Erik van Os en Marije Tolman", "", "Van In", 5);
-                Boek b3 = new Boek(3, "Mijn dikste vriend", "Nederlands - Turks!", true, "Christine Sterkens", "", "Herkes", 3);
-
-                context.Boeken.Add(b1);
-                context.Boeken.Add(b2);
-                context.Boeken.Add(b3);
-                context.SaveChanges();
+               
 
             }
             catch (DbEntityValidationException e)

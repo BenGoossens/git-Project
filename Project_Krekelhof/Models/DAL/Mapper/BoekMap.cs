@@ -15,7 +15,15 @@ namespace Project_Krekelhof.Models.DAL.Mapper
             this.Property(t => t.Auteur).HasMaxLength(100);
             this.Property(t => t.Uitgeverij).HasMaxLength(100);
             //this.Property(t => t.Isbn).HasMaxLength(13);
-          
+
+            //HasMany(t => t.Categories)
+            //    .WithRequired()
+            //    .Map(m => m.MapKey("BoekId"))
+            //    .WillCascadeOnDelete(false);
+            HasRequired(t => t.Categorie)
+                .WithMany()
+                .Map(m => m.MapKey("CategorieNaam"))
+                .WillCascadeOnDelete(false);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,12 +12,11 @@ namespace Project_Krekelhof.Controllers
     public class LeerlingController : Controller
     {
         private ILeerlingRepository LeerlingRepository;
-        private IUitleningRepository UitleningRepository;
+        //private IUitleningRepository UitleningRepository;
 
-        public LeerlingController(ILeerlingRepository leerlingRepository, IUitleningRepository uitleningRepository)
+        public LeerlingController(ILeerlingRepository leerlingRepository)
         {
             LeerlingRepository = leerlingRepository;
-            UitleningRepository = uitleningRepository;
         }
 
         // GET: Leerling
