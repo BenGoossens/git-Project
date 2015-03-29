@@ -22,7 +22,7 @@ namespace Project_Krekelhof.Models.DAL.Mapper
             //    .WillCascadeOnDelete(false);
             HasRequired(t => t.Categorie)
                 .WithMany()
-                .Map(m => m.MapKey("CategorieNaam"))
+                .Map(m => m.MapKey("BoekCategorie"))
                 .WillCascadeOnDelete(false);
         }
     }

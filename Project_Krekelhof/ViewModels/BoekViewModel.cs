@@ -37,7 +37,7 @@ namespace Project_Krekelhof.ViewModels
                 Leeftijd = b.Leeftijd,
                 Isbn = b.Isbn,
                 Categorie = b.Categorie.Naam,
-                Beschikbaar = b.Beschikbaar,
+                Beschikbaar = b.Beschikbaar
             });
         }
     }

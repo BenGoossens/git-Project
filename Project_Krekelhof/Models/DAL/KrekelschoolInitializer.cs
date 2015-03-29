@@ -19,17 +19,42 @@ namespace Project_Krekelhof.Models.DAL
                 Categorie c2 = new Categorie(2, "ziekenhuisverblijf");
                 Categorie c3 = new Categorie(3, "ik en mijn knuffel");
                 Categorie c4 = new Categorie(4, "haast hebben, tijd nemen");
+                Categorie c5 = new Categorie(5, "liedjes");
+                Categorie c6 = new Categorie(6, "verhaal");
+                Categorie c7 = new Categorie(7, "film");
+                Categorie c8 = new Categorie(8, "film & liedjes");
 
                 Boek b1 = new Boek(1, "Bravo klein visje", "", true, "Guido van Genechten", "", "Van In", "3", c1);
                 Boek b2 = new Boek(2, "Mejuffer Muis in het ziekenhuis", "", true, "Elle van Lieshout, Erik van Os en Marije Tolman", "", "Van In", "5", c2);
                 Boek b3 = new Boek(3, "Mijn dikste vriend", "Nederlands - Turks!", true, "Christine Sterkens", "", "Herkes", "3", c3);
                 Boek b4 = new Boek(4, "Millie Duizendvoet", "", true, "Stijn Moekaars en Frank Daenen", "", "De Eenhoorn	haast hebben, tijd nemen", "4 +", c4);
-                //				
 
                 context.Boeken.Add(b1);
                 context.Boeken.Add(b2);
                 context.Boeken.Add(b3);
                 context.Boeken.Add(b4);
+                context.SaveChanges();
+
+                Cd cd1 = new Cd(1, "hits voor Kids", "liedjes voor kinderen", true, "tamtam", c5);
+                Cd cd2 = new Cd(2, "vakantiehits", "", true, "K3", c5);
+                Cd cd3 = new Cd(3, "stand by me", "", true, "timon en pumbaa", c5);
+			    Cd cd4 = new Cd(4, "rikki wordt grote broer", "", true, "luister je mee 1", c6);
+
+                context.Cds.Add(cd1);
+                context.Cds.Add(cd2);
+                context.Cds.Add(cd3);
+                context.Cds.Add(cd4);
+                context.SaveChanges();
+
+                Dvd dvd1 = new Dvd(1, "Plop", "kabouterfeest", true, "studio100", c7);
+                Dvd dvd2 = new Dvd(2, "de kleine zeemeermin", "sprookjes", true, "Disney", c7);
+                Dvd dvd3 = new Dvd(3, "happy never after 2", "", true, "Steven E. Gordon & Boyd Kirkland", c6);
+                Dvd dvd4 = new Dvd(4, "de wielen van de bus", "de drie scheepjes", true, "Timothy Armstrong", c8);
+
+                context.Dvds.Add(dvd1);
+                context.Dvds.Add(dvd2);
+                context.Dvds.Add(dvd3);
+                context.Dvds.Add(dvd4);
                 context.SaveChanges();
 
                 Leerling lln1 = new Leerling(1, "Tuana","Agacseven","J. Verdegemstraat",72,"","3KA");

@@ -10,9 +10,7 @@ namespace Project_Krekelhof.Models.Domain
         public string Auteur { get; set; }
         public string Isbn { get; set; }
         public string Uitgeverij { get; set; }
-
         public string Leeftijd { get; set; }
-
         public virtual Categorie Categorie { get; set; }
 
         public Boek()

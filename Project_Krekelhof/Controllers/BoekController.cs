@@ -17,8 +17,8 @@ namespace Project_Krekelhof.Controllers
 
         public BoekController(IBoekRepository boekRepository, ICategorieRepository categorieRepository)
         {
-            gebruiker = new Gebruiker(boekRepository, categorieRepository);
-            medewerker = new Medewerker(boekRepository, categorieRepository);
+            gebruiker = new Gebruiker(boekRepository, categorieRepository, null, null);
+            medewerker = new Medewerker(boekRepository, categorieRepository, null, null);
         }
 
         public ActionResult Index(String zoekstring = null)
@@ -51,7 +51,7 @@ namespace Project_Krekelhof.Controllers
             if (ModelState.IsValid)
             {
                 medewerker.AddBoek(boek);
-                TempData["Info"] = "Het boek werd toegevoegd...";
+                TempData["Info"] = "Het boek werd toegevoegd.";
                 return RedirectToAction("Index");
             }
             return RedirectToAction("Create");

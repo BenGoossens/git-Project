@@ -7,11 +7,12 @@ namespace Project_Krekelhof.Models.Domain
 {
     public class Spel : Item
     {
-        public virtual ICollection<Categorie> Categories { get; set; }
+        public virtual Categorie Categorie { get; set; }
 
-        public Spel(int id, string naam, string beschrijving, bool beschikbaar)
+        public Spel(int id, string naam, string beschrijving, bool beschikbaar, Categorie categorie)
             : base(id, naam, beschrijving, beschikbaar)
         {
+            Categorie = categorie;
         }
 
         public Spel()

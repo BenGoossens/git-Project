@@ -1,8 +1,8 @@
-﻿@model Project_Krekelhof.ViewModels.BoekIndexViewModel
-@{
-    ViewBag.Title = "Boekenlijst";
-}
+﻿@model Project_Krekelhof.ViewModels.CdIndexViewModel
 
+@{
+    ViewBag.Title = "CdLijst";
+}
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,7 +13,7 @@
         {
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "Get",
-            UpdateTargetId = "Boeken"//,
+            UpdateTargetId = "Cds"//,
             //OnComplete = "clearMessage"
         }
         ))
@@ -23,5 +23,5 @@
 }
 
 <div>
-    @Html.Partial("BoekenLijst", Model)
+    @Html.Partial("CdLijst", Model)
 </div>
