@@ -27,7 +27,7 @@ namespace Project_Krekelhof.Controllers
             if (!String.IsNullOrEmpty(zoekstring))
             {
                 boeken = gebruiker.GeefBoeken(zoekstring);
-                ViewBag.Selection = "Alle boeken met " + zoekstring;
+                ViewBag.Selection = "Alle boeken met '"  + zoekstring + "'";
             }
             else
             {

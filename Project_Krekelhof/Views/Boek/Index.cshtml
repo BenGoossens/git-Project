@@ -1,12 +1,11 @@
-﻿@model Project_Krekelhof.ViewModels.BoekIndexViewModel
+﻿<link href="~/Content/Leerlingen.css" rel="stylesheet" type="text/css" />
+
+@model Project_Krekelhof.ViewModels.BoekIndexViewModel
 @{
-    ViewBag.Title = "Boekenlijst";
+    ViewBag.Title = "Boeken";
 }
 
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
 @*@using (Ajax.BeginForm("Index",
         new AjaxOptions
@@ -22,14 +21,21 @@
     <input type="submit" value="Zoek" class="btn btn-default" />
 }*@
 
+ <h3 style="padding-top:15px; margin-bottom:100px">@ViewBag.Selection</h3>
+
 @using (Html.BeginForm())
 {
-    <p>
+    <p style="float:left">
         @Html.TextBox("zoekstring")
         <input type="submit" value="Filter" />
     </p>
 }
 
+<p style="float:right">
+    @Html.ActionLink("Create New", "Create")
+</p>
+
 <div>
     @Html.Partial("BoekenLijst", Model)
 </div>
+
