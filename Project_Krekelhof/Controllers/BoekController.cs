@@ -21,7 +21,7 @@ namespace Project_Krekelhof.Controllers
             medewerker = new Medewerker(boekRepository, categorieRepository, null, null, null);
         }
 
-        public ActionResult Index(String zoekstring = null)
+        public ActionResult Index(String zoekstring)
         {
             IEnumerable<Boek> boeken;
             if (!String.IsNullOrEmpty(zoekstring))

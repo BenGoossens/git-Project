@@ -8,7 +8,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@using (Ajax.BeginForm("Index",
+@*@using (Ajax.BeginForm("Index",
         new AjaxOptions
         {
             InsertionMode = InsertionMode.Replace,
@@ -20,6 +20,14 @@
 {
     <input type="search" name="search" id="search" />
     <input type="submit" value="Search in all products" class="btn btn-default" />
+}*@
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.TextBox("zoekstring")
+        <input type="submit" value="Filter" />
+    </p>
 }
 
 <div>
