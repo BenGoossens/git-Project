@@ -1,0 +1,27 @@
+﻿@model Project_Krekelhof.ViewModels.SpelIndexViewModel
+
+@{
+    ViewBag.Title = "SpelLijst";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Ajax.BeginForm("Index",
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "Get",
+            UpdateTargetId = "Spellen"//,
+            //OnComplete = "clearMessage"
+        }
+        ))
+{
+    <input type="search" name="search" id="search" />
+    <input type="submit" value="Search in all products" class="btn btn-default" />
+}
+
+<div>
+    @Html.Partial("SpelLijst", Model)
+</div>

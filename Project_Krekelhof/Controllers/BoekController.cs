@@ -17,8 +17,8 @@ namespace Project_Krekelhof.Controllers
 
         public BoekController(IBoekRepository boekRepository, ICategorieRepository categorieRepository)
         {
-            gebruiker = new Gebruiker(boekRepository, categorieRepository, null, null);
-            medewerker = new Medewerker(boekRepository, categorieRepository, null, null);
+            gebruiker = new Gebruiker(boekRepository, categorieRepository, null, null, null);
+            medewerker = new Medewerker(boekRepository, categorieRepository, null, null, null);
         }
 
         public ActionResult Index(String zoekstring = null)

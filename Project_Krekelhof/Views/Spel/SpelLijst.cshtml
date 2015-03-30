@@ -1,0 +1,63 @@
+﻿@model Project_Krekelhof.ViewModels.SpelIndexViewModel
+
+<h3>@ViewBag.Selection</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Spellen.FirstOrDefault().Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Spellen.FirstOrDefault().Naam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Spellen.FirstOrDefault().Omschrijving)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Spellen.FirstOrDefault().Beschikbaar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Spellen.FirstOrDefault().Uitgeverij)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Spellen.FirstOrDefault().Leeftijd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Spellen.FirstOrDefault().Categorie)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Spellen)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Omschrijving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beschikbaar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uitgeverij)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Leeftijd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorie)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

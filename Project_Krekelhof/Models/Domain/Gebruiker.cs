@@ -11,13 +11,15 @@ namespace Project_Krekelhof.Models.Domain
         public ICategorieRepository CategorieRepository;
         public ICdRepository CdRepository;
         public IDvdRepository DvdRepository;
+        public ISpelRepository SpelRepository;
 
-        public Gebruiker(IBoekRepository boekRepository, ICategorieRepository categorieRepository, ICdRepository cdRepository, IDvdRepository dvdRepository)
+        public Gebruiker(IBoekRepository boekRepository, ICategorieRepository categorieRepository, ICdRepository cdRepository, IDvdRepository dvdRepository, ISpelRepository spelRepository)
         {
             this.BoekRepository = boekRepository;
             this.CategorieRepository = categorieRepository;
             this.CdRepository = cdRepository;
             this.DvdRepository = dvdRepository;
+            this.SpelRepository = spelRepository;
         }
 
         #region methodesBoek
@@ -55,6 +57,18 @@ namespace Project_Krekelhof.Models.Domain
         {
             Dvd dvd = DvdRepository.FindById(id);
             return dvd;
+        }
+        #endregion
+
+        #region methodesSpel
+        public IEnumerable<Spel> GeefSpellen(string zoekTerm)
+        {
+            return !String.IsNullOrEmpty(zoekTerm) ? SpelRepository.Find(zoekTerm).ToList() : SpelRepository.FindAll().OrderBy(t => t.Naam).ToList();
+        }
+        public Spel GeefSpel(int id)
+        {
+            Spel spel = SpelRepository.FindById(id);
+            return spel;
         }
         #endregion
 

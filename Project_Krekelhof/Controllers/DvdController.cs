@@ -15,8 +15,8 @@ namespace Project_Krekelhof.Controllers
 
         public DvdController(IDvdRepository dvdRepository, ICategorieRepository categorieRepository)
         {
-            gebruiker = new Gebruiker(null, categorieRepository, null, dvdRepository);
-            medewerker = new Medewerker(null, categorieRepository, null, dvdRepository);
+            gebruiker = new Gebruiker(null, categorieRepository, null, dvdRepository, null);
+            medewerker = new Medewerker(null, categorieRepository, null, dvdRepository, null);
         }
         // GET: Dvd
         public ActionResult Index(String zoekstring = null)

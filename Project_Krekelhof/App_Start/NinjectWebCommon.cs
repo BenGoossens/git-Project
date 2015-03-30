@@ -67,6 +67,7 @@ namespace Project_Krekelhof.App_Start
             kernel.Bind<IBoekRepository>().To<BoekRepository>().InRequestScope();
             kernel.Bind<ICdRepository>().To<CdRepository>().InRequestScope();
             kernel.Bind<IDvdRepository>().To<DvdRepository>().InRequestScope();
+            kernel.Bind<ISpelRepository>().To<SpelRepository>().InRequestScope();
             kernel.Bind<ICategorieRepository>().To<CategorieRepository>().InRequestScope();
             kernel.Bind<ILeerlingRepository>().To<LeerlingRepository>().InRequestScope();
             kernel.Bind<IUitleningRepository>().To<UitleningRepository>().InRequestScope();

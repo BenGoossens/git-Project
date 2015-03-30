@@ -34,10 +34,12 @@ namespace Project_Krekelhof.Models.DAL
             //modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
             //modelBuilder.Ignore<Item>();
             modelBuilder.Configurations.Add(new BoekMap());
-            modelBuilder.Configurations.Add(new CategorieMap());
             modelBuilder.Configurations.Add(new DvdMap());
+            modelBuilder.Configurations.Add(new CdMap());
+            modelBuilder.Configurations.Add(new SpelMap());
             modelBuilder.Configurations.Add(new ItemMap());
             modelBuilder.Configurations.Add(new VerteltasMap());
+            modelBuilder.Configurations.Add(new CategorieMap());
             modelBuilder.Configurations.Add(new UitleningMap());
             modelBuilder.Configurations.Add(new LeerlingMap());
 

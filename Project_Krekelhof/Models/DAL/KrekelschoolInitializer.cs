@@ -23,6 +23,10 @@ namespace Project_Krekelhof.Models.DAL
                 Categorie c6 = new Categorie(6, "verhaal");
                 Categorie c7 = new Categorie(7, "film");
                 Categorie c8 = new Categorie(8, "film & liedjes");
+                Categorie c9 = new Categorie(9, "kids tegen grote mensen");
+                Categorie c10 = new Categorie(10, "kleuren");
+                Categorie c11 = new Categorie(11, "dieren");
+                Categorie c12 = new Categorie(12, "");
 
                 Boek b1 = new Boek(1, "Bravo klein visje", "", true, "Guido van Genechten", "", "Van In", "3", c1);
                 Boek b2 = new Boek(2, "Mejuffer Muis in het ziekenhuis", "", true, "Elle van Lieshout, Erik van Os en Marije Tolman", "", "Van In", "5", c2);
@@ -55,6 +59,17 @@ namespace Project_Krekelhof.Models.DAL
                 context.Dvds.Add(dvd2);
                 context.Dvds.Add(dvd3);
                 context.Dvds.Add(dvd4);
+                context.SaveChanges();
+
+                Spel spel1 = new Spel(1, "beterweter", "", true, "university games", "8+", c9);
+                Spel spel2 = new Spel(1, "bonte ballonnen", "", true, "ravensburger", "3-5", c10);
+                Spel spel3 = new Spel(1, "de sterke man", "", true, "jumbo", "5+", c11);
+                Spel spel4 = new Spel(1, "domino", "", true, "", "", c12);
+
+                context.Spellen.Add(spel1);
+                context.Spellen.Add(spel2);
+                context.Spellen.Add(spel3);
+                context.Spellen.Add(spel4);
                 context.SaveChanges();
 
                 Leerling lln1 = new Leerling(1, "Tuana","Agacseven","J. Verdegemstraat",72,"","3KA");

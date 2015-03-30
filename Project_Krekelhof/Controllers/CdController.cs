@@ -15,8 +15,8 @@ namespace Project_Krekelhof.Controllers
 
         public CdController(ICdRepository cdRepository, ICategorieRepository categorieRepository)
         {
-            gebruiker = new Gebruiker(null, categorieRepository, cdRepository, null);
-            medewerker = new Medewerker(null, categorieRepository, cdRepository, null);
+            gebruiker = new Gebruiker(null, categorieRepository, cdRepository, null, null);
+            medewerker = new Medewerker(null, categorieRepository, cdRepository, null, null);
         }
 
         // GET: Cd

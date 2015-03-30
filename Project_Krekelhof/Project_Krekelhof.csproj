@@ -212,6 +212,8 @@
     <Content Include="Views\Cd\CdLijst.cshtml" />
     <Content Include="Views\Dvd\Index.cshtml" />
     <Content Include="Views\Dvd\DvdLijst.cshtml" />
+    <Content Include="Views\Spel\Index.cshtml" />
+    <Content Include="Views\Spel\SpelLijst.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -245,6 +247,7 @@
     <Compile Include="Controllers\DvdController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeerlingController.cs" />
+    <Compile Include="Controllers\SpelController.cs" />
     <Compile Include="Controllers\UitleningController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -262,7 +265,9 @@
     <Compile Include="Models\DAL\Mapper\ItemMap.cs" />
     <Compile Include="Models\DAL\Mapper\LeerlingMap.cs" />
     <Compile Include="Models\DAL\LeerlingRepository.cs" />
+    <Compile Include="Models\DAL\Mapper\SpelMap.cs" />
     <Compile Include="Models\DAL\Mapper\UitleningMap.cs" />
+    <Compile Include="Models\DAL\SpelRepository.cs" />
     <Compile Include="Models\DAL\UitleningRepository.cs" />
     <Compile Include="Models\DAL\Mapper\VerteltasMap.cs" />
     <Compile Include="Models\Domain\Admin.cs" />
@@ -276,6 +281,7 @@
     <Compile Include="Models\Domain\ICdRepository.cs" />
     <Compile Include="Models\Domain\IDvdRepository.cs" />
     <Compile Include="Models\Domain\ILeerlingRepository.cs" />
+    <Compile Include="Models\Domain\ISpelRepository.cs" />
     <Compile Include="Models\Domain\Item.cs" />
     <Compile Include="Models\Domain\IUitleningRepository.cs" />
     <Compile Include="Models\Domain\IVerteltasRepository.cs" />
@@ -293,6 +299,7 @@
     <Compile Include="ViewModels\CdViewModel.cs" />
     <Compile Include="ViewModels\DvdViewModel.cs" />
     <Compile Include="ViewModels\LeerlingViewModel.cs" />
+    <Compile Include="ViewModels\SpelViewModel.cs" />
     <Compile Include="ViewModels\UitleningViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
