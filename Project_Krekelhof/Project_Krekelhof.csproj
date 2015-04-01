@@ -180,6 +180,7 @@
     <Content Include="Images\Krekel.png" />
     <Content Include="Images\Lupe.png" />
     <Content Include="Images\Spel.png" />
+    <Content Include="Images\Stapel.png" />
     <Content Include="Images\Toevoegen.png" />
     <Content Include="Images\Uitleningen.png" />
     <Content Include="Images\Verteltas.png" />
@@ -189,6 +190,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Models\Domain\domain.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\checkbox.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

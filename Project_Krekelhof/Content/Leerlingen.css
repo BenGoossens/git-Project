@@ -7,6 +7,8 @@ body {
     color:#333;    
     font: 13px/1.5 Verdana,Helvetica,Arial,sans-serif;
 
+    
+
     background: rgba(210,255,82,1);
     background: -moz-radial-gradient(center, ellipse cover, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 72%, rgba(145,232,66,1) 100%);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(210,255,82,1)), color-stop(72%, rgba(145,232,66,1)), color-stop(100%, rgba(145,232,66,1)));
@@ -14,8 +16,20 @@ body {
     background: -o-radial-gradient(center, ellipse cover, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 72%, rgba(145,232,66,1) 100%);
     background: -ms-radial-gradient(center, ellipse cover, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 72%, rgba(145,232,66,1) 100%);
     background: radial-gradient(ellipse at center, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 72%, rgba(145,232,66,1) 100%);
+
+
+
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842', GradientType=1 );
    
+}
+
+#stapel{
+    background-image: url(../Images/Stapel.png) ;
+    float: left;
+    margin-left: 0px;
+    padding-left: 0px;
+    
+    
 }
 
 h2{
@@ -81,6 +95,21 @@ tr td{
     padding-top: 15px;
     border: 1px solid white;
 
+}
+
+table tr th{
+        text-align: center;
+    padding-top: 15px;
+    border: 1px solid white;
+}
+
+td{
+    height: 90px;
+    text-align: left;
+}
+
+#tabelrijen:hover{
+    border: 3px solid grey;
 }
 
 

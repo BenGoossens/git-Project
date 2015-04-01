@@ -5,8 +5,8 @@
 
 
 
-<table class="table">
-    <tr>
+<table class="table" >
+    <tr style="text-align:center;">
         <th>
             @Html.DisplayNameFor(model => model.Boeken.FirstOrDefault().Id)
         </th>
@@ -37,9 +37,61 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model.Boeken)
+ 
+    @if (Request["beschikbaar"] == "beschikbaar")
     {
-        <tr>
+    foreach (var item in Model.Boeken)
+    {
+        if (item.Beschikbaar == true)
+        {
+            <tr id="tabelrijen">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Auteur)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uitgeverij)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Omschrijving)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Leeftijd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Isbn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beschikbaar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categorie)
+                </td>
+                <td>
+
+                    <a>
+                        <img src="~/Images/Bewerken.png" style="width:10px; height:10px;" />
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+
+                    </a>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id, @class = "Detailsknop" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id, @class = "Deleteknop" })
+                </td>
+            </tr>
+        }
+
+    }
+    }
+    else{
+        
+        foreach (var item in Model.Boeken)
+            {
+            <tr id="tabelrijen">
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
@@ -68,16 +120,18 @@
                 @Html.DisplayFor(modelItem => item.Categorie)
             </td>
             <td>
-                
+
                 <a>
-                    <img src="~/Images/Bewerken.png" style="width:10px; height:10px;"/>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |               
-                    
+                    <img src="~/Images/Bewerken.png" style="width:10px; height:10px;" />
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+
                 </a>
                 @Html.ActionLink("Details", "Details", new { id = item.Id, @class = "Detailsknop" }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id, @class = "Deleteknop" })
             </td>
         </tr>
     }
+   }
+
 
 </table>

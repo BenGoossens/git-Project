@@ -29,9 +29,9 @@ namespace Project_Krekelhof.Models.DAL
                 Categorie c12 = new Categorie(12, "");
 
                 Boek b1 = new Boek(1, "Bravo klein visje", "", true, "Guido van Genechten", "", "Van In", "3", c1);
-                Boek b2 = new Boek(2, "Mejuffer Muis in het ziekenhuis", "", true, "Elle van Lieshout, Erik van Os en Marije Tolman", "", "Van In", "5", c2);
+                Boek b2 = new Boek(2, "Mejuffer Muis in het ziekenhuis", "", false, "Elle van Lieshout, Erik van Os en Marije Tolman", "", "Van In", "5", c2);
                 Boek b3 = new Boek(3, "Mijn dikste vriend", "Nederlands - Turks!", true, "Christine Sterkens", "", "Herkes", "3", c3);
-                Boek b4 = new Boek(4, "Millie Duizendvoet", "", true, "Stijn Moekaars en Frank Daenen", "", "De Eenhoorn	haast hebben, tijd nemen", "4 +", c4);
+                Boek b4 = new Boek(4, "Millie Duizendvoet", "", false, "Stijn Moekaars en Frank Daenen", "", "De Eenhoorn	haast hebben, tijd nemen", "4 +", c4);
 
                 context.Boeken.Add(b1);
                 context.Boeken.Add(b2);

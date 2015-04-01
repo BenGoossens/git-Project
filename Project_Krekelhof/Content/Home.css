@@ -64,11 +64,11 @@ background: #96b832;
 button:hover {
 
   background: #97b6c9;
-  background-image: -webkit-linear-gradient(top, #97b6c9, #2c3338);
-  background-image: -moz-linear-gradient(top, #97b6c9, #2c3338);
-  background-image: -ms-linear-gradient(top, #97b6c9, #2c3338);
-  background-image: -o-linear-gradient(top, #97b6c9, #2c3338);
-  background-image: linear-gradient(to bottom, #97b6c9, #2c3338);
+  background-image: -webkit-linear-gradient(top, #426E1A, #96b832);
+  background-image: -moz-linear-gradient(top, #426E1A, #96b832);
+  background-image: -ms-linear-gradient(top, #426E1A, #96b832);
+  background-image: -o-linear-gradient(top, #426E1A, #96b832);
+  background-image: linear-gradient(to bottom, #426E1A, #96b832);
 
 }
 
