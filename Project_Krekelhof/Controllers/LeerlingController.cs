@@ -14,17 +14,33 @@ namespace Project_Krekelhof.Controllers
         private ILeerlingRepository LeerlingRepository;
         //private IUitleningRepository UitleningRepository;
 
+        private Medewerker medewerker;
+        private Gebruiker gebruiker;
+
         public LeerlingController(ILeerlingRepository leerlingRepository)
         {
-            LeerlingRepository = leerlingRepository;
+            gebruiker = new Gebruiker(null, null, null, null, null, leerlingRepository);
+            medewerker = new Medewerker(null, null, null, null, null, leerlingRepository);
         }
 
         // GET: Leerling
-        public ActionResult Index()
+        public ActionResult Index(String zoekstring = null)
         {
-            IEnumerable<Leerling> leerlingen = LeerlingRepository.FindAll().OrderBy(l => l.Id).ToList();
-            IEnumerable<LeerlingIndexViewModel> lvm = leerlingen.Select(l => new LeerlingIndexViewModel(l)).ToList();
-            return View(lvm);
+            IEnumerable<Leerling> leerlingen;
+            if (!String.IsNullOrEmpty(zoekstring))
+            {
+                leerlingen = gebruiker.GeefLeerlingen(zoekstring);
+                ViewBag.Selection = "Alle leerlingen met '" + zoekstring + "'";
+            }
+            else
+            {
+                leerlingen = gebruiker.GeefLeerlingen(zoekstring);
+                ViewBag.Selection = "Alle leerlingen";
+            }
+            if (Request.IsAjaxRequest())
+                return PartialView("Lijst", new LeerlingIndexViewModel(leerlingen));
+
+            return View(new LeerlingIndexViewModel(leerlingen));
         }
     }
 }

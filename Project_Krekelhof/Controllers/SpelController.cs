@@ -15,8 +15,8 @@ namespace Project_Krekelhof.Controllers
 
         public SpelController(ISpelRepository spelRepository, ICategorieRepository categorieRepository)
         {
-            gebruiker = new Gebruiker(null, categorieRepository, null, null, spelRepository);
-            medewerker = new Medewerker(null, categorieRepository, null, null, spelRepository);
+            gebruiker = new Gebruiker(null, categorieRepository, null, null, spelRepository, null);
+            medewerker = new Medewerker(null, categorieRepository, null, null, spelRepository, null);
         }
 
         // GET: Spel
@@ -26,7 +26,7 @@ namespace Project_Krekelhof.Controllers
             if (!String.IsNullOrEmpty(zoekstring))
             {
                 spellen = gebruiker.GeefSpellen(zoekstring);
-                ViewBag.Selection = "Alle spellen met " + zoekstring;
+                ViewBag.Selection = "Alle spellen met '" + zoekstring + "'";
             }
             else
             {

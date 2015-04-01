@@ -1,9 +1,11 @@
-﻿@model Project_Krekelhof.ViewModels.SpelIndexViewModel
+﻿<link href="~/Content/Leerlingen.css" rel="stylesheet" type="text/css" />
+
+@model Project_Krekelhof.ViewModels.SpelIndexViewModel
 
 <h3>@ViewBag.Selection</h3>
 
 <table class="table">
-    <tr>
+    <tr style="text-align:center;">
         <th>
             @Html.DisplayNameFor(model => model.Spellen.FirstOrDefault().Id)
         </th>
@@ -27,37 +29,76 @@
         </th>
         <th></th>
     </tr>
-
-    @foreach (var item in Model.Spellen)
+    
+@if (Request["beschikbaar"] == "beschikbaar")
+{
+    foreach (var item in Model.Spellen)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Naam)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Omschrijving)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Beschikbaar)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Uitgeverij)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Leeftijd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categorie)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+        if (item.Beschikbaar == true)
+        {
+            <tr id="tabelrijen">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Omschrijving)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beschikbaar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uitgeverij)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Leeftijd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categorie)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
+                    @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
+                    @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+                </td>
+            </tr>
+        }
     }
-
+}
+else
+{
+    foreach (var item in Model.Spellen)
+    {
+            <tr id="tabelrijen">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Omschrijving)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beschikbaar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uitgeverij)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Leeftijd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categorie)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
+                    @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
+                    @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+                </td>
+            </tr>
+    }
+}
 </table>

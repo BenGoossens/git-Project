@@ -7,14 +7,11 @@ namespace Project_Krekelhof.Models.Domain
 {
     public interface ILeerlingRepository
     {
-        Leerling FindBy(int itemId);
-
+        Leerling FindById(int itemId);
         IQueryable<Leerling> FindAll();
-
+        IQueryable<Leerling> Find(String zoekString);
         void Add(Leerling leerling);
-
         void Delete(Leerling leerling);
-
         void SaveChanges();
 
     }

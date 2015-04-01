@@ -216,6 +216,7 @@
     <Content Include="Views\Dvd\DvdLijst.cshtml" />
     <Content Include="Views\Spel\Index.cshtml" />
     <Content Include="Views\Spel\SpelLijst.cshtml" />
+    <Content Include="Views\Leerling\LeerlingenLijst.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

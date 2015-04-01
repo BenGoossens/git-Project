@@ -6,22 +6,6 @@
     ViewBag.Title = "Boeken";
 }
 
-
-
-@*@using (Ajax.BeginForm("Index",
-        new AjaxOptions
-        {
-            HttpMethod = "Get",
-            InsertionMode = InsertionMode.Replace,
-            UpdateTargetId = "Boeken"//,
-            //OnComplete = "clearMessage"
-        }
-        ))
-{
-    <input type="search" name="search" id="search" />
-    <input type="submit" value="Zoek" class="btn btn-default" />
-}*@
-
  <h3 style="padding-top:40px; margin-bottom:100px; font-size: 50px;">@ViewBag.Selection</h3>
 
 @using (Html.BeginForm())

@@ -7,18 +7,33 @@
     ViewBag.Title = "CdLijst";
 }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h3 style="padding-top:40px; margin-bottom:100px; font-size: 50px;">@ViewBag.Selection</h3>
 
 @using (Html.BeginForm())
 {
-    <p>
+    <p style="float:left">
         @Html.TextBox("zoekstring")
-        <input type="submit" value="Filter" />
+        <input type="submit" id="submitknop" value="Zoek" />
     </p>
 }
+
+
+<form method="post" style="float:left">
+    <p style="float:left; padding-left:10px; padding-right:5px;">
+        Alleen beschikbare Cd's
+    </p>
+    <input type="checkbox" name="beschikbaar" value="beschikbaar">
+    <input type="submit" value="Zoek" />
+
+</form>
+
+<p style="float:right">
+    @Html.ActionLink("Nieuwe cd toevoegen", "Create")
+    <img style="height:25px" src="~/Images/Toevoegen.png" />
+</p>
 
 <div>
     @Html.Partial("CdLijst", Model)
 </div>
+
+@Scripts.Render("~/Scripts/checkbox.js")

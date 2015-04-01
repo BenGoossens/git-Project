@@ -1,9 +1,9 @@
 ﻿@model Project_Krekelhof.ViewModels.CdIndexViewModel
 
-<h3>@ViewBag.Selection</h3>
+@*<h3>@ViewBag.Selection</h3>*@
 
 <table class="table">
-    <tr>
+    <tr style="text-align:center;">
         <th>
             @Html.DisplayNameFor(model => model.Cds.FirstOrDefault().Id)
         </th>
@@ -25,32 +25,70 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model.Cds) {
-    <tr id="tabelrijen">
-        <td>
-            @Html.DisplayFor(modelItem => item.Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Naam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Omschrijving)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Beschikbaar)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtiestNaam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Categorie)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+@if (Request["beschikbaar"] == "beschikbaar")
+{
+    foreach (var item in Model.Cds)
+    {
+        if (item.Beschikbaar == true)
+        {
+            <tr id="tabelrijen">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Omschrijving)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beschikbaar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArtiestNaam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categorie)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
+                    @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
+                    @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+                </td>
+            </tr>
+        }
+    }
+}
+else
+{
+    foreach (var item in Model.Cds)
+    {
+        <tr id="tabelrijen">
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Omschrijving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beschikbaar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArtiestNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorie)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+            </td>
+        </tr>
+    }
 }
 
 </table>

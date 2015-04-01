@@ -15,9 +15,17 @@ namespace Project_Krekelhof.Models.DAL
             Leerlingen = Context.Leerlingen;
         }
 
-        public Leerling FindBy(int Id)
+        public Leerling FindById(int Id)
         {
             return Leerlingen.Find(Id);
+        }
+        public IQueryable<Leerling> Find(string zoekString)
+        {
+            return Leerlingen.Where(p => p.Voornaam.ToLower().Contains(zoekString.ToLower()) ||
+                                             p.Familienaam.ToLower().Contains(zoekString.ToLower()) ||
+                                             p.Klas.ToLower().Contains(zoekString.ToLower()) ||
+                                             p.Email.ToLower().Contains(zoekString.ToLower()) ||
+                                             p.Straat.ToLower().Contains(zoekString.ToLower())).OrderBy(p => p.Id);
         }
 
         public IQueryable<Leerling> FindAll()

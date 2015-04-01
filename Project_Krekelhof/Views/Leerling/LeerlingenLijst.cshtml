@@ -1,0 +1,70 @@
+﻿<link href="~/Content/Leerlingen.css" rel="stylesheet" type="text/css" />
+
+@model Project_Krekelhof.ViewModels.LeerlingIndexViewModel
+
+
+<table class="table">
+    <tr style="text-align:center;">
+        <th>
+            @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Voornaam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Familienaam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Straat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Huisnummer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Klas)
+        </th>
+        <th></th>
+    </tr>
+
+        @foreach (var item in Model.Leerlingen)
+        {
+                <tr id="tabelrijen">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Voornaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Familienaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Straat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Huisnummer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Klas)
+                    </td>
+                    <td>
+
+                        <a>
+                            <img src="~/Images/Bewerken.png" style="width:10px; height:10px;" />
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+
+                        </a>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id, @class = "Detailsknop" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id, @class = "Deleteknop" })
+                    </td>
+                </tr>
+
+        }
+
+</table>

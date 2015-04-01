@@ -15,8 +15,8 @@ namespace Project_Krekelhof.Controllers
 
         public CdController(ICdRepository cdRepository, ICategorieRepository categorieRepository)
         {
-            gebruiker = new Gebruiker(null, categorieRepository, cdRepository, null, null);
-            medewerker = new Medewerker(null, categorieRepository, cdRepository, null, null);
+            gebruiker = new Gebruiker(null, categorieRepository, cdRepository, null, null, null);
+            medewerker = new Medewerker(null, categorieRepository, cdRepository, null, null, null);
         }
 
         // GET: Cd
@@ -26,7 +26,7 @@ namespace Project_Krekelhof.Controllers
             if (!String.IsNullOrEmpty(zoekstring))
             {
                 cds = gebruiker.GeefCds(zoekstring);
-                ViewBag.Selection = "Alle cd's met " + zoekstring;
+                ViewBag.Selection = "Alle cd's met '" + zoekstring + "'";
             }
             else
             {
