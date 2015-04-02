@@ -51,7 +51,7 @@ namespace Project_Krekelhof.Controllers
         {
             Boek boek = new Boek();
             ViewBag.Title = "Boek toevoegen";
-            //ViewBag.Postcode = GetCategorieSelectList(boek);
+            ViewBag.Categorie = GetCategorieSelectList(boek);
             return View(new BoekViewModel(boek));
         }
 
@@ -74,6 +74,7 @@ namespace Project_Krekelhof.Controllers
             {
                 ModelState.AddModelError("", ex.Message);
             }
+            ViewBag.Categorie = GetCategorieSelectList(bvm.Categorie);
             return View(bvm);
         }
 
@@ -95,6 +96,13 @@ namespace Project_Krekelhof.Controllers
             return new SelectList(categorieRepository.FindAll().OrderBy(g => g.Naam),
                 "Id", "Naam",
                boek == null || boek.Categorie == null ? "" : boek.Categorie.Naam);
+        }
+
+        private SelectList GetCategorieSelectList(string categorie)
+        {
+            return new SelectList(categorieRepository.FindAll().OrderBy(g => g.Naam),
+                "Id", "Naam",
+               categorie ?? "");
         }
     }
 }

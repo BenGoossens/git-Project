@@ -18,6 +18,7 @@ namespace Project_Krekelhof.ViewModels
         public string Uitgeverij { get; set; }
         public string Leeftijd { get; set; }
         public string Isbn { get; set; }
+        public int CategroieId { get; set; }
         public string Categorie { get; set; }
         public bool Beschikbaar { get; set; }
 
@@ -35,6 +36,7 @@ namespace Project_Krekelhof.ViewModels
             Uitgeverij = b.Uitgeverij;
             Leeftijd = b.Leeftijd;
             Isbn = b.Isbn;
+            //CategroieId = (b.Categorie == null) ? 0 : b.Categorie.Id;
             Categorie = (b.Categorie == null) ? null : b.Categorie.Naam;
             Beschikbaar = b.Beschikbaar;
         }
