@@ -15,6 +15,21 @@ namespace Project_Krekelhof.ViewModels
         public int Huisnummer { get; set; }
         public string Email { get; set; }
         public string Klas { get; set; }
+
+
+        public LeerlingViewModel()
+        {
+        }
+        public LeerlingViewModel(Leerling l)
+        {
+            Id = l.Id;
+            Voornaam = l.Voornaam;
+            Familienaam = l.Familienaam;
+            Straat = l.Straat;
+            Huisnummer = l.Huisnummer;
+            Email = l.Email;
+            Klas = l.Klas;
+        }
     }
 
     public class LeerlingIndexViewModel
@@ -33,5 +48,6 @@ namespace Project_Krekelhof.ViewModels
                 Email = s.Email,
                 Klas = s.Klas
             });
-        }    }
+        }    
+    }
 }

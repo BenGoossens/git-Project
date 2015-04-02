@@ -217,6 +217,7 @@
     <Content Include="Views\Spel\Index.cshtml" />
     <Content Include="Views\Spel\SpelLijst.cshtml" />
     <Content Include="Views\Leerling\LeerlingenLijst.cshtml" />
+    <Content Include="Views\Leerling\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
