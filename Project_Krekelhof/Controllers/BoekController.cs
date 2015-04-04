@@ -87,7 +87,7 @@ namespace Project_Krekelhof.Controllers
             boek.Uitgeverij = bvm.Uitgeverij;
             boek.Isbn = bvm.Isbn;
             boek.Leeftijd = bvm.Leeftijd;
-            boek.Categorie = (String.IsNullOrEmpty(bvm.Categorie) ? null : categorieRepository.FindBy(bvm.Categorie));
+            boek.Categorie = (String.IsNullOrEmpty(bvm.Categorie) ? null : categorieRepository.FindById(Int32.Parse(bvm.Categorie)));
             boek.Beschikbaar = bvm.Beschikbaar;
         }
 
