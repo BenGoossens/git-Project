@@ -78,6 +78,66 @@ namespace Project_Krekelhof.Controllers
             return View(bvm);
         }
 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            Boek boek = boekRepository.FindById(id);
+            if (boek == null)
+                return HttpNotFound();
+            ViewBag.Categorie = GetCategorieSelectList(boek);
+            return View("Create", new BoekViewModel(boek));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, BoekViewModel bvm)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    Boek boek = boekRepository.FindById(id);
+                    MapToBoek(bvm, boek);
+                    boekRepository.SaveChanges();
+                    TempData["message"] = String.Format("Boek {0} werd aangepast", boek.Naam);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
+            }
+            ViewBag.Categorie = GetCategorieSelectList(bvm.Categorie);
+            return View("Create", bvm);
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Boek boek = boekRepository.FindById(id);
+            if (boek == null)
+                return HttpNotFound();
+            return View(new BoekViewModel(boek));
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            try
+            {
+                Boek boek = boekRepository.FindById(id);
+                if (boek == null)
+                    return HttpNotFound();
+                boekRepository.Remove(boek);
+                boekRepository.SaveChanges();
+                TempData["message"] = String.Format("Boek {0} werd verwijderd", boek.Naam);
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = "Verwijderen Boek mislukt. Probeer opnieuw. ";
+            }
+            return RedirectToAction("Index");
+        }
+
         private void MapToBoek(BoekViewModel bvm, Boek boek)
         {
             boek.Id = bvm.Id;

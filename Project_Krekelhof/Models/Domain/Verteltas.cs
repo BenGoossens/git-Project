@@ -13,6 +13,11 @@ namespace Project_Krekelhof.Models.Domain
         public virtual ICollection<Dvd> Dvds { get; set; }
         public virtual ICollection<Spel> Spellen { get; set; }
 
+        public Verteltas()
+        {
+            
+        }
+
         public Verteltas(int id, string naam, string beschrijving, bool beschikbaar)
             : base(id, naam, beschrijving, beschikbaar)
         {
