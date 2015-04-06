@@ -221,6 +221,10 @@
     <Content Include="Views\Boek\Delete.cshtml" />
     <Content Include="Views\Cd\Create.cshtml" />
     <Content Include="Views\Cd\Delete.cshtml" />
+    <Content Include="Views\Dvd\Create.cshtml" />
+    <Content Include="Views\Dvd\Delete.cshtml" />
+    <Content Include="Views\Spel\Create.cshtml" />
+    <Content Include="Views\Spel\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

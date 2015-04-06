@@ -15,6 +15,22 @@ namespace Project_Krekelhof.ViewModels
         public string Uitgeverij { get; set; }
         public string Leeftijd { get; set; }
         public string Categorie { get; set; }
+
+        public SpelViewModel()
+        {
+            
+        }
+
+        public SpelViewModel(Spel s)
+        {
+            Id = s.Id;
+            Naam = s.Naam;
+            Omschrijving = s.Omschrijving;
+            Uitgeverij = s.Uitgeverij;
+            Leeftijd = s.Leeftijd;
+            Categorie = (s.Categorie == null) ? null : s.Categorie.Naam;
+            Beschikbaar = s.Beschikbaar;
+        }
     }
 
     public class SpelIndexViewModel

@@ -83,7 +83,7 @@ namespace Project_Krekelhof.Controllers
             Cd cd = cdRepository.FindById(id);
             if (cd == null)
                 return HttpNotFound();
-            ViewBag.Postcode = GetCategorieSelectList(cd);
+            ViewBag.Categorie = GetCategorieSelectList(cd);
             return View("Create", new CdViewModel(cd));
         }
 
@@ -109,6 +109,7 @@ namespace Project_Krekelhof.Controllers
             return View("Create", cvm);
         }
 
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             Cd cd = cdRepository.FindById(id);

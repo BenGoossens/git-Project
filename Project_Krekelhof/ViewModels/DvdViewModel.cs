@@ -14,6 +14,21 @@ namespace Project_Krekelhof.ViewModels
         public bool Beschikbaar { get; set; }
         public string Regisseur { get; set; }
         public string Categorie { get; set; }
+
+        public DvdViewModel()
+        {
+            
+        }
+
+        public DvdViewModel(Dvd d)
+        {
+            Id = d.Id;
+            Naam = d.Naam;
+            Omschrijving = d.Omschrijving;
+            Regisseur = d.Regisseur;
+            Categorie = (d.Categorie == null) ? null : d.Categorie.Naam;
+            Beschikbaar = d.Beschikbaar;
+        }
     }
 
     public class DvdIndexViewModel
