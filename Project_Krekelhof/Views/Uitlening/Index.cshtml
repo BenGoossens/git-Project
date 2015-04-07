@@ -1,51 +1,29 @@
-﻿@model IEnumerable<Project_Krekelhof.ViewModels.UitleningIndexViewModel>
+﻿<link href="~/Content/Leerlingen.css" rel="stylesheet" type="text/css" />
 
+
+@model Project_Krekelhof.ViewModels.UitleningIndexViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Uitleningen";
 }
 
-<h2>Index</h2>
+<h3 style="padding-top:40px; margin-bottom:100px; font-size: 50px;">@ViewBag.Selection</h3>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+@using (Html.BeginForm())
+{
+    <p style="float:left">
+        @Html.TextBox("zoekstring")
+        <input type="submit" id="submitknop" value="Zoek" />
+    </p>
+}
+
+<p style="float:right">
+    @Html.ActionLink("Uitlening toevoegen", "Create")
+    <img style="height:25px" src="~/Images/Toevoegen.png" />
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EindeUitlening)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartUitlening)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsTerug)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Naam)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EindeUitlening)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartUitlening)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsTerug)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Naam)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
 
-</table>
+
+<div>
+    @Html.Partial("UitleningenLijst", Model)
+</div>
+

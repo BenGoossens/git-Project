@@ -8,9 +8,11 @@ namespace Project_Krekelhof.Models.Domain
     public interface IUitleningRepository
     {
        
-        Uitlening FindBy(int uitleningId);
+        Uitlening FindById(int id);
         
         IQueryable<Uitlening> FindAll();
+
+        IQueryable<Uitlening> Find(String zoekString);
 
         void Add(Uitlening uitlening);
 

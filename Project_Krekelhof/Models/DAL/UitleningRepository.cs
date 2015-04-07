@@ -18,14 +18,21 @@ namespace Project_Krekelhof.Models.DAL
         }
 
 
-        public Uitlening FindBy(int Id)
+        public Uitlening FindById(int id)
         {
-            return Uitleningen.Find(Id);
+            return Uitleningen.Find(id);
         }
         
         public IQueryable<Uitlening> FindAll()
         {
             return Uitleningen;
+        }
+
+        public IQueryable<Uitlening> Find(string zoekString)
+        {
+            return Uitleningen.Where(p => p.Leerling.Voornaam.ToLower().Contains(zoekString.ToLower()) ||
+                                             p.Leerling.Familienaam.ToLower().Contains(zoekString.ToLower()) ||
+                                             p.Item.Naam.ToLower().Contains(zoekString.ToLower())).OrderBy(p => p.BeginDatumUitlening);
         }
 
         public void Add(Uitlening uitlening)

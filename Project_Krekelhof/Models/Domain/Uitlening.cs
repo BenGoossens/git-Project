@@ -12,24 +12,28 @@ namespace Project_Krekelhof.Models.Domain
         public DateTime EindDatumUitlening { get; set; }
         public bool IsTerug { get; set; }
         public virtual Item Item { get; set; }
+        public virtual Leerling Leerling { get; set; }
 
         public Uitlening()
         {
             
         }
 
-        public Uitlening(int id, bool isterug, DateTime van, DateTime tot, Item item)
+        public Uitlening(int id, bool isterug, DateTime van, DateTime tot, Item item, Leerling leerling)
         {
             Id = id;
             IsTerug = isterug;
             BeginDatumUitlening = van;
             EindDatumUitlening = tot;
             Item = item;
+            Leerling = leerling;
         }
 
-        public Uitlening(Item item, DateTime eind)
+        public Uitlening(int id, Item item, Leerling leerling, DateTime eind)
         {
+            Id = id;
             Item = item;
+            Leerling = leerling;
             BeginDatumUitlening = DateTime.Today;
             EindDatumUitlening = eind;
             IsTerug = false;

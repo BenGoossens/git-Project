@@ -8,7 +8,7 @@ namespace Project_Krekelhof.Models.Domain
 {
     public class Medewerker : Gebruiker
     {
-        public Medewerker(IBoekRepository boekRepository, ICategorieRepository categorieRepository, ICdRepository cdRepository, IDvdRepository dvdRepository, ISpelRepository spelRepository, ILeerlingRepository leerlingRepository) : base(boekRepository, categorieRepository, cdRepository, dvdRepository, spelRepository, leerlingRepository)
+        public Medewerker(IBoekRepository boekRepository, ICategorieRepository categorieRepository, ICdRepository cdRepository, IDvdRepository dvdRepository, ISpelRepository spelRepository, ILeerlingRepository leerlingRepository, IUitleningRepository uitleningRepository) : base(boekRepository, categorieRepository, cdRepository, dvdRepository, spelRepository, leerlingRepository, uitleningRepository)
         {
         }
 

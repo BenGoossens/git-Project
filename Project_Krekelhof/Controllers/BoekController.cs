@@ -21,8 +21,8 @@ namespace Project_Krekelhof.Controllers
 
         public BoekController(IBoekRepository boekRepository, ICategorieRepository categorieRepository)
         {
-            gebruiker = new Gebruiker(boekRepository, categorieRepository, null, null, null, null);
-            medewerker = new Medewerker(boekRepository, categorieRepository, null, null, null, null);
+            gebruiker = new Gebruiker(boekRepository, categorieRepository, null, null, null, null, null);
+            medewerker = new Medewerker(boekRepository, categorieRepository, null, null, null, null, null);
             this.boekRepository = boekRepository;
             this.categorieRepository = categorieRepository;
         }

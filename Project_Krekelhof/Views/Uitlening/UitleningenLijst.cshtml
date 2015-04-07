@@ -1,0 +1,64 @@
+﻿<link href="~/Content/Leerlingen.css" rel="stylesheet" type="text/css" />
+
+@model Project_Krekelhof.ViewModels.UitleningIndexViewModel
+
+
+<table class="table">
+    <tr style="text-align:center;">
+        <th>
+            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().ItemNaam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().LeerlingVoornaam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().StartUitlening)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().EindeUitlening)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().IsTerug)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Uitleningen)
+    {
+        <tr id="tabelrijen">
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeerlingVoornaam) @Html.DisplayFor(modelItem => item.LeerlingFamilienaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartUitlening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EindeUitlening)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsTerug)
+            </td>
+            <td>
+
+                <a>
+                    <img src="~/Images/Bewerken.png" style="width:10px; height:10px;" />
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+
+                </a>
+                @Html.ActionLink("Details", "Details", new { id = item.Id, @class = "Detailsknop" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id, @class = "Deleteknop" })
+            </td>
+        </tr>
+
+    }
+
+</table>

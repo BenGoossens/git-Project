@@ -18,8 +18,8 @@ namespace Project_Krekelhof.Controllers
 
         public SpelController(ISpelRepository spelRepository, ICategorieRepository categorieRepository)
         {
-            gebruiker = new Gebruiker(null, categorieRepository, null, null, spelRepository, null);
-            medewerker = new Medewerker(null, categorieRepository, null, null, spelRepository, null);
+            gebruiker = new Gebruiker(null, categorieRepository, null, null, spelRepository, null, null);
+            medewerker = new Medewerker(null, categorieRepository, null, null, spelRepository, null, null);
 
             this.spelRepository = spelRepository;
             this.categorieRepository = categorieRepository;

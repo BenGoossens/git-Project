@@ -77,15 +77,22 @@ namespace Project_Krekelhof.Models.DAL
                 Leerling lln3 = new Leerling(3, "Robin", "Coppens", "Banierstraat", 29, "", "1KA");
                 Leerling lln4 = new Leerling(4, "Iclal", "Dalgic", "Klinkkouterstraat", 33, "aranhida-izzy@hotmail.com", "1KB");
 
-
                 context.Leerlingen.Add(lln1);
                 context.Leerlingen.Add(lln2);
                 context.Leerlingen.Add(lln3);
                 context.Leerlingen.Add(lln4);
                 context.SaveChanges();
 
-               
+                Uitlening u1 = new Uitlening(1, false, new DateTime(2015, 04, 07), new DateTime(2015, 04, 22), spel1, lln1);
+                //Uitlening u2 = new Uitlening(2, b1, lln3, new DateTime(2015, 04, 22));
+                //Uitlening u3 = new Uitlening(3, dvd1, lln2, new DateTime(2015, 04, 18));
+                //Uitlening u4 = new Uitlening(4, cd1, lln4, new DateTime(2015, 05, 01));
 
+                context.Uitleningen.Add(u1);
+                //context.Uitleningen.Add(u2);
+                //context.Uitleningen.Add(u3);
+                //context.Uitleningen.Add(u4);
+                context.SaveChanges();
             }
             catch (DbEntityValidationException e)
             {

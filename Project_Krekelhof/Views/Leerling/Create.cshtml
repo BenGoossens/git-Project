@@ -1,10 +1,17 @@
 ﻿@model Project_Krekelhof.ViewModels.LeerlingViewModel
 
 @{
-    ViewBag.Title = "Create";
+    if (@Model.Id == 0)
+    {
+        ViewBag.Title = "Creëer cd";
+    }
+    else
+    {
+        ViewBag.Title = "Editeer Cd";
+    }
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm()) 
 {

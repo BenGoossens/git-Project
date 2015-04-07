@@ -13,8 +13,9 @@ namespace Project_Krekelhof.Models.Domain
         public IDvdRepository DvdRepository;
         public ISpelRepository SpelRepository;
         public ILeerlingRepository LeerlingRepository;
+        public IUitleningRepository UitleningRepository;
 
-        public Gebruiker(IBoekRepository boekRepository, ICategorieRepository categorieRepository, ICdRepository cdRepository, IDvdRepository dvdRepository, ISpelRepository spelRepository, ILeerlingRepository leerlingRepository)
+        public Gebruiker(IBoekRepository boekRepository, ICategorieRepository categorieRepository, ICdRepository cdRepository, IDvdRepository dvdRepository, ISpelRepository spelRepository, ILeerlingRepository leerlingRepository, IUitleningRepository uitleningRepository)
         {
             this.BoekRepository = boekRepository;
             this.CategorieRepository = categorieRepository;
@@ -22,6 +23,7 @@ namespace Project_Krekelhof.Models.Domain
             this.DvdRepository = dvdRepository;
             this.SpelRepository = spelRepository;
             this.LeerlingRepository = leerlingRepository;
+            this.UitleningRepository = uitleningRepository;
         }
 
         #region methodesBoek
@@ -95,6 +97,18 @@ namespace Project_Krekelhof.Models.Domain
         {
             Leerling leerling = LeerlingRepository.FindById(id);
             return leerling;
+        }
+        #endregion
+
+        #region methodesUitlening
+        public IEnumerable<Uitlening> GeefUitleningen(string zoekTerm)
+        {
+            return !String.IsNullOrEmpty(zoekTerm) ? UitleningRepository.Find(zoekTerm).ToList() : UitleningRepository.FindAll().OrderBy(t => t.Id).ToList();
+        }
+        public Uitlening GeefUitleningen(int id)
+        {
+            Uitlening uitlening = UitleningRepository.FindById(id);
+            return uitlening;
         }
         #endregion
     }

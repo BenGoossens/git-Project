@@ -11,40 +11,44 @@ namespace Project_Krekelhof.Controllers
 {
     public class UitleningController : Controller
     {
-
+        private Gebruiker gebruiker;
 
         private IUitleningRepository uitleningRepository;
-        //private IItemRepository itemRepository;
+        private IBoekRepository boekRepository;
+        private ICdRepository cdRepository;
+        private IDvdRepository dvdRepository;
+        private ISpelRepository spelRepository;
         private ILeerlingRepository leerlingRepository;
 
-        public UitleningController()
+        public UitleningController(Gebruiker gebruiker, IUitleningRepository uitleningRepository, IBoekRepository boekRepository, ICdRepository cdRepository, IDvdRepository dvdRepository, ISpelRepository spelRepository, ILeerlingRepository leerlingRepository)
         {
+            this.gebruiker = gebruiker;
 
+            this.uitleningRepository = uitleningRepository;
+            this.boekRepository = boekRepository;
+            this.cdRepository = cdRepository;
+            this.dvdRepository = dvdRepository;
+            this.spelRepository = spelRepository;
+            this.leerlingRepository = leerlingRepository;
         }
-        //public UitleningController(IUitleningRepository uitleningRepository, IItemRepository itemRepository,ILeerlingRepository leerlingRepository)
-        //{
-        //    this.uitleningRepository = uitleningRepository;
-        //    this.itemRepository = itemRepository;
-        //    this.leerlingRepository = leerlingRepository;
-        //}
-
-        //public IEnumerable<Uitlening> GetUitleningen()
-        //{
-        //    return uitleningRepository.FindAll().ToList();
-        //}
-
-        public ActionResult Index()
+        
+        public ActionResult Index(string zoekstring)
         {
-            //Ophalen uitleningen, gesorteerd op startuitlening.
-            IEnumerable<Uitlening> uitleningen =
-                uitleningRepository.FindAll().Include(u => u.Item).OrderByDescending(u => u.IsTerug);
-            //Aanmaken van ViewModel.  ToList zorgt voor het uitvoeren van de query
-           
-            IEnumerable<UitleningIndexViewModel> vms =
-                uitleningen.Select(u => new UitleningIndexViewModel(u)).ToList();
-            return View(vms);
-           
-            //ViewBag.TotaleOmzet = uitleningen.Sum(b => b.Id);
+            IEnumerable<Uitlening> uitleningen;
+            if (!String.IsNullOrEmpty(zoekstring))
+            {
+                uitleningen = gebruiker.GeefUitleningen(zoekstring);
+                ViewBag.Selection = "Alle uitleningen met '" + zoekstring + "'";
+            }
+            else
+            {
+                uitleningen = gebruiker.GeefUitleningen(zoekstring);
+                ViewBag.Selection = "Alle Uitleningen";
+            }
+            if (Request.IsAjaxRequest())
+                return PartialView("Lijst", new UitleningIndexViewModel(uitleningen));
+
+            return View(new UitleningIndexViewModel(uitleningen));
         }
     }
 }

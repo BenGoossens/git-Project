@@ -18,8 +18,8 @@ namespace Project_Krekelhof.Controllers
 
         public DvdController(IDvdRepository dvdRepository, ICategorieRepository categorieRepository)
         {
-            gebruiker = new Gebruiker(null, categorieRepository, null, dvdRepository, null, null);
-            medewerker = new Medewerker(null, categorieRepository, null, dvdRepository, null, null);
+            gebruiker = new Gebruiker(null, categorieRepository, null, dvdRepository, null, null, null);
+            medewerker = new Medewerker(null, categorieRepository, null, dvdRepository, null, null, null);
 
             this.dvdRepository = dvdRepository;
             this.categorieRepository = categorieRepository;

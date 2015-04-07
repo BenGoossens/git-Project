@@ -20,8 +20,8 @@ namespace Project_Krekelhof.Controllers
 
         public LeerlingController(ILeerlingRepository leerlingRepository)
         {
-            gebruiker = new Gebruiker(null, null, null, null, null, leerlingRepository);
-            medewerker = new Medewerker(null, null, null, null, null, leerlingRepository);
+            gebruiker = new Gebruiker(null, null, null, null, null, leerlingRepository, null);
+            medewerker = new Medewerker(null, null, null, null, null, leerlingRepository, null);
             this.leerlingRepository = leerlingRepository;
         }
 
@@ -73,6 +73,64 @@ namespace Project_Krekelhof.Controllers
                 ModelState.AddModelError("", ex.Message);
             }
             return View(lvm);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            Leerling leerling = leerlingRepository.FindById(id);
+            if (leerling == null)
+                return HttpNotFound();
+            return View("Create", new LeerlingViewModel(leerling));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, LeerlingViewModel lvm)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    Leerling leerling = leerlingRepository.FindById(id);
+                    MapToLeerling(lvm, leerling);
+                    leerlingRepository .SaveChanges();
+                    TempData["message"] = String.Format("Leerling {0} werd aangepast", leerling.Voornaam);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
+            }
+            return View("Create", lvm);
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Leerling leerling = leerlingRepository.FindById(id);
+            if (leerling == null)
+                return HttpNotFound();
+            return View(new LeerlingViewModel(leerling));
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            try
+            {
+                Leerling leerling = leerlingRepository.FindById(id);
+                if (leerling == null)
+                    return HttpNotFound();
+                leerlingRepository.Delete(leerling);
+                leerlingRepository.SaveChanges();
+                TempData["message"] = String.Format("Leerling {0} werd verwijderd", leerling.Voornaam);
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = "Verwijderen Leerling mislukt. Probeer opnieuw. ";
+            }
+            return RedirectToAction("Index");
         }
 
         private void MapToLeerling(LeerlingViewModel lvm, Leerling leerling)
