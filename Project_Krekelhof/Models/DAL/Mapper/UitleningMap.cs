@@ -17,11 +17,19 @@ namespace Project_Krekelhof.Models.DAL.Mapper
             //Properties
             
             //Relationships
-            this.HasOptional(t => t.Item)
-                .WithMany()
+            //this.HasOptional(t => t.Item)
+            //    .WithMany()
+            //    .Map(m => m.MapKey("Item"))
+            //    .WillCascadeOnDelete(false);
+            this.HasRequired(t => t.Item)
+                .WithOptional()
                 .Map(m => m.MapKey("Item"))
                 .WillCascadeOnDelete(false);
-            this.HasOptional(t => t.Leerling)
+            //this.HasOptional(t => t.Leerling)
+            //    .WithMany()
+            //    .Map(m => m.MapKey("Leerling"))
+            //    .WillCascadeOnDelete(false);
+            this.HasRequired(t => t.Leerling)
                 .WithMany()
                 .Map(m => m.MapKey("Leerling"))
                 .WillCascadeOnDelete(false);

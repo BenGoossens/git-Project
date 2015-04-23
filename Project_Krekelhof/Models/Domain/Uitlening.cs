@@ -50,18 +50,18 @@ namespace Project_Krekelhof.Models.Domain
             }
         }
 
-        public Project_Krekelhof.Models.Domain.Item item
-        {
-            get { return Item; }
-            set
-            {
-                if (value == null)
-                    throw new ArgumentException("Ongeldig Item!");
-                if (!item.Beschikbaar)
-                    throw new ArgumentException("Item is niet beschikbaar!");
-                Item = value;
-            }
-        }
+        //public Project_Krekelhof.Models.Domain.Item item
+        //{
+        //    get { return Item; }
+        //    set
+        //    {
+        //        if (value == null)
+        //            throw new ArgumentException("Ongeldig Item!");
+        //        if (!item.Beschikbaar)
+        //            throw new ArgumentException("Item is niet beschikbaar!");
+        //        Item = value;
+        //    }
+        //}
 
         public void WordTerugGebracht()
         {
