@@ -227,6 +227,8 @@
     <Content Include="Views\Spel\Delete.cshtml" />
     <Content Include="Views\Leerling\Delete.cshtml" />
     <Content Include="Views\Uitlening\UitleningenLijst.cshtml" />
+    <Content Include="Views\Uitlening\Delete.cshtml" />
+    <Content Include="Views\Uitlening\Verlengen.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

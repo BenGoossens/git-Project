@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Project_Krekelhof.Models.Domain;
+using System.ComponentModel.DataAnnotations;
 
 namespace Project_Krekelhof.ViewModels
 {
     public class UitleningViewModel
     {
         public int Id { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Einde uitlening")]
         public DateTime EindeUitlening { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Start uitlening")]
         public DateTime StartUitlening { get; set; }
+        [Display(Name = "Is terug")]
         public bool IsTerug { get; set; }
+        [Display(Name = "Item")]
         public string ItemNaam { get; set; } 
+        [Display(Name= "Leerling")]
         public string LeerlingVoornaam { get; set; }
         public string LeerlingFamilienaam { get; set; }
 

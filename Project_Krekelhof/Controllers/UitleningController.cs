@@ -50,6 +50,112 @@ namespace Project_Krekelhof.Controllers
 
             return View(new UitleningIndexViewModel(uitleningen));
         }
+
+        //[HttpGet]
+        //public ActionResult Create()
+        //{
+        //    Uitlening uitlening = new Uitlening();
+        //    ViewBag.Title = "Uitlening toevoegen";
+        //    ViewBag.Categorie = GetCategorieSelectList(uitlening);
+        //    return View(new UitleningViewModel(uitlening));
+        //}
+
+        //[HttpPost]
+        //public ActionResult Create(BoekViewModel bvm)
+        //{
+        //    try
+        //    {
+        //        if (ModelState.IsValid)
+        //        {
+        //            Boek boek = new Boek();
+        //            MapToBoek(bvm, boek);
+        //            boekRepository.Add(boek);
+        //            boekRepository.SaveChanges();
+        //            TempData["Message"] = String.Format("{0} werd gecreëerd.", boek.Naam);
+        //            return RedirectToAction("Index");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ModelState.AddModelError("", ex.Message);
+        //    }
+        //    ViewBag.Categorie = GetCategorieSelectList(bvm.Categorie);
+        //    return View(bvm);
+        //}
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Uitlening uitlening = uitleningRepository.FindById(id);
+            if (uitlening == null)
+                return HttpNotFound();
+            return View(new UitleningViewModel(uitlening));
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            try
+            {
+                Uitlening uitlening = uitleningRepository.FindById(id);
+                if (uitlening == null)
+                    return HttpNotFound();
+                uitleningRepository.Delete(uitlening);
+                uitleningRepository.SaveChanges();
+                TempData["message"] = String.Format("Uitlening {0} werd verwijderd", uitlening.Id);
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = "Verwijderen uitlening mislukt. Probeer opnieuw. ";
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Verlengen(int id)
+        {
+            Uitlening uitlening = uitleningRepository.FindById(id);
+            if (uitlening == null)
+                return HttpNotFound();
+            //uitlening.EindDatum = uitlening.EindDatum.AddDays(7);
+            return View("Verlengen", new UitleningViewModel(uitlening));
+        }
+
+        [HttpPost, ActionName("Verlengen")]
+        public ActionResult VerlengenComfirmed(int id, UitleningViewModel uvm)
+        {
+            try
+            {
+                Uitlening uitlening = uitleningRepository.FindById(id);
+                if (uitlening == null)
+                    return HttpNotFound();
+                MapToUitlening(uvm, uitlening);
+                uitleningRepository.Add(uitlening);
+                uitleningRepository.SaveChanges();
+                TempData["message"] = String.Format("Uitlening {0} werd verlengd", uitlening.Id);
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = "Verwijderen uitlening mislukt. Probeer opnieuw. ";
+            }
+            return RedirectToAction("Index");
+        }
+
+        private void MapToUitlening(UitleningViewModel uvm, Uitlening uitlening)
+        {
+            uitlening.Id = uvm.Id;
+            uitlening.EindDatum = uvm.EindeUitlening.AddDays(7);
+            uitlening.BeginDatumUitlening = uvm.StartUitlening;
+            uitlening.IsTerug = uvm.IsTerug;
+           //// uitlening.Leerling = (String.IsNullOrEmpty(uvm.LeerlingVoornaam) ? null : uitleningRepository.FindById(Int32.Parse(uvm.LeerlingVoornaam)));
+           // uitlening.Isbn = uvm.Isbn;
+           // uitlening.Leeftijd = uvm.Leeftijd;
+           // uitlening.Categorie = (String.IsNullOrEmpty(uvm.Categorie) ? null : categorieRepository.FindById(Int32.Parse(uvm.Categorie)));
+           // uitlening.Beschikbaar = uvm.Beschikbaar;
+        }
+
+
+
     }
 }
 

@@ -1,0 +1,27 @@
+﻿@model Project_Krekelhof.ViewModels.UitleningViewModel
+
+@{
+    ViewBag.Title = "Verleng uitlening";
+}
+
+<h2>@ViewBag.Title</h2>
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-warning">@ViewBag.ErrorMessage</div>
+}
+<h4>Weet je zeker dat je de uitlening van @Model.LeerlingVoornaam @Model.LeerlingFamilienaam met item @Model.ItemNaam wil verlengen?</h4>
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Verlengen" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+
+

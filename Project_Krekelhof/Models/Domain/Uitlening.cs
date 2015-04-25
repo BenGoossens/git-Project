@@ -44,7 +44,7 @@ namespace Project_Krekelhof.Models.Domain
             get { return EindDatumUitlening; }
             set
             {
-                if (value <= DateTime.Today)
+                if (value <= BeginDatumUitlening)
                     throw new ArgumentException("Eind datum mag niet vroeger zijn dan begin datum!");
                 EindDatumUitlening = value;
             }
