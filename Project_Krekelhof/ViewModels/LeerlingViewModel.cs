@@ -40,7 +40,7 @@ namespace Project_Krekelhof.ViewModels
         {
             Leerlingen = leerlingen.Select(s => new LeerlingViewModel()
             {
-                Id = s.Id,
+                //Id = s.Id,
                 Voornaam = s.Voornaam,
                 Familienaam = s.Familienaam,
                 Straat = s.Straat,
