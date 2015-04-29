@@ -19,6 +19,8 @@ namespace Project_Krekelhof.Models.DAL
         }
         //public KrekelschoolContext(string connStringName) : base(connStringName) { }
 
+        public virtual DbSet<Item> Items { get; set; } 
+
         public virtual DbSet<Boek> Boeken { get; set; }
         public virtual DbSet<Dvd> Dvds { get; set; }
         public virtual DbSet<Cd> Cds { get; set; }

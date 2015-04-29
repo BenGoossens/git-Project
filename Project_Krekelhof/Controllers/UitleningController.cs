@@ -14,21 +14,15 @@ namespace Project_Krekelhof.Controllers
         private Gebruiker gebruiker;
 
         private IUitleningRepository uitleningRepository;
-        private IBoekRepository boekRepository;
-        private ICdRepository cdRepository;
-        private IDvdRepository dvdRepository;
-        private ISpelRepository spelRepository;
+        private IItemRepository itemRepository;
         private ILeerlingRepository leerlingRepository;
 
-        public UitleningController(Gebruiker gebruiker, IUitleningRepository uitleningRepository, IBoekRepository boekRepository, ICdRepository cdRepository, IDvdRepository dvdRepository, ISpelRepository spelRepository, ILeerlingRepository leerlingRepository)
+        public UitleningController(Gebruiker gebruiker, IUitleningRepository uitleningRepository, IItemRepository itemRepository, ILeerlingRepository leerlingRepository)
         {
             this.gebruiker = gebruiker;
 
             this.uitleningRepository = uitleningRepository;
-            this.boekRepository = boekRepository;
-            this.cdRepository = cdRepository;
-            this.dvdRepository = dvdRepository;
-            this.spelRepository = spelRepository;
+            this.itemRepository = itemRepository;
             this.leerlingRepository = leerlingRepository;
         }
         
@@ -51,37 +45,39 @@ namespace Project_Krekelhof.Controllers
             return View(new UitleningIndexViewModel(uitleningen));
         }
 
-        //[HttpGet]
-        //public ActionResult Create()
-        //{
-        //    Uitlening uitlening = new Uitlening();
-        //    ViewBag.Title = "Uitlening toevoegen";
-        //    ViewBag.Categorie = GetCategorieSelectList(uitlening);
-        //    return View(new UitleningViewModel(uitlening));
-        //}
+        [HttpGet]
+        public ActionResult Create()
+        {
+            Uitlening uitlening = new Uitlening();
+            ViewBag.Title = "Uitlening toevoegen";
+            ViewBag.Item = GetItemSelectList(uitlening);
+            ViewBag.Leerling = GetLeerlingSelectList(uitlening);
+            return View(new UitleningViewModel(uitlening));
+        }
 
-        //[HttpPost]
-        //public ActionResult Create(BoekViewModel bvm)
-        //{
-        //    try
-        //    {
-        //        if (ModelState.IsValid)
-        //        {
-        //            Boek boek = new Boek();
-        //            MapToBoek(bvm, boek);
-        //            boekRepository.Add(boek);
-        //            boekRepository.SaveChanges();
-        //            TempData["Message"] = String.Format("{0} werd gecreëerd.", boek.Naam);
-        //            return RedirectToAction("Index");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ModelState.AddModelError("", ex.Message);
-        //    }
-        //    ViewBag.Categorie = GetCategorieSelectList(bvm.Categorie);
-        //    return View(bvm);
-        //}
+        [HttpPost]
+        public ActionResult Create(UitleningViewModel uvm)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Uitlening uitlening = new Uitlening();
+                    MapToUitlening(uvm, uitlening);
+                    uitleningRepository.Add(uitlening);
+                    uitleningRepository.SaveChanges();
+                    TempData["Message"] = String.Format("{0} werd gecreëerd.", uitlening.Id);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+            ViewBag.Item = GetItemSelectList(uvm.Item);
+            ViewBag.Leerling = GetLeerlingSelectList(uvm.volledigeNaam);
+            return View(uvm);
+        }
 
         [HttpGet]
         public ActionResult Delete(int id)
@@ -147,15 +143,41 @@ namespace Project_Krekelhof.Controllers
             uitlening.EindDatum = uvm.EindeUitlening.AddDays(7);
             uitlening.BeginDatumUitlening = uvm.StartUitlening;
             uitlening.IsTerug = uvm.IsTerug;
-           //// uitlening.Leerling = (String.IsNullOrEmpty(uvm.LeerlingVoornaam) ? null : uitleningRepository.FindById(Int32.Parse(uvm.LeerlingVoornaam)));
-           // uitlening.Isbn = uvm.Isbn;
-           // uitlening.Leeftijd = uvm.Leeftijd;
-           // uitlening.Categorie = (String.IsNullOrEmpty(uvm.Categorie) ? null : categorieRepository.FindById(Int32.Parse(uvm.Categorie)));
-           // uitlening.Beschikbaar = uvm.Beschikbaar;
+            uitlening.Item = (String.IsNullOrEmpty(uvm.Item)
+                ? null
+                : itemRepository.FindById(Int32.Parse(uvm.Item)));
+            uitlening.Leerling = (String.IsNullOrEmpty(uvm.volledigeNaam)
+                ? null
+                : leerlingRepository.FindById(Int32.Parse(uvm.volledigeNaam)));
         }
 
+        private SelectList GetItemSelectList(Uitlening uitlening)
+        {
+            return new SelectList(itemRepository.FindAll().OrderBy(g => g.Naam),
+                "Id", "Naam",
+               uitlening == null || uitlening.Item == null ? "" : uitlening.Item.Naam);
+        }
 
+        private SelectList GetItemSelectList(string item)
+        {
+            return new SelectList(itemRepository.FindAll().OrderBy(g => g.Naam),
+                "Id", "Naam",
+               item ?? "");
+        }
 
+        private SelectList GetLeerlingSelectList(Uitlening uitlening)
+        {
+            return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Familienaam),
+                "Id", "volledigeNaam",
+               uitlening == null || uitlening.Leerling == null ? "" : uitlening.Leerling.VolledigeNaam);
+        }
+
+        private SelectList GetLeerlingSelectList(string leerling)
+        {
+            return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Familienaam),
+                "Id", "volledigeNaam",
+               leerling ?? "");
+        }
     }
 }
 

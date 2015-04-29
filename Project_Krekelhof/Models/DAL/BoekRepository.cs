@@ -12,7 +12,7 @@ namespace Project_Krekelhof.Models.DAL
          private KrekelschoolContext Context;
          private DbSet<Boek> Boeken;
 
-         public BoekRepository(KrekelschoolContext context) 
+        public BoekRepository(KrekelschoolContext context) 
         {
             Context = context;
             Boeken = Context.Boeken;

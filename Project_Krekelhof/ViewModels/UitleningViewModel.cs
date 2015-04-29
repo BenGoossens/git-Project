@@ -19,10 +19,11 @@ namespace Project_Krekelhof.ViewModels
         [Display(Name = "Is terug")]
         public bool IsTerug { get; set; }
         [Display(Name = "Item")]
-        public string ItemNaam { get; set; } 
+        public string Item { get; set; } 
         [Display(Name= "Leerling")]
-        public string LeerlingVoornaam { get; set; }
-        public string LeerlingFamilienaam { get; set; }
+        //public string LeerlingVoornaam { get; set; }
+        //public string LeerlingFamilienaam { get; set; }
+        public string volledigeNaam { get; set; }
 
         public UitleningViewModel()
         {
@@ -32,14 +33,13 @@ namespace Project_Krekelhof.ViewModels
         public UitleningViewModel(Uitlening u)
         {
             Id = u.Id;
-            ItemNaam = (u.Item == null) ? null : u.Item.Naam;
-            LeerlingVoornaam = (u.Leerling == null) ? null : u.Leerling.Voornaam;
-            LeerlingFamilienaam = (u.Leerling == null) ? null : u.Leerling.Familienaam;
+            Item = (u.Item == null) ? null : u.Item.Naam;
+            //LeerlingVoornaam = (u.Leerling == null) ? null : u.Leerling.Voornaam;
+            //LeerlingFamilienaam = (u.Leerling == null) ? null : u.Leerling.Familienaam;
+            volledigeNaam = (u.Leerling == null) ? null : u.Leerling.VolledigeNaam;
             EindeUitlening = u.EindDatum;
-            StartUitlening = u.BeginDatumUitlening;
-            IsTerug = u.IsTerug;
-            
-            
+            //StartUitlening = u.BeginDatumUitlening;
+            //IsTerug = u.IsTerug;
         }   
     }
 
@@ -51,9 +51,8 @@ namespace Project_Krekelhof.ViewModels
         {
             Uitleningen = uitleningen.Select(u => new UitleningViewModel(){
                 Id = u.Id,
-                ItemNaam = (u.Item == null) ? null : u.Item.Naam,
-                LeerlingVoornaam = (u.Leerling == null) ? null : u.Leerling.Voornaam,
-                LeerlingFamilienaam = (u.Leerling == null) ? null : u.Leerling.Familienaam,
+                Item = u.Item.Naam,
+                volledigeNaam = u.Leerling.VolledigeNaam,
                 EindeUitlening = u.EindDatum,
                 StartUitlening = u.BeginDatumUitlening,
                 IsTerug = u.IsTerug

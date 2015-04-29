@@ -239,7 +239,7 @@ namespace Project_Krekelhof.Controllers
 
         private void MapToLeerling(LeerlingViewModel lvm, Leerling leerling)
         {
-            leerling.Id = lvm.Id;
+            //leerling.Id = lvm.Id;
             leerling.Voornaam = lvm.Voornaam;
             leerling.Familienaam = lvm.Familienaam;
             leerling.Straat = lvm.Straat;

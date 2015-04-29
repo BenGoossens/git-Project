@@ -229,6 +229,7 @@
     <Content Include="Views\Uitlening\UitleningenLijst.cshtml" />
     <Content Include="Views\Uitlening\Delete.cshtml" />
     <Content Include="Views\Uitlening\Verlengen.cshtml" />
+    <Content Include="Views\Uitlening\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -271,6 +272,7 @@
     <Compile Include="Models\DAL\CategorieRepository.cs" />
     <Compile Include="Models\DAL\CdRepository.cs" />
     <Compile Include="Models\DAL\DvdRepository.cs" />
+    <Compile Include="Models\DAL\ItemRepository.cs" />
     <Compile Include="Models\DAL\KrekelschoolContext.cs" />
     <Compile Include="Models\DAL\KrekelschoolInitializer.cs" />
     <Compile Include="Models\DAL\Mapper\BoekMap.cs" />
@@ -295,6 +297,7 @@
     <Compile Include="Models\Domain\ICategorieRepository.cs" />
     <Compile Include="Models\Domain\ICdRepository.cs" />
     <Compile Include="Models\Domain\IDvdRepository.cs" />
+    <Compile Include="Models\Domain\IItemRepository.cs" />
     <Compile Include="Models\Domain\ILeerlingRepository.cs" />
     <Compile Include="Models\Domain\ISpelRepository.cs" />
     <Compile Include="Models\Domain\Item.cs" />

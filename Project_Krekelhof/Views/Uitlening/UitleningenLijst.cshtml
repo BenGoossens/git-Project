@@ -9,10 +9,10 @@
             @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().Id)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().ItemNaam)
+            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().Item)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().LeerlingVoornaam)
+            @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().volledigeNaam)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Uitleningen.FirstOrDefault().StartUitlening)
@@ -33,10 +33,10 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ItemNaam)
+                @Html.DisplayFor(modelItem => item.Item)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LeerlingVoornaam) @Html.DisplayFor(modelItem => item.LeerlingFamilienaam)
+                @Html.DisplayFor(modelItem => item.volledigeNaam)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StartUitlening)
