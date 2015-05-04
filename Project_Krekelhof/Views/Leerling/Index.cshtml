@@ -21,6 +21,11 @@
     <img style="height:25px" src="~/Images/Toevoegen.png" />
 </p>
 
+@using (Html.BeginForm("Index", "Leerling", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" />
+    <input type="submit" value="OK" />
+}  
 
 
 <div>

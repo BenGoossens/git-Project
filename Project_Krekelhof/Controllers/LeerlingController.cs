@@ -146,7 +146,7 @@ namespace Project_Krekelhof.Controllers
                     connect.Close();
                 }
             }
-            return View();
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

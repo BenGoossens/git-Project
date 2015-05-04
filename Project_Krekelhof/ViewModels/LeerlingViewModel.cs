@@ -22,7 +22,7 @@ namespace Project_Krekelhof.ViewModels
         }
         public LeerlingViewModel(Leerling l)
         {
-            //Id = l.Id;
+            Id = l.Id;
             Voornaam = l.Voornaam;
             Familienaam = l.Familienaam;
             Straat = l.Straat;

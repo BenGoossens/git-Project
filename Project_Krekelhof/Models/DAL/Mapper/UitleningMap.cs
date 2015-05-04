@@ -29,10 +29,10 @@ namespace Project_Krekelhof.Models.DAL.Mapper
             //    .WithMany()
             //    .Map(m => m.MapKey("Leerling"))
             //    .WillCascadeOnDelete(false);
-            this.HasRequired(t => t.Leerling)
-                .WithMany()
-                .Map(m => m.MapKey("Leerling"))
-                .WillCascadeOnDelete(false);
+            //this.HasRequired(t => t.Leerling)
+            //    .WithMany()
+            //    .Map(m => m.MapKey("Leerling"))
+            //    .WillCascadeOnDelete(false);
         }
     }
 }

@@ -2,17 +2,13 @@
 
 @model Project_Krekelhof.ViewModels.LeerlingIndexViewModel
 
-@using (Html.BeginForm("Index", "Leerling", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <input type="file" name="file" />
-    <input type="submit" value="OK" />
-}  
+
 
 <table class="table">
     <tr style="text-align:center;">
-        @*<th>
+        <th>
             @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Id)
-        </th>*@
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Voornaam)
         </th>
@@ -37,9 +33,9 @@
         @foreach (var item in Model.Leerlingen)
         {
                 <tr id="tabelrijen">
-                    @*<td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Id)
-                    </td>*@
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Voornaam)
                     </td>

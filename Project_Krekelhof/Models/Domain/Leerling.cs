@@ -48,11 +48,6 @@ namespace Project_Krekelhof.Models.Domain
             this.Klas = klas;
         }
 
-        public string VolledigeNaam
-        {
-            get { return Voornaam + " " + Familienaam; }
-        }
-
         public void KrijgLening(Uitlening uitlening)
         {
             if (Uitleningen.Count >= 3)
@@ -69,5 +64,9 @@ namespace Project_Krekelhof.Models.Domain
             Uitleningen.Remove(uitlening);
         }
 
+        public override string ToString()
+        {
+            return Voornaam + " " + Familienaam;
+        }
     }
 }
