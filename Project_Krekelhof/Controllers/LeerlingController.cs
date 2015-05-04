@@ -31,7 +31,7 @@ namespace Project_Krekelhof.Controllers
             this.leerlingRepository = leerlingRepository;
         }
 
-        // GET: Leerling
+        [HttpGet]
         public ActionResult Index(String zoekstring = null)
         {
             IEnumerable<Leerling> leerlingen;
@@ -146,6 +146,7 @@ namespace Project_Krekelhof.Controllers
                     connect.Close();
                 }
             }
+
             return RedirectToAction("Index");
         }
 
