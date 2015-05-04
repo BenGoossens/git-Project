@@ -24,18 +24,17 @@ namespace Project_Krekelhof.Models.Domain
             Id = id;
             IsTerug = isterug;
             BeginDatumUitlening = van;
-            EindDatumUitlening = tot;
+            EindDatum = tot;
             Item = item;
             Leerling = leerling;
         }
 
-        public Uitlening(int id, Item item, Leerling leerling, DateTime eind)
+        public Uitlening(Item item, Leerling leerling)
         {
-            Id = id;
             Item = item;
             Leerling = leerling;
             BeginDatumUitlening = DateTime.Today;
-            EindDatumUitlening = eind;
+            EindDatum = BeginDatumUitlening.AddDays(7);
             IsTerug = false;
         }
 
@@ -44,7 +43,7 @@ namespace Project_Krekelhof.Models.Domain
             get { return EindDatumUitlening; }
             set
             {
-                if (value <= BeginDatumUitlening)
+                if (value <= DateTime.Today)
                     throw new ArgumentException("Eind datum mag niet vroeger zijn dan begin datum!");
                 EindDatumUitlening = value;
             }
