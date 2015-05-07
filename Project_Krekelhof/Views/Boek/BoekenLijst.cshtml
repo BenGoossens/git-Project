@@ -80,7 +80,8 @@
 
                     </a>
                     @Html.ActionLink("Details", "Details", new { id = item.Id, @class = "Detailsknop" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id, @class = "Deleteknop" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id, @class = "Deleteknop" }) |
+                    @Html.ActionLink("Uitlenen", "Uitlenen", new { id = item.Id })
                 </td>
             </tr>
         }

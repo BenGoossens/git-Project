@@ -167,14 +167,14 @@ namespace Project_Krekelhof.Controllers
 
         private SelectList GetLeerlingSelectList(Uitlening uitlening)
         {
-            return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Familienaam),
+            return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Voornaam),
                 "Id", "volledigeNaam",
                uitlening == null || uitlening.Leerling == null ? "" : uitlening.Leerling.ToString());
         }
 
         private SelectList GetLeerlingSelectList(string leerling)
         {
-            return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Familienaam),
+            return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Voornaam),
                 "Id", "volledigeNaam",
                leerling ?? "");
         }
