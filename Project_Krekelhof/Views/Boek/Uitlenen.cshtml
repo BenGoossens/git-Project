@@ -1,0 +1,57 @@
+﻿<link href="~/Content/Leerlingen.css" rel="stylesheet" type="text/css" />
+
+@model Project_Krekelhof.ViewModels.LeerlingIndexViewModel
+
+<div align="center" style="width: 250px; margin: auto; background-color: white;">
+    <div>
+        @*<table id="table" class="table">
+            <tr style="text-align:center;">
+                <th>
+                    @Html.DisplayNameFor(model => model.Leerlingen.FirstOrDefault().Familienaam)
+                </th>
+            </tr>
+            @foreach (var item in Model.Leerlingen)
+            {
+                <tr id="tabelrijen">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Voornaam)
+                        @Html.DisplayFor(modelItem => item.Familienaam)
+                    </td>
+                </tr>
+            }
+        </table>*@
+        <select size="10">
+            @foreach (var item in Model.Leerlingen)
+            {
+                <option>@Html.DisplayFor(modelItem => item.Voornaam) @Html.DisplayFor(modelItem => item.Familienaam)</option>
+            }
+        </select>
+        
+    </div>
+
+    <div>
+        @using (Html.BeginForm("UitleningT", "Boek", FormMethod.Post))
+        {
+            <div class="row">
+                &nbsp;
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <button type="button" class="button_example"
+                            data-dismiss="modal">
+                        Ok
+                    </button>
+                </div>
+            </div>
+        }
+        @*<script type="text/javascript">
+    $(function () {
+        $('#approve-btn').click(function () {
+            $('#modal-container').modal('hide');
+        });
+    });
+        </script>*@
+
+    </div>
+
+</div> 

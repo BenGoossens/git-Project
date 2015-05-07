@@ -21,8 +21,9 @@ namespace Project_Krekelhof.ViewModels
         [Display(Name = "Item")]
         public string Item { get; set; } 
         [Display(Name= "Leerling")]
-        //public string LeerlingVoornaam { get; set; }
-        //public string LeerlingFamilienaam { get; set; }
+        public string LeerlingVoornaam { get; set; }
+        public string LeerlingFamilienaam { get; set; }
+        public string NaamLeerling { get; set; }
         public string volledigeNaam { get; set; }
 
         public UitleningViewModel()
@@ -34,8 +35,9 @@ namespace Project_Krekelhof.ViewModels
         {
             Id = u.Id;
             Item = (u.Item == null) ? null : u.Item.Naam;
-            //LeerlingVoornaam = (u.Leerling == null) ? null : u.Leerling.Voornaam;
-            //LeerlingFamilienaam = (u.Leerling == null) ? null : u.Leerling.Familienaam;
+            LeerlingVoornaam = (u.Leerling == null) ? null : u.Leerling.Voornaam;
+            LeerlingFamilienaam = (u.Leerling == null) ? null : u.Leerling.Familienaam;
+            NaamLeerling = (u.Leerling == null) ? null : u.Leerling.Voornaam + u.Leerling.Familienaam;
             volledigeNaam = (u.Leerling == null) ? null : u.Leerling.ToString();
             EindeUitlening = u.EindDatum;
             //StartUitlening = u.BeginDatumUitlening;
