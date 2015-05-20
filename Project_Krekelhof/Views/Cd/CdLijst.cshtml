@@ -51,8 +51,8 @@
                     @Html.DisplayFor(modelItem => item.Categorie)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
-                    @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+                    @Html.ActionLink("Aanpassen", "Edit", new {id = item.Id}) |
+                    @Html.ActionLink("Verwijderen", "Delete", new {id = item.Id})
                 </td>
             </tr>
         }
@@ -82,8 +82,8 @@ else
                 @Html.DisplayFor(modelItem => item.Categorie)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Aanpassen", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Verwijderen", "Delete", new { id = item.Id })
             </td>
         </tr>
     }

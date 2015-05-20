@@ -80,6 +80,51 @@ namespace Project_Krekelhof.Controllers
         }
 
         [HttpGet]
+        public ActionResult Verlengen(int id)
+        {
+            Uitlening uitlening = uitleningRepository.FindById(id);
+            if (uitlening == null)
+                return HttpNotFound();
+            ViewBag.Item = GetItemSelectList(uitlening);
+            ViewBag.Leerling = GetLeerlingSelectList(uitlening);
+            return View(new UitleningViewModel(uitlening));
+        }
+
+        [HttpPost, ActionName("Verlengen")]
+        public ActionResult VerlengenComfirmed(int id, UitleningViewModel uvm)
+        {
+            try
+            {
+                //Uitlening uitlening = uitleningRepository.FindById(id);
+                //if (uitlening == null)
+                //    return HttpNotFound();
+                //MapToUitlening(uvm, uitlening);
+                //uitleningRepository.Add(uitlening);
+                //uitleningRepository.SaveChanges();
+                //TempData["message"] = String.Format("Uitlening {0} werd verlengd", uitlening.Id);
+
+                Uitlening uitlening = uitleningRepository.FindById(id);
+                MapToUitlening(uvm, uitlening);
+                uitleningRepository.SaveChanges();
+                TempData["message"] = String.Format("Uitlening {0} werd verlengd", uitlening.Id);
+                return RedirectToAction("Index");
+
+                //Boek boek = boekRepository.FindById(id);
+                //MapToBoek(bvm, boek);
+                //boekRepository.SaveChanges();
+                //TempData["message"] = String.Format("Boek {0} werd aangepast", boek.Naam);
+                //return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = "Verwijderen uitlening mislukt. Probeer opnieuw. ";
+            }
+            ViewBag.Item = GetItemSelectList(uvm.Item);
+            ViewBag.Leerling = GetLeerlingSelectList(uvm.volledigeNaam);
+            return View(uvm);
+        }
+
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             Uitlening uitlening = uitleningRepository.FindById(id);
@@ -107,40 +152,10 @@ namespace Project_Krekelhof.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public ActionResult Verlengen(int id)
-        {
-            Uitlening uitlening = uitleningRepository.FindById(id);
-            if (uitlening == null)
-                return HttpNotFound();
-            //uitlening.EindDatum = uitlening.EindDatum.AddDays(7);
-            return View("Verlengen", new UitleningViewModel(uitlening));
-        }
-
-        [HttpPost, ActionName("Verlengen")]
-        public ActionResult VerlengenComfirmed(int id, UitleningViewModel uvm)
-        {
-            try
-            {
-                Uitlening uitlening = uitleningRepository.FindById(id);
-                if (uitlening == null)
-                    return HttpNotFound();
-                MapToUitlening(uvm, uitlening);
-                uitleningRepository.Add(uitlening);
-                uitleningRepository.SaveChanges();
-                TempData["message"] = String.Format("Uitlening {0} werd verlengd", uitlening.Id);
-            }
-            catch (Exception ex)
-            {
-                TempData["error"] = "Verwijderen uitlening mislukt. Probeer opnieuw. ";
-            }
-            return RedirectToAction("Index");
-        }
-
         private void MapToUitlening(UitleningViewModel uvm, Uitlening uitlening)
         {
             uitlening.Id = uvm.Id;
-            uitlening.EindDatum = uvm.EindeUitlening.AddDays(7);
+            uitlening.EindDatum = uvm.EindeUitlening;
             uitlening.BeginDatumUitlening = uvm.StartUitlening;
             uitlening.IsTerug = uvm.IsTerug;
             uitlening.Item = (String.IsNullOrEmpty(uvm.Item)
@@ -168,14 +183,14 @@ namespace Project_Krekelhof.Controllers
         private SelectList GetLeerlingSelectList(Uitlening uitlening)
         {
             return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Voornaam),
-                "Id", "volledigeNaam",
+                "Id", "LeerlingVoornaam",
                uitlening == null || uitlening.Leerling == null ? "" : uitlening.Leerling.ToString());
         }
 
         private SelectList GetLeerlingSelectList(string leerling)
         {
             return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Voornaam),
-                "Id", "volledigeNaam",
+                "Id", "LeerlingVoornaam",
                leerling ?? "");
         }
     }

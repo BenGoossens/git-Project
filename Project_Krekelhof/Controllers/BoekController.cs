@@ -144,18 +144,7 @@ namespace Project_Krekelhof.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Uitlenen()
-        {
-            IEnumerable<Leerling> Leerlingen;
-            Leerlingen = leerlingRepository.FindAll();
-            return PartialView("Uitlenen", new LeerlingIndexViewModel(Leerlingen));
-        }
 
-        [HttpPost]
-        public ActionResult UitleningT()
-        {
-            return RedirectToAction("Index");
-        }
 
         private void MapToBoek(BoekViewModel bvm, Boek boek)
         {
@@ -185,69 +174,57 @@ namespace Project_Krekelhof.Controllers
         }
 
 
-        //[HttpGet]
-        //public ActionResult CreateUitlening()
+        //public ActionResult Uitlenen()
         //{
+        //    IEnumerable<Leerling> Leerlingen;
+        //    Leerlingen = leerlingRepository.FindAll();
+        //    return PartialView("Uitlenen", new LeerlingIndexViewModel(Leerlingen));
         //    Uitlening uitlening = new Uitlening();
-        //    ViewBag.Title = "Uitlening toevoegen";
+        //    ViewBag.Title = "Boek toevoegen";
         //    ViewBag.Leerling = GetLeerlingSelectList(uitlening);
-        //    return View(new UitleningViewModel(uitlening));
+        //    return PartialView("Uitlenen", new LeerlingIndexViewModel(Leerlingen));
         //}
 
-        //[HttpPost, ActionName("CreateUitlening")]
-        //public ActionResult CreateUitleningConfirmed(UitleningViewModel uvm)
+        //[HttpPost, ActionName("Uitlenen")]
+        //public ActionResult UitleningT(UitleningViewModel uvm, int id)
         //{
-        //    try
+        //    if (ModelState.IsValid)
         //    {
-        //        if (ModelState.IsValid)
+        //        try
         //        {
+        //            Boek boek = boekRepository.FindById(id);
         //            Uitlening uitlening = new Uitlening();
         //            MapToUitlening(uvm, uitlening);
-        //            uitleningRepository.Add(uitlening);
         //            uitleningRepository.SaveChanges();
-        //            TempData["Message"] = String.Format("{0} werd gecreëerd.", uitlening.Id);
         //            return RedirectToAction("Index");
         //        }
+        //        catch (Exception ex)
+        //        {
+        //            ModelState.AddModelError("", ex.Message);
+        //        }
         //    }
-        //    catch (Exception ex)
-        //    {
-        //        ModelState.AddModelError("", ex.Message);
-        //    }
-        //    //ViewBag.Item = GetItemSelectList(uvm.Item);
-        //    ViewBag.Leerling = GetLeerlingSelectList(uvm.volledigeNaam);
-        //    return View(uvm);
+        //    ViewBag.Categorie = GetCategorieSelectList(uvm.volledigeNaam);
+        //    return PartialView("Uitlenen");
         //}
 
         //private void MapToUitlening(UitleningViewModel uvm, Uitlening uitlening)
         //{
-        //    uitlening.Id = uvm.Id;
-        //    uitlening.EindDatum = uvm.EindeUitlening.AddDays(7);
-        //    uitlening.BeginDatumUitlening = uvm.StartUitlening;
-        //    uitlening.IsTerug = uvm.IsTerug;
-        //    //uitlening.Item = (String.IsNullOrEmpty(uvm.Item)
-        //    //    ? null
-        //    //    : itemRepository.FindById(Int32.Parse(uvm.Item)));
-        //    uitlening.Leerling = (String.IsNullOrEmpty(uvm.volledigeNaam)
-        //        ? null
-        //        : leerlingRepository.FindById(Int32.Parse(uvm.volledigeNaam)));
+        //    uitlening.Item.Naam = uvm.Item;
+        //    uitlening.Leerling.Voornaam = uvm.volledigeNaam;
         //}
 
         //private SelectList GetLeerlingSelectList(Uitlening uitlening)
         //{
-        //    return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Voornaam),
-        //        "Id", "NaamLeerling",
+        //    return new SelectList(categorieRepository.FindAll().OrderBy(g => g.Naam),
+        //        "Id", "Naam",
         //       uitlening == null || uitlening.Leerling == null ? "" : uitlening.Leerling.ToString());
         //}
 
         //private SelectList GetLeerlingSelectList(string leerling)
         //{
-        //    return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.Voornaam),
-        //        "Id", "NaamLeerling",
+        //    return new SelectList(leerlingRepository.FindAll().OrderBy(g => g.ToString()),
+        //        "Id", "Naam",
         //       leerling ?? "");
         //}
-
     }
-
-    
-
 }

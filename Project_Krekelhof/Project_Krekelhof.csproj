@@ -228,10 +228,10 @@
     <Content Include="Views\Leerling\Delete.cshtml" />
     <Content Include="Views\Uitlening\UitleningenLijst.cshtml" />
     <Content Include="Views\Uitlening\Delete.cshtml" />
-    <Content Include="Views\Uitlening\Verlengen.cshtml" />
     <Content Include="Views\Uitlening\Create.cshtml" />
     <Content Include="Views\Boek\CreateUitlening.cshtml" />
     <Content Include="Views\Boek\Uitlenen.cshtml" />
+    <Content Include="Views\Uitlening\Verlengen.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

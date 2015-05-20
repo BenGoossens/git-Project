@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using Project_Krekelhof.Models.Domain;
@@ -9,21 +10,27 @@ namespace Project_Krekelhof.ViewModels
 {
     public class UitleningViewModel
     {
+        [ReadOnly(true)]
         public int Id { get; set; }
+        
         [DataType(DataType.Date)]
         [Display(Name = "Einde uitlening")]
         public DateTime EindeUitlening { get; set; }
+        [ReadOnly(true)]
         [DataType(DataType.Date)]
         [Display(Name = "Start uitlening")]
         public DateTime StartUitlening { get; set; }
+        [ReadOnly(true)]
         [Display(Name = "Is terug")]
         public bool IsTerug { get; set; }
+        [ReadOnly(true)]
         [Display(Name = "Item")]
         public string Item { get; set; } 
         [Display(Name= "Leerling")]
         public string LeerlingVoornaam { get; set; }
         public string LeerlingFamilienaam { get; set; }
         public string NaamLeerling { get; set; }
+        [ReadOnly(true)]
         public string volledigeNaam { get; set; }
 
         public UitleningViewModel()
@@ -42,7 +49,7 @@ namespace Project_Krekelhof.ViewModels
             EindeUitlening = u.EindDatum;
             //StartUitlening = u.BeginDatumUitlening;
             //IsTerug = u.IsTerug;
-        }   
+        }
     }
 
     public class UitleningIndexViewModel

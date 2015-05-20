@@ -87,11 +87,10 @@
 
                         <a>
                             <img src="~/Images/Bewerken.png" style="width:10px; height:10px;" />
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Aanpassen", "Edit", new { id = item.Id }) |
 
                         </a>
-                        @Html.ActionLink("Details", "Details", new { id = item.Id, @class = "Detailsknop" }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id, @class = "Deleteknop" }) |
+                        @Html.ActionLink("Verwijderen", "Delete", new { id = item.Id, @class = "Deleteknop" }) |
                         @Html.ActionLink("Uitlening", "Uitlenen", null, new { @class = "modal-link btn btn-success" })
                     </td>
                 </tr>
@@ -135,11 +134,10 @@
 
                     <a>
                         <img src="~/Images/Bewerken.png" style="width:10px; height:10px;" />
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Aanpassen", "Edit", new { id = item.Id }) |
 
                     </a>
-                    @Html.ActionLink("Details", "Details", new { id = item.Id, @class = "Detailsknop" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id, @class = "Deleteknop" }) |
+                    @Html.ActionLink("Verwijderen", "Delete", new { id = item.Id, @class = "Deleteknop" }) |
                     @Html.ActionLink("Uitlening", "Uitlenen", null, new { @class = "modal-link btn btn-success" })
                 </td>
             </tr>
