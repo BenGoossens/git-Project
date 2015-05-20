@@ -85,8 +85,8 @@ namespace Project_Krekelhof.Controllers
             Uitlening uitlening = uitleningRepository.FindById(id);
             if (uitlening == null)
                 return HttpNotFound();
-            ViewBag.Item = GetItemSelectList(uitlening);
-            ViewBag.Leerling = GetLeerlingSelectList(uitlening);
+            //ViewBag.Item = GetItemSelectList(uitlening);
+            //ViewBag.Leerling = GetLeerlingSelectList(uitlening);
             return View(new UitleningViewModel(uitlening));
         }
 
@@ -119,8 +119,8 @@ namespace Project_Krekelhof.Controllers
             {
                 TempData["error"] = "Verwijderen uitlening mislukt. Probeer opnieuw. ";
             }
-            ViewBag.Item = GetItemSelectList(uvm.Item);
-            ViewBag.Leerling = GetLeerlingSelectList(uvm.volledigeNaam);
+            //ViewBag.Item = GetItemSelectList(uvm.Item);
+            //ViewBag.Leerling = GetLeerlingSelectList(uvm.volledigeNaam);
             return View(uvm);
         }
 
